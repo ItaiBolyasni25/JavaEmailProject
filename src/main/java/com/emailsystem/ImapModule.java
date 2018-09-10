@@ -7,6 +7,7 @@ package com.emailsystem;
 
 import jodd.mail.ImapServer;
 import jodd.mail.MailServer;
+import jodd.mail.ReceiveMailSession;
 
 /**
  *
@@ -15,13 +16,18 @@ import jodd.mail.MailServer;
 public class ImapModule {
     
     private final String imapServerName = "imap.gmail.com";
+    ImapServer imapServer;
     
     public ImapModule(String receiveEmail, String password) {
-                    ImapServer imapServer = MailServer.create()
+                    imapServer = MailServer.create()
                     .host(imapServerName)
                     .ssl(true)
                     .auth(receiveEmail, password)
                     .debugMode(true)
                     .buildImapMailServer();
+    }
+    
+    public ReceiveMailSession createSession() {
+        return this.imapServer.createSession();
     }
 }
