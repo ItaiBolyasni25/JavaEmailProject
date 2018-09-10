@@ -4,6 +4,7 @@
     <artifactId>desktop_project_dependencies</artifactId>
     <groupId>com.kfdesktopstandard</groupId>
     <version>1.0</version>
+    <relativePath>../pom.xml/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.1633867</groupId>
