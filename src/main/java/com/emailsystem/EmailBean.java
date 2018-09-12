@@ -7,7 +7,9 @@ package com.emailsystem;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -21,8 +23,8 @@ public class EmailBean {
     private String subject;
     private String textMsg;
     private String HTMLMsg;
-    private AttachmentBean[] attach = {};
-    private AttachmentBean[] embedAttach = {};
+    private List<AttachmentBean> attach;
+    private List<AttachmentBean> embedAttach;
     private int priority;
     
     private LocalDateTime sentTime;
@@ -30,6 +32,8 @@ public class EmailBean {
     
     public EmailBean() {
         sentTime = LocalDateTime.now();
+        attach = new ArrayList<AttachmentBean>();
+        embedAttach = new ArrayList<AttachmentBean>();
     }
 
     public String getFrom() {
@@ -88,19 +92,19 @@ public class EmailBean {
         this.HTMLMsg = HTMLMsg;
     }
 
-    public AttachmentBean[] getAttach() {
+    public List<AttachmentBean> getAttach() {
         return attach;
     }
 
-    public void setAttach(AttachmentBean[] attach) {
+    public void setAttach(List<AttachmentBean> attach) {
         this.attach = attach;
     }
 
-    public AttachmentBean[] getEmbedAttach() {
+    public List<AttachmentBean> getEmbedAttach() {
         return embedAttach;
     }
 
-    public void setEmbedAttach(AttachmentBean[] embedAttach) {
+    public void setEmbedAttach(List<AttachmentBean> embedAttach) {
         this.embedAttach = embedAttach;
     }
 
@@ -127,8 +131,72 @@ public class EmailBean {
     public void setReceivedTime(LocalDateTime receivedTime) {
         this.receivedTime = receivedTime;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.from);
+        hash = 59 * hash + Arrays.deepHashCode(this.to);
+        hash = 59 * hash + Arrays.deepHashCode(this.cc);
+        hash = 59 * hash + Objects.hashCode(this.subject);
+        hash = 59 * hash + Objects.hashCode(this.textMsg);
+        hash = 59 * hash + Objects.hashCode(this.HTMLMsg);
+        hash = 59 * hash + Objects.hashCode(this.attach);
+        hash = 59 * hash + Objects.hashCode(this.embedAttach);
+        hash = 59 * hash + this.priority;
+        hash = 59 * hash + Objects.hashCode(this.sentTime);
+        return hash;
+    }
+
+    @Override
+    public String toString() {
+        return "EmailBean{" + "from=" + from + ", to=" + Arrays.toString(to) + ", cc=" + Arrays.toString(cc) + ", bcc=" + bcc + ", subject=" + subject + ", textMsg=" + textMsg + ", HTMLMsg=" + HTMLMsg + ", attach=" + attach + ", embedAttach=" + embedAttach + ", priority=" + priority + ", sentTime=" + sentTime + ", receivedTime=" + receivedTime + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final EmailBean other = (EmailBean) obj;
+        if (this.priority != other.priority) {
+            return false;
+        }
+        if (!Objects.equals(this.from, other.from)) {
+            return false;
+        }
+        if (!Objects.equals(this.subject, other.subject)) {
+            return false;
+        }
+        if (!Objects.equals(this.textMsg, other.textMsg)) {
+            return false;
+        }
+        if (!Objects.equals(this.HTMLMsg, other.HTMLMsg)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.to, other.to)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.cc, other.cc)) {
+            return false;
+        }
+        for (int i = 0; i < other.attach.size() ; i++) {
+            if (!Objects.equals(this.attach.get(i),other.attach.get(i))) {
+                return false;
+            }
+        }
+        for (int i = 0; i < other.embedAttach.size() ; i++) {
+            if (!Objects.equals(this.embedAttach.get(i),other.embedAttach.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
     
-
-
-
 }

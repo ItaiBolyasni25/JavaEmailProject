@@ -7,8 +7,11 @@
 package com.emailsystem;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +33,7 @@ import jodd.mail.ReceiveMailSession;
 import jodd.mail.ReceivedEmail;
 import jodd.mail.SendMailSession;
 import jodd.mail.SmtpServer;
+import org.apache.commons.io.FileUtils;
 
 /**
  *
@@ -45,14 +49,25 @@ public class MailModule {
         EmailBean bean = new EmailBean();
         bean.setFrom("send.1633867@gmail.com");
         bean.setTo(new String[] {"receive.1633867@gmail.com"});
-        bean.setSubject("Receive Test 2");
-        bean.setTextMsg("<h1>Test the receive method part 2</h1><p> Add some more content and p tag </p>");
+        bean.setSubject("Hello from the other side");
+        bean.setTextMsg("<h1><u>Test:</u> Email thinggy <p> Im sending this using programming and <h3>yes</h3> i am just that cool. </p>");
         //bean.setCc(new String[] {"cc1@gmail.com", "cc2@gmail.com"});
 //        bean.setHTMLMsg("<html><META http-equiv=Content-Type "
 //                            + "content=\"text/html; charset=utf-8\">"
 //                            + "<body><h1>Here is my photograph embedded in "
 //                            + "this email.</h1>"
 //                            + "<h2>I'm flying!</h2></body></html>");
+        List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
+        List<AttachmentBean> embed = new ArrayList<AttachmentBean>();
+        try {
+            embed.add(new AttachmentBean("thumbsup.jpg", Files.readAllBytes(new File("thumbsup.jpg").toPath())));
+            embed.add(new AttachmentBean("java.jpg", Files.readAllBytes(new File("java.jpg").toPath())));
+            attach.add(new AttachmentBean("java.jpg", Files.readAllBytes(new File("java.jpg").toPath())));
+            bean.setAttach(attach);
+            bean.setEmbedAttach(embed);
+        } catch (Exception e) {
+            
+        }
         MailModule mail = new MailModule();
         mail.send(bean);
         try {
@@ -62,7 +77,6 @@ public class MailModule {
             System.exit(1);
         }
         mail.receive();
-
     }
     
     public void send(EmailBean bean)  {
@@ -72,11 +86,11 @@ public class MailModule {
                 
     }
     
-    public void receive() {
+    public EmailBean[] receive() {
         if (checkEmail(receiveEmail)) {
             int index = 0;
             ImapModule imapServer = new ImapModule(receiveEmail, password);
-            EmailBean[] beans;
+            EmailBean[] beans = null;
             
             try (ReceiveMailSession session = imapServer.createSession()) {
                 session.open();
@@ -113,46 +127,45 @@ public class MailModule {
                         // process messages
                         List<EmailMessage> messages = email.messages();
                         System.out.println(messages.size());
-                        messages.stream().map((msg) -> {
-                            System.out.println("------");
-                            return msg;
-                        }).map((msg) -> {
-                            System.out.println(msg.getEncoding());
-                            return msg;
-                        }).map((msg) -> {
-                            System.out.println(msg.getMimeType());
-                            return msg;
-                        }).forEachOrdered((msg) -> {
-                            System.out.println(msg.getContent());
-                        });
+                        for (EmailMessage msg: messages) {
+                            LOG.info("------");
+                            if (msg.getMimeType().equalsIgnoreCase("Text/Plain")) {
+                                System.out.println("============================================ PLAIN =============================================================");
+                                beans[index].setTextMsg(msg.getContent());
+                            } else if (msg.getMimeType().equalsIgnoreCase("Text/Html")) {
+                                System.out.println("============================================ HTML =============================================================");
+                                beans[index].setHTMLMsg(msg.getContent());
+                            }
+                            LOG.info("Encoding: " + msg.getEncoding());
+                        }
 
                         // process attachments
                         List<EmailAttachment<? extends DataSource>> attachments = email.attachments();
                         if (attachments != null) {
-                            System.out.println("+++++");
-                            attachments.stream().map((attachment) -> {
-                                System.out.println("name: " + attachment.getName());
-                                return attachment;
-                            }).map((attachment) -> {
-                                System.out.println("cid: " + attachment.getContentId());
-                                return attachment;
-                            }).map((attachment) -> {
-                                System.out.println("size: " + attachment.getSize());
-                                return attachment;
-                            }).forEachOrdered((attachment) -> {
-                                attachment.writeToFile(
-                                        new File("c:\\temp", attachment.getName()));
-                            });
+                            List<AttachmentBean> embed = new ArrayList<>();
+                            List<AttachmentBean> normalAttach = new ArrayList<>();
+                            for (EmailAttachment attach: attachments) {
+                                if (attach.isEmbedded()) {
+                                    embed.add(new AttachmentBean(attach.getName(), attach.toByteArray()));
+                                } else {
+                                    normalAttach.add(new AttachmentBean(attach.getName(), attach.toByteArray()));
+                                }
+                            }
+                            beans[index].setAttach(normalAttach);
+                            beans[index].setEmbedAttach(embed);
                         }
-                        
+                        index++;
                     }
+                    return beans;
                 } else {
                     System.out.println("No emails on IMAP server");
-                }
+                } 
             }
+            
         } else {
             LOG.info("Unable to send email because either send or recieve addresses are invalid");
-        }
+        }  
+        return null;
     }
     
     private String[] emailArrayToStringArray(EmailAddress[] emails) {
@@ -172,16 +185,19 @@ public class MailModule {
                     .subject(bean.getSubject())
                     .cc(bean.getCc())
                     .bcc(bean.getBcc())
-                    .textMessage(bean.getTextMsg() + " " + LocalDateTime.now())
-                    .htmlMessage("<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg() + "<br></body></html>")
+                    .textMessage(bean.getTextMsg())
                     .priority(bean.getPriority())
                     .sentDate(Date.from(bean.getSentTime().atZone(ZoneId.systemDefault()).toInstant()));
+            String htmlMsgBuilder = "<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg();
             for(AttachmentBean attach: bean.getAttach()) {
-                email.attachment(EmailAttachment.with().content(attach.getAttach()));
+                email.attachment(EmailAttachment.with().name(attach.getName()).content(attach.getAttach()));
             }
             for (AttachmentBean attach: bean.getEmbedAttach()) {
-                email.embeddedAttachment(EmailAttachment.with().content(attach.getAttach()));
+                email.embeddedAttachment(EmailAttachment.with().name(attach.getName()).content(attach.getAttach()));
+                htmlMsgBuilder += "<br><h2>This is attached </h2><img style='width: 300px; height: 250px' src='cid:"+ attach.getName() + "'>";
             }
+            htmlMsgBuilder += "</body></html>";
+            email.htmlMessage(htmlMsgBuilder);
             
             try ( SendMailSession mailSession = smtpServer.createSession() ) {
                 mailSession.open();
@@ -198,15 +214,15 @@ public class MailModule {
             return false;
         }
         else if (!checkEmail(bean.getTo())) {
-            LOG.error("Email is invalid! 1");
+            LOG.error("Email is invalid!");
             return false;
         }
         else if (!checkEmail(bean.getCc())) {
-            LOG.error("Email is invalid! 2");
+            LOG.error("Email is invalid!");
             return false;
         }
         else if (!checkEmail(bean.getBcc())) {
-            LOG.error("Email is invalid! 3");
+            LOG.error("Email is invalid!");
             return false;
         }
         return true;

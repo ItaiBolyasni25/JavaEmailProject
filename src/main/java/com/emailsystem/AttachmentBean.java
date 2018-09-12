@@ -5,6 +5,9 @@
  */
 package com.emailsystem;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  *
  * @author 1633867
@@ -30,7 +33,37 @@ public class AttachmentBean {
         this.name = name;
     }
     
-    public AttachmentBean() {
-        
+    public AttachmentBean(String name, byte[] attach) {
+        this.name = name;
+        this.attach = attach;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final AttachmentBean other = (AttachmentBean) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (this.attach.length != other.attach.length) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
