@@ -75,17 +75,20 @@ public class MailModule {
                         beans[index].setReceivedTime(LocalDateTime.ofInstant(email.receivedDate().toInstant(), ZoneId.systemDefault()));
                         
                         
+                        beans[index].setTextMsg(processMessages(email.messages(), false));
+                        beans[index].setHTMLMsg(processMessages(email.messages(), true));
+                        
                         // process messages
-                        List<EmailMessage> messages = email.messages();
-                        System.out.println(messages.size());
-                        for (EmailMessage msg: messages) {
-                            LOG.info("------");
-                            if (msg.getMimeType().equalsIgnoreCase("Text/Plain")) {
-                                beans[index].setTextMsg(msg.getContent());
-                            } else if (msg.getMimeType().equalsIgnoreCase("Text/Html")) {
-                                beans[index].setHTMLMsg(msg.getContent());
-                            }
-                        }
+//                        List<EmailMessage> messages = email.messages();
+//                        System.out.println(messages.size());
+//                        for (EmailMessage msg: messages) {
+//                            LOG.info("------");
+//                            if (msg.getMimeType().equalsIgnoreCase("Text/Plain")) {
+//                                beans[index].setTextMsg(msg.getContent());
+//                            } else if (msg.getMimeType().equalsIgnoreCase("Text/Html")) {
+//                                beans[index].setHTMLMsg(msg.getContent());
+//                            }
+//                        }
                         // process attachments
                             beans[index].setAttach(processAttachments(email.attachments(), false));
                             beans[index].setEmbedAttach(processAttachments(email.attachments(), true));
@@ -100,13 +103,19 @@ public class MailModule {
         return null;
     }
     
-    private String processMessages(EmailMessage msg) {
-        
+    private String processMessages(List<EmailMessage> messages, boolean isHtml) {
+        for (EmailMessage msg : messages) {
+            if (msg.getMimeType().equalsIgnoreCase("Text/Plain") && !isHtml) {
+                return msg.getContent();
+            } else if (msg.getMimeType().equalsIgnoreCase("Text/Html") && isHtml) {
+                return msg.getContent();
+            }
+        }
+        return "";
     }
 
-
     
-    private List<AttachmentBean> processAttachments(List<EmailAttachment <?extends DataSource>> attachList, boolean embed) {
+    private List<AttachmentBean > processAttachments(List<EmailAttachment <?extends DataSource>> attachList, boolean embed) {
         List<AttachmentBean> beanList = new ArrayList<>();
         for (EmailAttachment attach : attachList) {
             if (attachList != null) {

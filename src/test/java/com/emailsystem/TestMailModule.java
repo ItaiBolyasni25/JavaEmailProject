@@ -32,7 +32,7 @@ public class TestMailModule {
         bean = new EmailBean();
         bean.setFrom("send.1633867@gmail.com");
         bean.setTo(new String[] {"receive.1633867@gmail.com"});
-        bean.setSubject("Sending emails with java");
+        bean.setSubject("Sending emails with java test new program");
         bean.setTextMsg("Test");
         bean.setCc(new String[] {"send.1633867@gmail.com", "cc2@gmail.com"});
         bean.setHTMLMsg("<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg() + "</body></html>");
