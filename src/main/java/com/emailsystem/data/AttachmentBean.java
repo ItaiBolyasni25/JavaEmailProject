@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.emailsystem;
+package com.emailsystem.data;
 
 import java.util.Arrays;
 import java.util.Objects;

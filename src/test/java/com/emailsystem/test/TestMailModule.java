@@ -1,4 +1,4 @@
-package com.emailsystem;
+package com.emailsystem.test;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,6 +6,9 @@ package com.emailsystem;
  * and open the template in the editor.
  */
 
+import com.emailsystem.business.MailModule;
+import com.emailsystem.data.AttachmentBean;
+import com.emailsystem.data.EmailBean;
 import java.io.File;
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -99,5 +102,75 @@ public class TestMailModule {
         System.out.println(bean.toString());
         System.out.println(bean2.toString());
         Assert.assertEquals(bean2, bean);
+    }
+    
+    @Test
+    public void sendEmailWithInvalidFrom() {
+        bean.setFrom("kshflkjshfgj12369");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Assert.assertEquals(mail.receive().length, 0);
+    }
+    
+    @Test
+    public void sendEmailWithInvalidTo() {
+        bean.setTo(new String[] {"kshflkjshfgj12369"});
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Assert.assertEquals(mail.receive().length, 0);
+    }
+    
+    @Test
+    public void sendAndReceiveTwoEmails() {
+        mail.send(bean);
+        try {
+            Thread.sleep(2000);
+            mail.send(bean);
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Assert.assertEquals(mail.receive().length, 2);
+    }
+    
+    @Test
+    public void sendEmailWithInvalidCc() {
+        bean.setCc(new String[] {"kshflkjshfgj12369"});
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Assert.assertEquals(mail.receive().length, 0);
+    }
+    
+    @Test
+    public void sendEmailWithInvalidBcc() {
+        bean.setBcc(new String[] {"kshflkjshfgj12369"});
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Assert.assertEquals(mail.receive().length, 0);
+    }
+    
+    @Test
+    public void sendEmptyEmail() {
+        bean = new EmailBean();
+        mail.send(bean);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Assert.assertEquals(mail.receive().length, 0);
     }
 }

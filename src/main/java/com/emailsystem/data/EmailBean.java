@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.emailsystem;
+package com.emailsystem.data;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,9 +20,9 @@ public class EmailBean {
     private String[] to = {};
     private String[] cc = {};
     private String[] bcc = {};
-    private String subject;
-    private String textMsg;
-    private String HTMLMsg;
+    private String subject = "";
+    private String textMsg = "";
+    private String HTMLMsg = "";
     private List<AttachmentBean> attach;
     private List<AttachmentBean> embedAttach;
     private int priority;
