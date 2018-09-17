@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.emailsystem.business;
 
 import com.emailsystem.data.AttachmentBean;
@@ -25,8 +20,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * ImapModule which is responsible for configuring the IMAP server, as well as
+ * receiving en EmailAddress[] and converting it into an EmailBean[]
  *
- * @author 1633867
+ * @author Itai Bolyasni
+ * @version 1.0.0
  */
 public class ImapModule {
 
@@ -42,7 +40,14 @@ public class ImapModule {
                 .debugMode(true)
                 .buildImapMailServer();
     }
-    
+
+    /**
+     *
+     * Receive method that takes no params and returns an EmailBean[]
+     *
+     * @return EmailBean[]
+     * @version 1.0.0
+     */
     public EmailBean[] receive() {
         int index = 0;
         EmailBean[] beans = null;
@@ -78,6 +83,10 @@ public class ImapModule {
         }
     }
 
+    /* 
+        Private method to process HTML and Plain text messages.
+        @param isHtml deciedes the formatting returned.
+     */
     private String processMessages(List<EmailMessage> messages, boolean isHtml) {
         for (EmailMessage msg : messages) {
             if (msg.getMimeType().equalsIgnoreCase("Text/Plain") && !isHtml) {
@@ -89,6 +98,10 @@ public class ImapModule {
         return "";
     }
 
+    /* 
+        Private method to process attachements and embedded attachments
+        @param embed deciedes the formatting returned.
+     */
     private List<AttachmentBean> processAttachments(List<EmailAttachment<? extends DataSource>> attachList, boolean embed) {
         List<AttachmentBean> beanList = new ArrayList<>();
         for (EmailAttachment attach : attachList) {
@@ -105,6 +118,9 @@ public class ImapModule {
         return beanList;
     }
 
+    /* 
+        Private method thta converts an EmailAddress[] into a String[]
+     */
     private String[] emailArrayToStringArray(EmailAddress[] emails) {
         String[] stringEmails = new String[emails.length];
         for (int i = 0; i < emails.length; i++) {

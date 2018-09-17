@@ -186,6 +186,9 @@ public class EmailBean {
         if (!Arrays.deepEquals(this.cc, other.cc)) {
             return false;
         }
+        if (!this.sentTime.isBefore(other.sentTime)) {
+            return false;
+        }
         for (int i = 0; i < other.attach.size() ; i++) {
             if (!Objects.equals(this.attach.get(i),other.attach.get(i))) {
                 return false;
