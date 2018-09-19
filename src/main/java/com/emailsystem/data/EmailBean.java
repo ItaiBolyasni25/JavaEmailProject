@@ -16,6 +16,15 @@ import java.util.Objects;
  * @author 1633867
  */
 public class EmailBean {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    private int id;
     private String from;
     private String[] to = {};
     private String[] cc = {};
