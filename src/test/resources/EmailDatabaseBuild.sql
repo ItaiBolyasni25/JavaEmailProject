@@ -7,6 +7,8 @@
  * Author:  1633867
  * Created: Sep 19, 2018
  */
+DROP DATABASE IF EXISTS EmailDB;
+CREATE DATABASE EmailDB;
 
 
 USE EmailDB;
