@@ -29,7 +29,7 @@ CREATE TABLE Attachments (
     id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     attachName VARCHAR(50) NOT NULL DEFAULT "",
     email_id int(10) NOT NULL ,
-    flieArray LONGBLOB NOT NULL,
+    fileArray LONGBLOB NOT NULL,
     FOREIGN KEY (email_id) REFERENCES Emails(email_id)
        ON DELETE CASCADE
        ON UPDATE CASCADE

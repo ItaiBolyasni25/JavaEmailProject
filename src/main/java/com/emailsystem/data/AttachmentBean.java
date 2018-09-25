@@ -16,7 +16,9 @@ public class AttachmentBean {
     private byte[] attach = {};
     private String name = "bob.jpg";
     
-
+    public AttachmentBean() {
+        
+    }
     public byte[] getAttach() {
         return attach;
     }

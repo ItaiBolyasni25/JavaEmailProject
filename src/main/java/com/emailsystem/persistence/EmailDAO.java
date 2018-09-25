@@ -44,6 +44,8 @@ public class EmailDAO {
                 bean.setBcc(getEmailAddresses(bean.getId(), "BCC"));
                 bean.setTextMsg(rs.getString("textMsg"));
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
+                //Attachments
+                bean.setAttach(getAttachments(bean.getId()));
 
                 // Timestamp 
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
@@ -117,6 +119,8 @@ public class EmailDAO {
                 //Finish setting attachBean, make the list and set the bean in the get
                 AttachmentBean attach = new AttachmentBean();
                 attach.setName(rs.getString("attachName"));
+                attach.setAttach(rs.getBytes("fileArray"));
+                attachList.add(attach);
             }
         }
         return attachList;
@@ -130,6 +134,7 @@ public class EmailDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 bean.setFrom(rs.getString("senderEmail"));
+                bean.setId(id);
                 bean.setTo(getEmailAddresses(id, "TO"));
                 bean.setCc(getEmailAddresses(id, "CC"));
                 bean.setBcc(getEmailAddresses(id, "BCC"));
@@ -137,7 +142,7 @@ public class EmailDAO {
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
                 bean.setSubject(rs.getString("subject"));
                 //Attachments
-                
+                bean.setAttach(getAttachments(id));
                 
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 //bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());

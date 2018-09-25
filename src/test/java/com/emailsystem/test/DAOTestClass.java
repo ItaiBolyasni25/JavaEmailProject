@@ -6,10 +6,16 @@
 package com.emailsystem.test;
 
 
+import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
 import com.emailsystem.persistence.EmailDAO;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import junit.framework.Assert;
@@ -40,22 +46,29 @@ public class DAOTestClass {
 //        }
 //    }
 //    
-//    @Test
-//    public void createEmailTest() {
-//        EmailDAO db = new EmailDAO();
-//        EmailBean bean = new EmailBean();
-//        bean.setFrom("send.1633867gmail.com");
-//        bean.setTo(new String[]{"receive.1633867@gmail.com"});
-//        bean.setSubject("Sending emails with java test new program");
-//        bean.setTextMsg("Test");
-//        bean.setCc(new String[]{"send.1633867@gmail.com", "cc2@gmail.com"});
-//        bean.setHTMLMsg("<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg() + "</body></html>");
-//        try {
-//            Assert.assertEquals(db.createEmail(bean), 1);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(DAOTestClass.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
+    @Test
+    public void createEmailTest() {
+        EmailDAO db = new EmailDAO();
+        EmailBean bean = new EmailBean();
+        bean.setFrom("send.1633867gmail.com");
+        bean.setTo(new String[]{"receive.1633867@gmail.com"});
+        bean.setSubject("TEST");
+        bean.setTextMsg("Test");
+        bean.setCc(new String[]{"send.1633867@gmail.com", "cc2@gmail.com"});
+        bean.setHTMLMsg("<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg() + "</body></html>");
+        List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
+        try {
+            attach.add(new AttachmentBean("java.jpg", Files.readAllBytes(new File("java.jpg").toPath())));
+            bean.setAttach(attach);
+        } catch (IOException e) {
+
+        }
+        try {
+            Assert.assertEquals(db.createEmail(bean), 1);
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOTestClass.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     @Test
     public void getAllEmailsTest() {
         EmailDAO db = new EmailDAO();
