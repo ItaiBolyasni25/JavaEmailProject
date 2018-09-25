@@ -8,6 +8,7 @@ package com.emailsystem.persistence;
 import com.emailsystem.data.EmailBean;
 import java.sql.DriverManager;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,23 +28,25 @@ public class EmailDAO {
     }
 
     public List<EmailBean> findAll() throws SQLException {
-        String query = "SELECT from, to, cc, bcc, subject, textMsg, htmlMsg, attach, priority, sentDate, receivedDate FROM Emails";
+        String query = "SELECT * FROM Emails";
         List<EmailBean> allEmails = new ArrayList();
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD)) {
             PreparedStatement ps = connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 EmailBean bean = new EmailBean();
-                bean.setFrom(rs.getString("from"));
-                bean.setTo((String[]) rs.getArray("to").getArray());
-                bean.setCc((String[]) rs.getArray("cc").getArray());
-                bean.setBcc((String[]) rs.getArray("bcc").getArray());
+                bean.setId(rs.getInt("email_id"));
+                bean.setFrom(rs.getString("senderEmail"));
+                bean.setSubject(rs.getString("subject"));
+                bean.setTo(getEmailAddresses(bean.getId(), "TO"));
+                bean.setCc(getEmailAddresses(bean.getId(), "CC"));
+                bean.setBcc(getEmailAddresses(bean.getId(), "BCC"));
                 bean.setTextMsg(rs.getString("textMsg"));
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
 
-                // Timestamp (?)
-                //bean.setSentTime(rs.getTimestamp(UNAME));
-                //bean.setReceivedTime(rs.getString("from"));
+                // Timestamp 
+                bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
+                bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
                 allEmails.add(bean);
             }
         }
@@ -52,28 +55,36 @@ public class EmailDAO {
 
     public int createEmail(EmailBean email) throws SQLException {
         int result;
-        String query = "INSERT INTO Emails VALUES (-1,?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folderName, sentDate) VALUES (?,?,?,?,?,?)";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
                 PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, email.getFrom());
-            ps.setArray(2, connection.createArrayOf("to", email.getTo()));
-            ps.setArray(3, connection.createArrayOf("cc", email.getTo()));
-            ps.setArray(4, connection.createArrayOf("bcc", email.getTo()));
-            ps.setString(5, email.getSubject());
-            ps.setString(6, email.getTextMsg());
-            ps.setString(7, email.getHTMLMsg());
-            // Attachments
-            ps.setBytes(8, email.getAttach().get(0).getAttach());
-            ps.setInt(9, email.getPriority());
-            ps.setTimestamp(10, Timestamp.valueOf(email.getSentTime()));
+            ps.setString(2, email.getSubject());
+            ps.setString(3, email.getTextMsg());
+            ps.setString(4, email.getHTMLMsg());
+            ps.setString(5, email.getFolderName());
+            ps.setTimestamp(6, Timestamp.valueOf(email.getSentTime()));
 
+            // Attachments
+//            ps.setBytes(8, email.getAttach().get(0).getAttach());
+//            ps.setInt(9, email.getPriority());
+//            ps.setTimestamp(10, Timestamp.valueOf(email.getSentTime()));
             result = ps.executeUpdate();
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 int id = -1;
                 if (rs.next()) {
                     id = rs.getInt(1);
+                    if (email.getCc().length > 0) {
+                        result = setRecipient(email, id, "CC");
+                    }
+                    if (email.getBcc().length > 0) {
+                        result = setRecipient(email, id, "BCC");
+                    }
+                    if (email.getTo().length > 0) {
+                        result = setRecipient(email, id, "TO");
+                    }
                 }
                 email.setId(id);
             }
@@ -83,10 +94,7 @@ public class EmailDAO {
 
     public EmailBean getEmail(int id) throws SQLException {
         EmailBean bean = new EmailBean();
-        String query = "SELECT * FROM Emails e "
-                + "JOIN Recipient r ON e.email_id = r.email_id "
-                + "JOIN RecipientAddress ra ON r.address_id = ra.address_id "
-                + "WHERE e.email_id = ?";
+        String query = "SELECT * FROM Emails e WHERE e.email_id = ?";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
                 PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
@@ -101,7 +109,7 @@ public class EmailDAO {
                 bean.setSubject(rs.getString("subject"));
                 //Attachments
 
-                //bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
+                bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 //bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
             } else {
                 System.out.println("Email with id: " + id + " doesn't exist");
@@ -111,7 +119,7 @@ public class EmailDAO {
     }
 
     public int deleteEmail(int id) throws SQLException {
-        String query = "DELETE FROM Emails WHERE id = ?";
+        String query = "DELETE FROM Emails WHERE email_id = ?";
         int result;
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
                 PreparedStatement ps = connection.prepareStatement(query)) {
@@ -122,6 +130,7 @@ public class EmailDAO {
         return result;
     }
 
+    /* Private helper methods */
     private int countRecipientAddresses(int email_id, String type) throws SQLException {
         String sql = "SELECT COUNT(emailAddress) FROM RecipientAddress ra "
                 + "JOIN Recipient r ON ra.address_id = r.address_id "
@@ -157,5 +166,59 @@ public class EmailDAO {
             }
             return emails;
         }
+    }
+    // Set the recipient bridging table and get the generated primary key
+    private int setRecipient(EmailBean bean, int id, String type) throws SQLException {
+
+        String query = "INSERT INTO Recipient(type,email_id) VALUES (?,?)";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, type);
+            ps.setInt(2, id);
+
+            ps.executeUpdate();
+
+            int tempId = -1;
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    tempId = rs.getInt(1);
+                }
+            }
+            return setRecipientAddresses(bean, tempId, type);
+        }
+    }
+    
+    // Set the recipient's email addresses depending on the type of recipient
+    private int setRecipientAddresses(EmailBean bean, int id, String type) throws SQLException {
+        int result = -1;
+        String query = "INSERT INTO RecipientAddress(emailAddress,address_id) VALUES (?,?)";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps2 = connection.prepareStatement(query)) {
+            switch (type) {
+                case "TO":
+                    for (String emailAddress : bean.getTo()) {
+                        ps2.setString(1, emailAddress);
+                        ps2.setInt(2, id);
+                        result = ps2.executeUpdate();
+                    }
+                    break;
+                case "CC":
+                    for (String emailAddress : bean.getCc()) {
+                        ps2.setString(1, emailAddress);
+                        ps2.setInt(2, id);
+                        result = ps2.executeUpdate();
+
+                    }
+                    break;
+                case "BCC":
+                    for (String emailAddress : bean.getBcc()) {
+                        ps2.setString(1, emailAddress);
+                        ps2.setInt(2, id);
+                        result = ps2.executeUpdate();
+                    }
+                    break;
+            }
+        }
+        return result;
     }
 }

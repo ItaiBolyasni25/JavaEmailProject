@@ -17,13 +17,7 @@ import java.util.Objects;
  */
 public class EmailBean {
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
     private int id;
     private String from;
     private String[] to = {};
@@ -35,6 +29,15 @@ public class EmailBean {
     private List<AttachmentBean> attach;
     private List<AttachmentBean> embedAttach;
     private int priority;
+    private String folderName = "";
+
+    public String getFolderName() {
+        return folderName;
+    }
+
+    public void setFolderName(String folderName) {
+        this.folderName = folderName;
+    }
     
     private LocalDateTime sentTime;
     private LocalDateTime receivedTime;
@@ -44,7 +47,13 @@ public class EmailBean {
         attach = new ArrayList<AttachmentBean>();
         embedAttach = new ArrayList<AttachmentBean>();
     }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getFrom() {
         return from;
     }
@@ -159,7 +168,7 @@ public class EmailBean {
 
     @Override
     public String toString() {
-        return "EmailBean{" + "from=" + from + ", to=" + Arrays.toString(to) + ", cc=" + Arrays.toString(cc) + ", bcc=" + bcc + ", subject=" + subject + ", textMsg=" + textMsg + ", HTMLMsg=" + HTMLMsg + ", attach=" + attach + ", embedAttach=" + embedAttach + ", priority=" + priority + ", sentTime=" + sentTime + ", receivedTime=" + receivedTime + '}';
+        return "EmailBean{" + "id=" + id + "from=" + from + ", to=" + Arrays.toString(to) + ", cc=" + Arrays.toString(cc) + ", bcc=" + bcc + ", subject=" + subject + ", textMsg=" + textMsg + ", HTMLMsg=" + HTMLMsg + ", attach=" + attach + ", embedAttach=" + embedAttach + ", priority=" + priority + ", folderName=" + folderName + ", sentTime=" + sentTime + ", receivedTime=" + receivedTime + '}';
     }
 
     @Override
@@ -196,6 +205,12 @@ public class EmailBean {
             return false;
         }
         if (!this.sentTime.isBefore(other.sentTime)) {
+            return false;
+        }
+        if (!this.folderName.equalsIgnoreCase(other.folderName)) {
+            return false;
+        }
+        if (this.id != other.id) {
             return false;
         }
         for (int i = 0; i < other.attach.size() ; i++) {
