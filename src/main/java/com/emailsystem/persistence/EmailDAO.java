@@ -5,6 +5,7 @@
  */
 package com.emailsystem.persistence;
 
+import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
 import java.sql.DriverManager;
 import java.sql.*;
@@ -66,10 +67,6 @@ public class EmailDAO {
             ps.setString(5, email.getFolderName());
             ps.setTimestamp(6, Timestamp.valueOf(email.getSentTime()));
 
-            // Attachments
-//            ps.setBytes(8, email.getAttach().get(0).getAttach());
-//            ps.setInt(9, email.getPriority());
-//            ps.setTimestamp(10, Timestamp.valueOf(email.getSentTime()));
             result = ps.executeUpdate();
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
@@ -85,6 +82,11 @@ public class EmailDAO {
                     if (email.getTo().length > 0) {
                         result = setRecipient(email, id, "TO");
                     }
+                    if (email.getAttach().size() > 0) {
+                        for (AttachmentBean attach: email.getAttach()) {
+                            result = setAttachments(attach,id);
+                        }
+                    }
                 }
                 email.setId(id);
             }
@@ -92,6 +94,33 @@ public class EmailDAO {
         return result;
     }
 
+    private int setAttachments(AttachmentBean attach, int id) throws SQLException {
+        String query = "INSERT INTO Attachments(attachName, email_id, fileArray) VALUES (?,?,?)";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, attach.getName());
+            ps.setInt(2,id);
+            ps.setBytes(3, attach.getAttach());
+            
+            return ps.executeUpdate();
+        }
+    }
+    
+    private List<AttachmentBean> getAttachments(int id) throws SQLException {
+        List<AttachmentBean> attachList = new ArrayList();
+        String query = "SELECT * FROM Attachments WHERE email_id = ?";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                //Finish setting attachBean, make the list and set the bean in the get
+                AttachmentBean attach = new AttachmentBean();
+                attach.setName(rs.getString("attachName"));
+            }
+        }
+        return attachList;
+    }
     public EmailBean getEmail(int id) throws SQLException {
         EmailBean bean = new EmailBean();
         String query = "SELECT * FROM Emails e WHERE e.email_id = ?";
@@ -108,7 +137,8 @@ public class EmailDAO {
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
                 bean.setSubject(rs.getString("subject"));
                 //Attachments
-
+                
+                
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 //bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
             } else {
