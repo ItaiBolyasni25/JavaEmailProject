@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.emailsystem.test.DAOTestClass" time="0.58" tests="4" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.emailsystem.test.TestMailModule" time="144.615" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,8 +18,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
-    <property name="sun.java.command" value="C:\Windows\Temp\surefire7143157328401883622\surefirebooter4615098613891485456.jar C:\Windows\Temp\surefire7143157328401883622 2018-09-26T18-19-16_720-jvmRun1 surefire3524472349798469072tmp surefire_05230276607130594435tmp"/>
-    <property name="test" value="com.emailsystem.test.DAOTestClass"/>
+    <property name="sun.java.command" value="C:\Windows\Temp\surefire843022957658312977\surefirebooter8454162943366867913.jar C:\Windows\Temp\surefire843022957658312977 2018-09-26T18-15-36_434-jvmRun1 surefire1721116122342093802tmp surefire_04911285572130853312tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\1633867\Desktop\EmailProject\target\test-classes;C:\Users\1633867\Desktop\EmailProject\target\classes;C:\dev\.m2\repository\org\jodd\jodd-mail\5.0.4\jodd-mail-5.0.4.jar;C:\dev\.m2\repository\org\jodd\jodd-core\5.0.4\jodd-core-5.0.4.jar;C:\dev\.m2\repository\javax\mail\javax.mail-api\1.6.1\javax.mail-api-1.6.1.jar;C:\dev\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\dev\.m2\repository\com\sun\mail\javax.mail\1.6.1\javax.mail-1.6.1.jar;C:\dev\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\dev\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\dev\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\dev\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.11.0\log4j-slf4j-impl-2.11.0.jar;C:\dev\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.0\log4j-api-2.11.0.jar;C:\dev\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.0\log4j-core-2.11.0.jar;C:\dev\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\dev\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\1633867"/>
@@ -32,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire7143157328401883622\surefirebooter4615098613891485456.jar"/>
+    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire843022957658312977\surefirebooter8454162943366867913.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_181\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,14 +61,20 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="deleteEmailTest" classname="com.emailsystem.test.DAOTestClass" time="0.27">
-    <failure message="expected:&lt;0&gt; but was:&lt;1&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<0> but was:<1>
-	at com.emailsystem.test.DAOTestClass.deleteEmailTest(DAOTestClass.java:48)
-]]></failure>
-    <system-out><![CDATA[Record with id: 1 deleted.
-]]></system-out>
-  </testcase>
-  <testcase name="getAllEmailsTest" classname="com.emailsystem.test.DAOTestClass" time="0.1"/>
-  <testcase name="createEmailTest" classname="com.emailsystem.test.DAOTestClass" time="0.17"/>
-  <testcase name="getEmailTest" classname="com.emailsystem.test.DAOTestClass" time="0"/>
+  <testcase name="invalidAttachmentPath" classname="com.emailsystem.test.TestMailModule" time="2.43"/>
+  <testcase name="sendEmailWithoutSubject" classname="com.emailsystem.test.TestMailModule" time="13.055"/>
+  <testcase name="sendTextFileAsAttachment" classname="com.emailsystem.test.TestMailModule" time="10.409"/>
+  <testcase name="sendToMultipleCc" classname="com.emailsystem.test.TestMailModule" time="9.176"/>
+  <testcase name="sendingEmailWithNormalAttachment" classname="com.emailsystem.test.TestMailModule" time="10.879"/>
+  <testcase name="sendEmailWithInvalidBcc" classname="com.emailsystem.test.TestMailModule" time="7.119"/>
+  <testcase name="sendEmailWithMultipleFields" classname="com.emailsystem.test.TestMailModule" time="9.56"/>
+  <testcase name="sendEmailWithInvalidCc" classname="com.emailsystem.test.TestMailModule" time="6.477"/>
+  <testcase name="sendEmailWithInvalidTo" classname="com.emailsystem.test.TestMailModule" time="7.114"/>
+  <testcase name="sendToMultiplePeople" classname="com.emailsystem.test.TestMailModule" time="9.799"/>
+  <testcase name="sendAndReceiveTwoEmails" classname="com.emailsystem.test.TestMailModule" time="14.05"/>
+  <testcase name="sendEmptyEmail" classname="com.emailsystem.test.TestMailModule" time="6.269"/>
+  <testcase name="sendingEmailWithAllAttachments" classname="com.emailsystem.test.TestMailModule" time="11.147"/>
+  <testcase name="sendingEmailWithMultipleAttachments" classname="com.emailsystem.test.TestMailModule" time="10.6"/>
+  <testcase name="sendEmailWithInvalidFrom" classname="com.emailsystem.test.TestMailModule" time="6.279"/>
+  <testcase name="sendingEmailWithoutAttachments" classname="com.emailsystem.test.TestMailModule" time="9.882"/>
 </testsuite>

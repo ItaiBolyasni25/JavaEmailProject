@@ -9,9 +9,7 @@ import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
 import java.sql.DriverManager;
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,9 +21,15 @@ public class EmailDAO {
     private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
     private final String UNAME = "a1633867";
     private final String PASSWORD = "dawson";
+    AttachmentDAO attachDao;
+    RecipientDAO recDao;
+    FolderDAO folderDao;
+
 
     public EmailDAO() {
-
+        attachDao = new AttachmentDAO(URL, UNAME, PASSWORD);
+        recDao = new RecipientDAO(URL, UNAME, PASSWORD);
+        folderDao = new FolderDAO(URL, UNAME, PASSWORD);
     }
 
     public List<EmailBean> findAll() throws SQLException {
@@ -39,15 +43,17 @@ public class EmailDAO {
                 bean.setId(rs.getInt("email_id"));
                 bean.setFrom(rs.getString("senderEmail"));
                 bean.setSubject(rs.getString("subject"));
-                bean.setTo(getEmailAddresses(bean.getId(), "TO"));
-                bean.setCc(getEmailAddresses(bean.getId(), "CC"));
-                bean.setBcc(getEmailAddresses(bean.getId(), "BCC"));
+                bean.setTo(recDao.read(bean.getId(), "TO"));
+                bean.setCc(recDao.read(bean.getId(), "CC"));
+                bean.setBcc(recDao.read(bean.getId(), "BCC"));
                 bean.setTextMsg(rs.getString("textMsg"));
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
+                bean.setFolderName(folderDao.getFolderName(bean.getId()));
                 //Attachments
-                bean.setAttach(getAttachments(bean.getId()));
-
-                // Timestamp 
+                bean.setAttach(attachDao.read(bean.getId(), false));
+                bean.setEmbedAttach(attachDao.read(bean.getId(), true));
+                 
+               // Timestamp 
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
                 allEmails.add(bean);
@@ -56,9 +62,10 @@ public class EmailDAO {
         return allEmails;
     }
 
+    
     public int createEmail(EmailBean email) throws SQLException {
         int result;
-        String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folderName, sentDate) VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES (?,?,?,?,?,?)";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
                 PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -66,7 +73,7 @@ public class EmailDAO {
             ps.setString(2, email.getSubject());
             ps.setString(3, email.getTextMsg());
             ps.setString(4, email.getHTMLMsg());
-            ps.setString(5, email.getFolderName());
+            ps.setInt(5, folderDao.getId(email.getFolderName()));
             ps.setTimestamp(6, Timestamp.valueOf(email.getSentTime()));
 
             result = ps.executeUpdate();
@@ -76,54 +83,28 @@ public class EmailDAO {
                 if (rs.next()) {
                     id = rs.getInt(1);
                     if (email.getCc().length > 0) {
-                        result = setRecipient(email, id, "CC");
+                        result = recDao.create(email, id, "CC");
                     }
                     if (email.getBcc().length > 0) {
-                        result = setRecipient(email, id, "BCC");
+                        result = recDao.create(email, id, "BCC");
                     }
                     if (email.getTo().length > 0) {
-                        result = setRecipient(email, id, "TO");
+                        result = recDao.create(email, id, "TO");
                     }
                     if (email.getAttach().size() > 0) {
                         for (AttachmentBean attach: email.getAttach()) {
-                            result = setAttachments(attach,id);
+                            result = attachDao.create(attach,id, false);
+                        }
+                        for (AttachmentBean attach: email.getEmbedAttach()) {
+                            result = attachDao.create(attach, id, true);
                         }
                     }
                 }
                 email.setId(id);
+                
             }
         }
         return result;
-    }
-
-    private int setAttachments(AttachmentBean attach, int id) throws SQLException {
-        String query = "INSERT INTO Attachments(attachName, email_id, fileArray) VALUES (?,?,?)";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, attach.getName());
-            ps.setInt(2,id);
-            ps.setBytes(3, attach.getAttach());
-            
-            return ps.executeUpdate();
-        }
-    }
-    
-    private List<AttachmentBean> getAttachments(int id) throws SQLException {
-        List<AttachmentBean> attachList = new ArrayList();
-        String query = "SELECT * FROM Attachments WHERE email_id = ?";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                //Finish setting attachBean, make the list and set the bean in the get
-                AttachmentBean attach = new AttachmentBean();
-                attach.setName(rs.getString("attachName"));
-                attach.setAttach(rs.getBytes("fileArray"));
-                attachList.add(attach);
-            }
-        }
-        return attachList;
     }
     public EmailBean getEmail(int id) throws SQLException {
         EmailBean bean = new EmailBean();
@@ -135,14 +116,16 @@ public class EmailDAO {
             if (rs.next()) {
                 bean.setFrom(rs.getString("senderEmail"));
                 bean.setId(id);
-                bean.setTo(getEmailAddresses(id, "TO"));
-                bean.setCc(getEmailAddresses(id, "CC"));
-                bean.setBcc(getEmailAddresses(id, "BCC"));
+                bean.setTo(recDao.read(id, "TO"));
+                bean.setCc(recDao.read(id, "CC"));
+                bean.setBcc(recDao.read(id, "BCC"));
                 bean.setTextMsg(rs.getString("textMsg"));
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
                 bean.setSubject(rs.getString("subject"));
+                bean.setFolderName(folderDao.getFolderName(bean.getId()));
                 //Attachments
-                bean.setAttach(getAttachments(id));
+                bean.setAttach(attachDao.read(id, false));
+                bean.setEmbedAttach(attachDao.read(id, true));
                 
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 //bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
@@ -164,96 +147,5 @@ public class EmailDAO {
         System.out.println("Record with id: " + id + " deleted.");
         return result;
     }
-
-    /* Private helper methods */
-    private int countRecipientAddresses(int email_id, String type) throws SQLException {
-        String sql = "SELECT COUNT(emailAddress) FROM RecipientAddress ra "
-                + "JOIN Recipient r ON ra.address_id = r.address_id "
-                + "WHERE email_id = ? AND type = ?";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setInt(1, email_id);
-            ps.setString(2, type);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                return rs.getInt(1);
-            }
-        }
-        return 0;
-    }
-
-    private String[] getEmailAddresses(int email_id, String type) throws SQLException {
-        String sql = "SELECT emailAddress FROM RecipientAddress ra "
-                + "JOIN Recipient r ON ra.address_id = r.address_id "
-                + "WHERE email_id = ? AND type = ?";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setInt(1, email_id);
-            ps.setString(2, type);
-            ResultSet rs = ps.executeQuery();
-            int result = countRecipientAddresses(email_id, type);
-            System.out.println("RESULT: " + result);
-            String[] emails = new String[result];
-            for (int i = 0; i < result; i++) {
-                if (rs.next()) {
-                    emails[i] = rs.getString("emailAddress");
-                }
-            }
-            return emails;
-        }
-    }
-    // Set the recipient bridging table and get the generated primary key
-    private int setRecipient(EmailBean bean, int id, String type) throws SQLException {
-
-        String query = "INSERT INTO Recipient(type,email_id) VALUES (?,?)";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setString(1, type);
-            ps.setInt(2, id);
-
-            ps.executeUpdate();
-
-            int tempId = -1;
-            try (ResultSet rs = ps.getGeneratedKeys()) {
-                if (rs.next()) {
-                    tempId = rs.getInt(1);
-                }
-            }
-            return setRecipientAddresses(bean, tempId, type);
-        }
-    }
     
-    // Set the recipient's email addresses depending on the type of recipient
-    private int setRecipientAddresses(EmailBean bean, int id, String type) throws SQLException {
-        int result = -1;
-        String query = "INSERT INTO RecipientAddress(emailAddress,address_id) VALUES (?,?)";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps2 = connection.prepareStatement(query)) {
-            switch (type) {
-                case "TO":
-                    for (String emailAddress : bean.getTo()) {
-                        ps2.setString(1, emailAddress);
-                        ps2.setInt(2, id);
-                        result = ps2.executeUpdate();
-                    }
-                    break;
-                case "CC":
-                    for (String emailAddress : bean.getCc()) {
-                        ps2.setString(1, emailAddress);
-                        ps2.setInt(2, id);
-                        result = ps2.executeUpdate();
-
-                    }
-                    break;
-                case "BCC":
-                    for (String emailAddress : bean.getBcc()) {
-                        ps2.setString(1, emailAddress);
-                        ps2.setInt(2, id);
-                        result = ps2.executeUpdate();
-                    }
-                    break;
-            }
-        }
-        return result;
-    }
 }

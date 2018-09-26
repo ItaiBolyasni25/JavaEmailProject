@@ -7,12 +7,23 @@
  * Author:  1633867
  * Created: Sep 19, 2018
  */
-DROP TABLE IF EXISTS RecipientAddress;
+
+
+
+
 DROP TABLE IF EXISTS Recipient;
+DROP TABLE IF EXISTS RecipientAddress;
 
 DROP TABLE IF EXISTS Attachments;
 DROP TABLE IF EXISTS Emails;
+DROP TABLE IF EXISTS Folders;
 
+
+
+CREATE TABLE Folders (
+    folder_id int(10) NOT NULL auto_increment PRIMARY KEY,
+    folderName VARCHAR(100) NOT NULL DEFAULT ""
+);
 
 CREATE TABLE Emails (
     email_id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -20,9 +31,12 @@ CREATE TABLE Emails (
     subject VARCHAR(100) NOT NULL DEFAULT "", 
     textMsg LONGTEXT NOT NULL, 
     htmlMsg LONGTEXT NOT NULL, 
-    folderName VARCHAR(50),
+    folder_id int(10),
     sentDate TIMESTAMP NOT NULL,
-    receivedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    receivedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (folder_id) REFERENCES Folders(folder_id)
+       ON DELETE CASCADE
+       ON UPDATE CASCADE
 );
 
 CREATE TABLE Attachments (
@@ -30,25 +44,28 @@ CREATE TABLE Attachments (
     attachName VARCHAR(50) NOT NULL DEFAULT "",
     email_id int(10) NOT NULL ,
     fileArray LONGBLOB NOT NULL,
-    FOREIGN KEY (email_id) REFERENCES Emails(email_id)
-       ON DELETE CASCADE
-       ON UPDATE CASCADE
-);
-
-CREATE TABLE Recipient (
-    address_id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    type VARCHAR(50) NOT NULL,
-    email_id int(10) NOT NULL,
+    isEmbed boolean NOT NULL,
     FOREIGN KEY (email_id) REFERENCES Emails(email_id)
        ON DELETE CASCADE
        ON UPDATE CASCADE
 );
 
 CREATE TABLE RecipientAddress (
-    recipientAddress_id int(10) NOT NULL auto_increment PRIMARY KEY,
     emailAddress VARCHAR(100) NOT NULL,
+    address_id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+
+CREATE TABLE Recipient (
+    recipientAddress_id int(10) NOT NULL auto_increment PRIMARY KEY,
+    type VARCHAR(50) NOT NULL,
+    email_id int(10) NOT NULL,
     address_id int(10) NOT NULL,
-    FOREIGN KEY (address_id) REFERENCES Recipient(address_id)
+    FOREIGN KEY (email_id) REFERENCES Emails(email_id)
+       ON DELETE CASCADE
+       ON UPDATE CASCADE,
+    FOREIGN KEY (address_id) REFERENCES RecipientAddress(address_id)
        ON DELETE CASCADE
        ON UPDATE CASCADE
 );
+
+
