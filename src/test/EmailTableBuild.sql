@@ -68,4 +68,5 @@ CREATE TABLE Recipient (
        ON UPDATE CASCADE
 );
 
-
+ INSERT INTO Folders(folderName) VALUES ("Inbox");
+ INSERT INTO Folders(folderName) VALUES ("Sent");

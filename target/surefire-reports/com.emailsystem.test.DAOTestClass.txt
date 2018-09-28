@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.emailsystem.test.DAOTestClass
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.58 s <<< FAILURE! - in com.emailsystem.test.DAOTestClass
-deleteEmailTest(com.emailsystem.test.DAOTestClass)  Time elapsed: 0.27 s  <<< FAILURE!
-junit.framework.AssertionFailedError: expected:<0> but was:<1>
-	at com.emailsystem.test.DAOTestClass.deleteEmailTest(DAOTestClass.java:48)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.361 s - in com.emailsystem.test.DAOTestClass

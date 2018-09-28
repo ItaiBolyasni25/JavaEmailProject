@@ -204,9 +204,6 @@ public class EmailBean {
         if (!Arrays.deepEquals(this.cc, other.cc)) {
             return false;
         }
-        if (!this.sentTime.isBefore(other.sentTime)) {
-            return false;
-        }
         if (!this.folderName.equalsIgnoreCase(other.folderName)) {
             return false;
         }
