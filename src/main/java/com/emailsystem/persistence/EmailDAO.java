@@ -48,7 +48,7 @@ public class EmailDAO {
                 bean.setBcc(recDao.read(bean.getId(), "BCC"));
                 bean.setTextMsg(rs.getString("textMsg"));
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
-                bean.setFolderName(folderDao.getFolderName(bean.getId()));
+                bean.setFolderName(folderDao.getFolderName(rs.getInt("folder_id")));
                 //Attachments
                 bean.setAttach(attachDao.read(bean.getId(), false));
                 bean.setEmbedAttach(attachDao.read(bean.getId(), true));
@@ -106,6 +106,21 @@ public class EmailDAO {
         }
         return result;
     }
+    
+    public int updateEmailFolder(String newFolderName, int email_id) throws SQLException {
+        String query = "UPDATE Emails SET folder_id = ? WHERE email_id = ?";
+        if (folderDao.getId(newFolderName) == -1) {
+            throw new SQLException("Folder you are trying to move your email to doesn't exist!");
+        }
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setInt(1, folderDao.getId(newFolderName));
+            ps.setInt(2, email_id);
+            
+            return ps.executeUpdate();
+        }
+    }
+    
     public EmailBean getEmail(int id) throws SQLException {
         EmailBean bean = new EmailBean();
         String query = "SELECT * FROM Emails e WHERE e.email_id = ?";
@@ -122,7 +137,7 @@ public class EmailDAO {
                 bean.setTextMsg(rs.getString("textMsg"));
                 bean.setHTMLMsg(rs.getString("htmlMsg"));
                 bean.setSubject(rs.getString("subject"));
-                bean.setFolderName(folderDao.getFolderName(bean.getId()));
+                bean.setFolderName(folderDao.getFolderName(rs.getInt("folder_id")));
                 //Attachments
                 bean.setAttach(attachDao.read(id, false));
                 bean.setEmbedAttach(attachDao.read(id, true));
@@ -130,7 +145,7 @@ public class EmailDAO {
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 //bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
             } else {
-                System.out.println("Email with id: " + id + " doesn't exist");
+                throw new SQLException("Email with id: " + id + " doesn't exist");
             }
         }
         return bean;
@@ -143,6 +158,9 @@ public class EmailDAO {
                 PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
             result = ps.executeUpdate();
+        }
+        if (result == 0) {
+            throw new SQLException("Record with id: " + id + "doesn't exist!");
         }
         System.out.println("Record with id: " + id + " deleted.");
         return result;

@@ -36,9 +36,10 @@ public class FolderDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return rs.getInt(1);
+            } else {
+                return -1;
             }
         }
-        return -1;
     }
 
     public String getFolderName(int id) throws SQLException {
@@ -49,21 +50,20 @@ public class FolderDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return rs.getString(1);
+            } else {
+                throw new SQLException("ERROR");
             }
         }
-        return "";
     }
     
-    public int create(EmailBean email) throws SQLException {
-        if (getId(email.getFolderName()) != -1) {
-            throw new SQLException("The folder already exists, please try a different name.");
+    public int create(String folderName) throws SQLException {
+        if (getId(folderName) != -1) {
+            throw new SQLException("Folder " + folderName + " already exists!");
         }
-        String query = "INSERT INTO Folders(folder_id, folderName) VALUES (?,?)";
+        String query = "INSERT INTO Folders(folderName) VALUES (?)";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
                 PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setInt(1, email.getId());
-            ps.setString(2, email.getFolderName());
-            
+            ps.setString(1, folderName);
             
             ps.executeUpdate();
             
@@ -88,7 +88,22 @@ public class FolderDAO {
                     throw new SQLException("Cannot delete Inbox or Sent folders");
                 }
             }
-            return ps.executeUpdate("DELTE FROM Folders WHERE folder_id = " + id);
+            return ps.executeUpdate("DELETE FROM Folders WHERE folder_id = " + id);
+        }
+    }
+    
+    public int update(String oldFolderName, String newFolderName) throws SQLException {
+        if (this.getId(oldFolderName) == -1) {
+            throw new SQLException("Folder name doesn't exist!");
+        } else if (oldFolderName.equalsIgnoreCase("Inbox") || oldFolderName.equalsIgnoreCase("Sent")) {
+            throw new SQLException(oldFolderName + " cannot be deleted!");
+        }
+        String query = "UPDATE Folders SET folderName = ? WHERE folderName = ?";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, newFolderName);
+            ps.setString(2, oldFolderName);
+            return ps.executeUpdate();
         }
     }
     

@@ -1,14 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  1633867
- * Created: Sep 19, 2018
- */
-
-
 
 
 DROP TABLE IF EXISTS Recipient;
@@ -36,7 +25,6 @@ CREATE TABLE Emails (
     receivedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (folder_id) REFERENCES Folders(folder_id)
        ON DELETE CASCADE
-       ON UPDATE CASCADE
 );
 
 CREATE TABLE Attachments (
@@ -47,7 +35,6 @@ CREATE TABLE Attachments (
     isEmbed boolean NOT NULL,
     FOREIGN KEY (email_id) REFERENCES Emails(email_id)
        ON DELETE CASCADE
-       ON UPDATE CASCADE
 );
 
 CREATE TABLE RecipientAddress (
@@ -61,12 +48,7 @@ CREATE TABLE Recipient (
     email_id int(10) NOT NULL,
     address_id int(10) NOT NULL,
     FOREIGN KEY (email_id) REFERENCES Emails(email_id)
-       ON DELETE CASCADE
-       ON UPDATE CASCADE,
+       ON DELETE CASCADE,
     FOREIGN KEY (address_id) REFERENCES RecipientAddress(address_id)
        ON DELETE CASCADE
-       ON UPDATE CASCADE
 );
-
- INSERT INTO Folders(folderName) VALUES ("Inbox");
- INSERT INTO Folders(folderName) VALUES ("Sent");

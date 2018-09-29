@@ -50,15 +50,15 @@ public class RecipientDAO {
         }
     }
 
-    public String[] read(int id, String type) throws SQLException {
-        String query = "SELECT emailAddress FROM Recipient r"
+    public String[] read(int email_id, String type) throws SQLException {
+        String query = "SELECT ra.emailAddress FROM Recipient r"
                 + " JOIN RecipientAddress ra ON r.address_id = ra.address_id WHERE email_id = ? AND type = ?";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
                 PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setInt(1, id);
+            ps.setInt(1, email_id);
             ps.setString(2, type);
             ResultSet rs = ps.executeQuery();
-            int result = countRecipientAddresses(id, type);
+            int result = countRecipientAddresses(email_id, type);
             String[] emails = new String[result];
             for (int i = 0; i < result; i++) {
                 if (rs.next()) {
@@ -111,7 +111,7 @@ public class RecipientDAO {
     }
 
     private int countRecipientAddresses(int email_id, String type) throws SQLException {
-        String sql = "SELECT COUNT(emailAddress) FROM RecipientAddress ra "
+        String sql = "SELECT COUNT(*) FROM RecipientAddress ra "
                 + "JOIN Recipient r ON ra.address_id = r.address_id "
                 + "WHERE email_id = ? AND type = ?";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);

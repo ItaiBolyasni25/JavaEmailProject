@@ -189,13 +189,13 @@ public class EmailBean {
         if (!Objects.equals(this.from, other.from)) {
             return false;
         }
-        if (!Objects.equals(this.subject, other.subject)) {
+        if (!(this.subject.equalsIgnoreCase(other.subject))) {
             return false;
         }
-        if (!Objects.equals(this.textMsg, other.textMsg)) {
+        if (!(this.textMsg.equalsIgnoreCase(other.textMsg))) {
             return false;
         }
-        if (!Objects.equals(this.HTMLMsg, other.HTMLMsg)) {
+        if (!(this.HTMLMsg.equalsIgnoreCase(other.HTMLMsg))) {
             return false;
         }
         if (!Arrays.deepEquals(this.to, other.to)) {
