@@ -50,15 +50,15 @@ public class RecipientDAO {
             switch (type) {
                 case "TO":
                     setRecipients(email.getTo(), email_id, ps, type);
-                    LOG.info("Created recipient of type TO");
+                    LOG.info("Created recipient/s of type TO");
                     break;
                 case "CC":
                     setRecipients(email.getCc(), email_id, ps, type);
-                    LOG.info("Created recipient of type CC");
+                    LOG.info("Created recipient/s of type CC");
                     break;
                 case "BCC":
                     setRecipients(email.getBcc(), email_id, ps, type);
-                    LOG.info("Created recipient of type BCC");
+                    LOG.info("Created recipient/s of type BCC");
                     break;
                 default:
                     throw new SQLException("Invalid email type");

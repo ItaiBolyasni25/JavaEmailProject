@@ -31,7 +31,6 @@ public class SmtpModule {
                 .ssl(true)
                 .host(smtpHost)
                 .auth(email, password)
-                .debugMode(true)
                 .buildSmtpMailServer();
     }
 

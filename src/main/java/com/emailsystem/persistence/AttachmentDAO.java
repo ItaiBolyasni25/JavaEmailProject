@@ -53,7 +53,7 @@ public class AttachmentDAO {
             ps.setString(1, attach.getName());
             ps.setInt(2, id);
             ps.setBytes(3, attach.getAttach());
-            
+            LOG.info(attach.getName() + " was created");
             return ps.executeUpdate();
         }
     }

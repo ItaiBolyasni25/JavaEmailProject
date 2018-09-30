@@ -95,7 +95,7 @@ public class FolderDAO {
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
                     tempId = rs.getInt(1);
-                    LOG.info("Folder was created with id: " + tempId);
+                    LOG.info(folderName + " was created with id: " + tempId);
                 }
             }
             return tempId;
@@ -120,7 +120,7 @@ public class FolderDAO {
                     throw new SQLException("Cannot delete Inbox or Sent folders");
                 }
             }
-            LOG.info("Folder with id: " + id + " was deleted");
+            LOG.info(this.getFolderName(id) + " with id: " + id + " was deleted");
             return ps.executeUpdate("DELETE FROM Folders WHERE folder_id = " + id);
         }
     }
