@@ -31,12 +31,11 @@ import org.slf4j.LoggerFactory;
 public class TestMailModule extends Assert {
 
     private MailModule mail;
-    private EmailBean bean;
+    private EmailBean bean = new EmailBean();;
     private final static org.slf4j.Logger LOG = LoggerFactory.getLogger(MailModule.class);
 
     @Before
     public void init() {
-        bean = new EmailBean();
         bean.setFrom("send.1633867@gmail.com");
         bean.setTo(new String[]{"receive.1633867@gmail.com"});
         bean.setSubject("Sending emails with java test new program");

@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -71,6 +72,20 @@ public class TestDAOModule extends Assert {
         bean.setHTMLMsg("test");
         bean.setFolderName("Inbox");
     }
+    
+    
+    /**
+     * The database is recreated before each test. If the last test is
+     * destructive then the database is in an unstable state. @AfterClass is
+     * called just once when the test class is finished with by the JUnit
+     * framework. It is instantiating the test class anonymously so that it can
+     * execute its non-static seedDatabase routine.
+     */
+    @AfterClass
+    public static void seedAfterTestCompleted() {
+        new TestDAOModule().seedDatabase();
+    }
+
 
     @Test
     public void getEmailTest() throws SQLException {
