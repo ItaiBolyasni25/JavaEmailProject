@@ -37,7 +37,6 @@ public class ImapModule {
                 .host(imapServerName)
                 .ssl(true)
                 .auth(receiveEmail, password)
-                .debugMode(true)
                 .buildImapMailServer();
     }
 

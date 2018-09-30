@@ -1,0 +1,32 @@
+2018-09-30  INFO [main] (FolderDAO.java:98) - Folder was created with id: 3
+2018-09-30  INFO [main] (FolderDAO.java:147) - Test Folder was updated to: Did it work
+2018-09-30  INFO [main] (FolderDAO.java:98) - Folder was created with id: 3
+2018-09-30  INFO [main] (FolderDAO.java:123) - Folder with id: 3 was deleted
+2018-09-30  INFO [main] (EmailDAO.java:197) - Record with id: 5 deleted.
+2018-09-30  INFO [main] (RecipientDAO.java:53) - Created recipient of type TO
+2018-09-30  INFO [main] (EmailDAO.java:114) - Email with id 26 was created
+2018-09-30  INFO [main] (RecipientDAO.java:57) - Created recipient of type CC
+2018-09-30  INFO [main] (FolderDAO.java:98) - Folder was created with id: 3
+2018-09-30  INFO [main] (RecipientDAO.java:53) - Created recipient of type TO
+2018-09-30  INFO [main] (EmailDAO.java:114) - Email with id 26 was created
+2018-09-30  INFO [main] (FolderDAO.java:98) - Folder was created with id: 3
+2018-09-30  INFO [main] (RecipientDAO.java:53) - Created recipient of type TO
+2018-09-30  INFO [main] (EmailDAO.java:114) - Email with id 26 was created
+2018-09-30  INFO [main] (RecipientDAO.java:53) - Created recipient of type TO
+2018-09-30  INFO [main] (EmailDAO.java:114) - Email with id 27 was created
+2018-09-30  INFO [main] (FolderDAO.java:123) - Folder with id: 3 was deleted
+2018-09-30  INFO [main] (FolderDAO.java:98) - Folder was created with id: 3
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30 ERROR [main] (MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30 ERROR [main] (MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+2018-09-30 ERROR [main] (MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
+2018-09-30 ERROR [main] (MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+2018-09-30  INFO [main] (SmtpModule.java:78) - Mail sent
