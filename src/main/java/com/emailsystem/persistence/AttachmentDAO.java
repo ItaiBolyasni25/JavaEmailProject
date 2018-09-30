@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.emailsystem.persistence;
 
+import com.emailsystem.business.MailModule;
 import com.emailsystem.data.AttachmentBean;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,15 +10,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- *
- * @author 1633867
+ * DAO that communicates with the Attachments table in the local database
+ * 
+ * @author Itai Bolyasni
+ * @version 1.0.0
  */
 public class AttachmentDAO {
     private final String URL;
     private final String UNAME;
     private final String PASSWORD;
+    private final static Logger LOG = LoggerFactory.getLogger(AttachmentDAO.class);
+
     
     public AttachmentDAO(String URL, String UNAME, String PASSWORD) {
         this.URL = URL;
@@ -29,6 +32,15 @@ public class AttachmentDAO {
         this.PASSWORD = PASSWORD;
     }
 
+     /**
+     * A method that creates an entry in the Attachments table in the database
+     *
+     * @param attach - the AttachmentBean
+     * @param id - the email id
+     * @param isEmbed - if the attachment is embedded or not
+     * @return int - the amount of rows that were affected.
+     * @version 1.0.0
+     */
     public int create(AttachmentBean attach, int id, boolean isEmbed) throws SQLException {
         String query;
         if (isEmbed) {
@@ -41,11 +53,18 @@ public class AttachmentDAO {
             ps.setString(1, attach.getName());
             ps.setInt(2, id);
             ps.setBytes(3, attach.getAttach());
-
+            
             return ps.executeUpdate();
         }
     }
     
+    /**
+     * A method that takes an email_id and returns a list of all of the associated attachments.
+     *
+     * @param id - the id of the email
+     * @param isEmbed - if the attachment is embedded or not
+     * @version 1.0.0
+     */
     public List<AttachmentBean> read(int id, boolean isEmbed) throws SQLException{
         List<AttachmentBean> attachList = new ArrayList();
         String query = "SELECT * FROM Attachments WHERE email_id = ? AND isEmbed = ?";

@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/GamingDanik/.m2/repository/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar;C:/Users/GamingDanik/.m2/repository/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar;C:/Users/GamingDanik/.m2/repository/org/jodd/jodd-mail/5.0.4/jodd-mail-5.0.4.jar;C:/Users/GamingDanik/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.0/log4j-api-2.11.0.jar;C:/Users/GamingDanik/.m2/repository/org/apache/logging/log4j/log4j-core/2.11.0/log4j-core-2.11.0.jar;C:/Users/GamingDanik/.m2/repository/org/apache/logging/log4j/log4j-slf4j-impl/2.11.0/log4j-slf4j-impl-2.11.0.jar;C:/Users/GamingDanik/.m2/repository/com/sun/mail/javax.mail/1.6.1/javax.mail-1.6.1.jar;C:/Users/GamingDanik/.m2/repository/com/google/protobuf/protobuf-java/2.6.0/protobuf-java-2.6.0.jar;C:/Users/GamingDanik/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar;C:/Users/GamingDanik/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar;C:/Users/GamingDanik/.m2/repository/javax/mail/javax.mail-api/1.6.1/javax.mail-api-1.6.1.jar;C:/Users/GamingDanik/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar;C:/Users/GamingDanik/.m2/repository/org/jodd/jodd-core/5.0.4/jodd-core-5.0.4.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'C:/Users/GamingDanik/Desktop/EmailProject/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2018. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/GamingDanik/Desktop/EmailProject/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'1633867 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/GamingDanik/Desktop/EmailProject/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'1633867 1.0-SNAPSHOT API'

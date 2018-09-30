@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.emailsystem.test.TestDAOModule" time="18.681" tests="19" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.emailsystem.test.TestDAOModule" time="21.337" tests="19" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -7,7 +7,7 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\GamingDanik\Desktop\EmailProject\target\test-classes;C:\Users\GamingDanik\Desktop\EmailProject\target\classes;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-mail\5.0.4\jodd-mail-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-core\5.0.4\jodd-core-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\javax\mail\javax.mail-api\1.6.1\javax.mail-api-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\GamingDanik\.m2\repository\com\sun\mail\javax.mail\1.6.1\javax.mail-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\mysql\mysql-connector-java\8.0.12\mysql-connector-java-8.0.12.jar;C:\Users\GamingDanik\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\GamingDanik\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.11.0\log4j-slf4j-impl-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.0\log4j-api-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.0\log4j-core-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\GamingDanik\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\GamingDanik\Desktop\EmailProject\target\test-classes;C:\Users\GamingDanik\Desktop\EmailProject\target\classes;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-mail\5.0.4\jodd-mail-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-core\5.0.4\jodd-core-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\javax\mail\javax.mail-api\1.6.1\javax.mail-api-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\GamingDanik\.m2\repository\com\sun\mail\javax.mail\1.6.1\javax.mail-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\mysql\mysql-connector-java\8.0.12\mysql-connector-java-8.0.12.jar;C:\Users\GamingDanik\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\GamingDanik\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\GamingDanik\.m2\repository\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;C:\Users\GamingDanik\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.11.0\log4j-slf4j-impl-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.0\log4j-api-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.0\log4j-core-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\GamingDanik\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -18,9 +18,8 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\GAMING~1\AppData\Local\Temp\surefire9106733247798237997\surefirebooter8877927933534935533.jar C:\Users\GamingDanik\AppData\Local\Temp\surefire9106733247798237997 2018-09-29T16-08-42_749-jvmRun1 surefire2165913798313126591tmp surefire_05400865793931182466tmp"/>
-    <property name="test" value="com.emailsystem.test.TestDAOModule"/>
-    <property name="surefire.test.class.path" value="C:\Users\GamingDanik\Desktop\EmailProject\target\test-classes;C:\Users\GamingDanik\Desktop\EmailProject\target\classes;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-mail\5.0.4\jodd-mail-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-core\5.0.4\jodd-core-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\javax\mail\javax.mail-api\1.6.1\javax.mail-api-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\GamingDanik\.m2\repository\com\sun\mail\javax.mail\1.6.1\javax.mail-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\mysql\mysql-connector-java\8.0.12\mysql-connector-java-8.0.12.jar;C:\Users\GamingDanik\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\GamingDanik\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.11.0\log4j-slf4j-impl-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.0\log4j-api-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.0\log4j-core-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\GamingDanik\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.java.command" value="C:\Users\GAMING~1\AppData\Local\Temp\surefire1241704653755398064\surefirebooter259024231962065739.jar C:\Users\GamingDanik\AppData\Local\Temp\surefire1241704653755398064 2018-09-30T16-08-57_332-jvmRun1 surefire3245293373706071345tmp surefire_06964062724154083913tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\GamingDanik\Desktop\EmailProject\target\test-classes;C:\Users\GamingDanik\Desktop\EmailProject\target\classes;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-mail\5.0.4\jodd-mail-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\org\jodd\jodd-core\5.0.4\jodd-core-5.0.4.jar;C:\Users\GamingDanik\.m2\repository\javax\mail\javax.mail-api\1.6.1\javax.mail-api-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\GamingDanik\.m2\repository\com\sun\mail\javax.mail\1.6.1\javax.mail-1.6.1.jar;C:\Users\GamingDanik\.m2\repository\mysql\mysql-connector-java\8.0.12\mysql-connector-java-8.0.12.jar;C:\Users\GamingDanik\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\GamingDanik\.m2\repository\org\slf4j\slf4j-api\1.7.5\slf4j-api-1.7.5.jar;C:\Users\GamingDanik\.m2\repository\org\slf4j\slf4j-log4j12\1.7.5\slf4j-log4j12-1.7.5.jar;C:\Users\GamingDanik\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.11.0\log4j-slf4j-impl-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.0\log4j-api-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.0\log4j-core-2.11.0.jar;C:\Users\GamingDanik\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\GamingDanik\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\GamingDanik"/>
     <property name="user.language" value="en"/>
@@ -32,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\GAMING~1\AppData\Local\Temp\surefire9106733247798237997\surefirebooter8877927933534935533.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\GAMING~1\AppData\Local\Temp\surefire1241704653755398064\surefirebooter259024231962065739.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_181\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_181\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,23 +61,23 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="updateFolderName" classname="com.emailsystem.test.TestDAOModule" time="1.195"/>
-  <testcase name="updateInvalidEmailFolder" classname="com.emailsystem.test.TestDAOModule" time="0.894"/>
-  <testcase name="deleteNormalFolder" classname="com.emailsystem.test.TestDAOModule" time="0.947"/>
-  <testcase name="getInexistantEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.838"/>
-  <testcase name="deleteEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.968"/>
-  <testcase name="createEmbedAttachmentEntry" classname="com.emailsystem.test.TestDAOModule" time="0.872"/>
-  <testcase name="updateInboxFolderName" classname="com.emailsystem.test.TestDAOModule" time="0.844"/>
-  <testcase name="createRecipient" classname="com.emailsystem.test.TestDAOModule" time="1.041"/>
-  <testcase name="createFolderThatExistsTest" classname="com.emailsystem.test.TestDAOModule" time="0.883"/>
-  <testcase name="getAllEmailsTest" classname="com.emailsystem.test.TestDAOModule" time="1.363"/>
-  <testcase name="updateEmailFolder" classname="com.emailsystem.test.TestDAOModule" time="0.992"/>
-  <testcase name="deleteInexistantEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.741"/>
-  <testcase name="readInexsistantRecipient" classname="com.emailsystem.test.TestDAOModule" time="1.005"/>
-  <testcase name="deleteInboxFolder" classname="com.emailsystem.test.TestDAOModule" time="0.884"/>
-  <testcase name="createEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.932"/>
-  <testcase name="createNormalAttachmentEntry" classname="com.emailsystem.test.TestDAOModule" time="0.903"/>
-  <testcase name="deleteAllEmailsWithinFolder" classname="com.emailsystem.test.TestDAOModule" time="1.563"/>
-  <testcase name="createNewFolderTest" classname="com.emailsystem.test.TestDAOModule" time="0.717"/>
-  <testcase name="getEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.992"/>
+  <testcase name="updateFolderName" classname="com.emailsystem.test.TestDAOModule" time="1.291"/>
+  <testcase name="updateInvalidEmailFolder" classname="com.emailsystem.test.TestDAOModule" time="1.035"/>
+  <testcase name="deleteNormalFolder" classname="com.emailsystem.test.TestDAOModule" time="0.968"/>
+  <testcase name="getInexistantEmailTest" classname="com.emailsystem.test.TestDAOModule" time="1.02"/>
+  <testcase name="deleteEmailTest" classname="com.emailsystem.test.TestDAOModule" time="1.035"/>
+  <testcase name="createEmbedAttachmentEntry" classname="com.emailsystem.test.TestDAOModule" time="1.055"/>
+  <testcase name="updateInboxFolderName" classname="com.emailsystem.test.TestDAOModule" time="1.13"/>
+  <testcase name="createRecipient" classname="com.emailsystem.test.TestDAOModule" time="1.232"/>
+  <testcase name="createFolderThatExistsTest" classname="com.emailsystem.test.TestDAOModule" time="0.902"/>
+  <testcase name="getAllEmailsTest" classname="com.emailsystem.test.TestDAOModule" time="1.664"/>
+  <testcase name="updateEmailFolder" classname="com.emailsystem.test.TestDAOModule" time="0.893"/>
+  <testcase name="deleteInexistantEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.945"/>
+  <testcase name="readInexsistantRecipient" classname="com.emailsystem.test.TestDAOModule" time="0.956"/>
+  <testcase name="deleteInboxFolder" classname="com.emailsystem.test.TestDAOModule" time="0.92"/>
+  <testcase name="createEmailTest" classname="com.emailsystem.test.TestDAOModule" time="1.058"/>
+  <testcase name="createNormalAttachmentEntry" classname="com.emailsystem.test.TestDAOModule" time="1.12"/>
+  <testcase name="deleteAllEmailsWithinFolder" classname="com.emailsystem.test.TestDAOModule" time="1.711"/>
+  <testcase name="createNewFolderTest" classname="com.emailsystem.test.TestDAOModule" time="1.15"/>
+  <testcase name="getEmailTest" classname="com.emailsystem.test.TestDAOModule" time="0.997"/>
 </testsuite>

@@ -5,6 +5,7 @@
  */
 package com.emailsystem.test;
 
+import com.emailsystem.business.MailModule;
 import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
 import com.emailsystem.persistence.AttachmentDAO;
@@ -33,6 +34,7 @@ import java.util.logging.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -44,6 +46,8 @@ public class TestDAOModule extends Assert {
     private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false";
     private final String UNAME = "a1633867";
     private final String PASSWORD = "dawson";
+        private final static org.slf4j.Logger LOG = LoggerFactory.getLogger(MailModule.class);
+
     EmailDAO db = new EmailDAO();
     EmailBean bean = new EmailBean();
     FolderDAO folders = new FolderDAO(URL, UNAME, PASSWORD);

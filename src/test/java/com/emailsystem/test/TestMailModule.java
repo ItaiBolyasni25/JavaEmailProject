@@ -11,6 +11,7 @@ import com.emailsystem.data.EmailBean;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +47,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendingEmailWithoutAttachments() {
+    public void sendingEmailWithoutAttachments() throws SQLException{
         mail.send(bean);
         try {
             Thread.sleep(5000);
@@ -58,7 +59,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendingEmailWithNormalAttachment() {
+    public void sendingEmailWithNormalAttachment() throws SQLException{
         List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
         try {
             attach.add(new AttachmentBean("java.jpg", Files.readAllBytes(new File("java.jpg").toPath())));
@@ -77,7 +78,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendingEmailWithAllAttachments() {
+    public void sendingEmailWithAllAttachments() throws SQLException{
         List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
         List<AttachmentBean> embed = new ArrayList<AttachmentBean>();
 
@@ -102,20 +103,16 @@ public class TestMailModule extends Assert {
         assertEquals(bean2, bean);
     }
 
-    @Test
-    public void sendEmailWithInvalidFrom() {
+    @Test(expected=SQLException.class)
+    public void sendEmailWithInvalidFrom() throws SQLException {
         bean.setFrom("kshflkjshfgj12369");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        assertEquals(mail.receive().length, 0);
+        mail.send(bean);
     }
 
-    @Test
-    public void sendEmailWithInvalidTo() {
+    @Test(expected=SQLException.class)
+    public void sendEmailWithInvalidTo() throws SQLException{
         bean.setTo(new String[]{"kshflkjshfgj12369"});
+        mail.send(bean);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
@@ -125,7 +122,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendAndReceiveTwoEmails() {
+    public void sendAndReceiveTwoEmails() throws SQLException{
         mail.send(bean);
         try {
             Thread.sleep(2000);
@@ -138,54 +135,26 @@ public class TestMailModule extends Assert {
         assertEquals(mail.receive().length, 2);
     }
 
-    @Test
-    public void sendEmailWithInvalidCc() {
+    @Test(expected=SQLException.class)
+    public void sendEmailWithInvalidCc() throws SQLException{
         bean.setCc(new String[]{"kshflkjshfgj12369"});
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        assertEquals(mail.receive().length, 0);
+        mail.send(bean);
     }
 
-    @Test
-    public void sendEmailWithInvalidBcc() {
+    @Test(expected=SQLException.class)
+    public void sendEmailWithInvalidBcc() throws SQLException{
         bean.setBcc(new String[]{"kshflkjshfgj12369"});
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        assertEquals(mail.receive().length, 0);
+        mail.send(bean);
     }
 
-    @Test
-    public void sendEmptyEmail() {
+    @Test(expected=SQLException.class)
+    public void sendEmptyEmail() throws SQLException{
         bean = new EmailBean();
         mail.send(bean);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        assertEquals(mail.receive().length, 0);
     }
 
     @Test
-    public void sendEmailWithoutSubject() {
-        bean.setSubject("");
-        mail.send(bean);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(TestMailModule.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        assertEquals(mail.receive()[0].getSubject(), null);
-    }
-
-    @Test
-    public void sendTextFileAsAttachment() throws IOException {
+    public void sendTextFileAsAttachment() throws IOException, SQLException {
         List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
         attach.add(new AttachmentBean("text.txt", Files.readAllBytes(new File("text.txt").toPath())));
         bean.setAttach(attach);
@@ -199,20 +168,16 @@ public class TestMailModule extends Assert {
     }
 
     //For some reason using @Test(IOException.class) gave me a runtime error
-    @Test
-    public void invalidAttachmentPath() {
+    @Test(expected=IOException.class)
+    public void invalidAttachmentPath() throws SQLException, IOException{
         List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
-        try {
-            attach.add(new AttachmentBean("notfound.jpg", Files.readAllBytes(new File("notfound.jpg").toPath())));
-        } catch (IOException ex) {
-            assertTrue(true);
-        }
+        attach.add(new AttachmentBean("notfound.jpg", Files.readAllBytes(new File("notfound.jpg").toPath())));
         bean.setAttach(attach);
         mail.send(bean);
     }
 
     @Test
-    public void sendToMultiplePeople() {
+    public void sendToMultiplePeople() throws SQLException{
         bean.setTo(new String[]{"send.1633867@gmail.com", "receive.1633867@gmail.com"});
         mail.send(bean);
         try {
@@ -224,7 +189,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendToMultipleCc() {
+    public void sendToMultipleCc() throws SQLException{
         bean.setCc(new String[]{"send.1633867@gmail.com", "receive.1633867@gmail.com", "cc.1633867@gmail.com"});
         mail.send(bean);
         try {
@@ -237,7 +202,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendEmailWithMultipleFields() {
+    public void sendEmailWithMultipleFields() throws SQLException{
         bean.setCc(new String[]{"send.1633867@gmail.com", "receive.1633867@gmail.com", "cc.1633867@gmail.com"});
         bean.setBcc(new String[]{"send.1633867@gmail.com", "receive.1633867@gmail.com", "cc.1633867@gmail.com"});
         bean.setTo(new String[]{"send.1633867@gmail.com", "receive.1633867@gmail.com"});
@@ -251,7 +216,7 @@ public class TestMailModule extends Assert {
     }
 
     @Test
-    public void sendingEmailWithMultipleAttachments() {
+    public void sendingEmailWithMultipleAttachments() throws SQLException{
         List<AttachmentBean> attach = new ArrayList<AttachmentBean>();
         List<AttachmentBean> embed = new ArrayList<AttachmentBean>();
 

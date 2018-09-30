@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.emailsystem.test.TestDAOModule
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.681 s - in com.emailsystem.test.TestDAOModule
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.337 s - in com.emailsystem.test.TestDAOModule

@@ -2,6 +2,7 @@
 package com.emailsystem.business;
 
 import com.emailsystem.data.EmailBean;
+import java.sql.SQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import jodd.mail.RFC2822AddressParser;
@@ -26,7 +27,7 @@ public class MailModule {
      * @param EmailBean bean
      * @version 1.0.0
      */
-    public void send(EmailBean bean) {
+    public void send(EmailBean bean) throws SQLException {
         if (verifyBeanData(bean) && bean != null) {
             SmtpModule smtp = new SmtpModule(bean.getFrom(), password);
             smtp.sendEmail(bean);
@@ -48,32 +49,28 @@ public class MailModule {
         return emails;
     }
 
-    /* 
+    /** 
         Private method that verifies all the bean's information
         @param EmailBean to be checked
-     */
-    private boolean verifyBeanData(EmailBean bean) {
+     **/
+    private boolean verifyBeanData(EmailBean bean) throws SQLException {
 
         if (bean.getFrom() == null || !checkEmail(bean.getFrom())) {
-            LOG.error("Email: " + bean.getFrom() + " is invalid!");
-            return false;
+            throw new SQLException("Email: " + bean.getFrom() + " is invalid!");
         } else if (bean.getTo() == null || !checkEmail(bean.getTo())) {
-            LOG.error("Receiver email is invalid!");
-            return false;
+           throw new SQLException("Receiver email is invalid!");
         } else if (!checkEmail(bean.getCc())) {
-            LOG.error("Cc email is invalid!");
-            return false;
+            throw new SQLException("Cc email is invalid!");
         } else if (!checkEmail(bean.getBcc())) {
-            LOG.error("Bcc email is invalid!");
-            return false;
+            throw new SQLException("Bcc email is invalid!");
         }
         return true;
     }
 
-    /* 
+    /** 
         Private method that verifies email addresses. Can accept one or many Strings
         @param String... emails - one or many emails.
-     */
+     **/
     private boolean checkEmail(String... emails) {
         for (String email : emails) {
             if (RFC2822AddressParser.STRICT.parseToEmailAddress(email) == null) {

@@ -1,30 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.emailsystem.persistence;
 
+import com.emailsystem.business.MailModule;
 import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
 import java.sql.DriverManager;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- *
- * @author 1633867
+ * Main DAO, responsible for managing the other DAO as well as fetching EmailBeans
+ * 
+ * @author Itai Bolyasni
+ * @version 1.0.0
  */
 public class EmailDAO {
 
     private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
     private final String UNAME = "a1633867";
     private final String PASSWORD = "dawson";
+    private final static Logger LOG = LoggerFactory.getLogger(EmailDAO.class);
+
     AttachmentDAO attachDao;
     RecipientDAO recDao;
     FolderDAO folderDao;
-
 
     public EmailDAO() {
         attachDao = new AttachmentDAO(URL, UNAME, PASSWORD);
@@ -32,6 +33,12 @@ public class EmailDAO {
         folderDao = new FolderDAO(URL, UNAME, PASSWORD);
     }
 
+     /**
+     * A method that returns all of the emails in the database
+     *
+     * @return List - a list of EmailBeans
+     * @version 1.0.0
+     */
     public List<EmailBean> findAll() throws SQLException {
         String query = "SELECT * FROM Emails";
         List<EmailBean> allEmails = new ArrayList();
@@ -52,8 +59,8 @@ public class EmailDAO {
                 //Attachments
                 bean.setAttach(attachDao.read(bean.getId(), false));
                 bean.setEmbedAttach(attachDao.read(bean.getId(), true));
-                 
-               // Timestamp 
+
+                // Timestamp 
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
                 allEmails.add(bean);
@@ -61,8 +68,13 @@ public class EmailDAO {
         }
         return allEmails;
     }
-
-    
+     /**
+     * A method that creates all the entries that are related to a certain EmailBean
+     * 
+     * @param email - the EmailBean that will be saved to the database
+     * @return int - the amount of rows that were affected.
+     * @version 1.0.0
+     */
     public int createEmail(EmailBean email) throws SQLException {
         int result;
         String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES (?,?,?,?,?,?)";
@@ -92,21 +104,30 @@ public class EmailDAO {
                         result = recDao.create(email, id, "TO");
                     }
                     if (email.getAttach().size() > 0) {
-                        for (AttachmentBean attach: email.getAttach()) {
-                            result = attachDao.create(attach,id, false);
+                        for (AttachmentBean attach : email.getAttach()) {
+                            result = attachDao.create(attach, id, false);
                         }
-                        for (AttachmentBean attach: email.getEmbedAttach()) {
+                        for (AttachmentBean attach : email.getEmbedAttach()) {
                             result = attachDao.create(attach, id, true);
                         }
                     }
+                    LOG.info("Email with id " + id + " was created");
                 }
                 email.setId(id);
-                
+
             }
         }
         return result;
     }
-    
+
+     /**
+     * A method that creates all the entries that are related to a certain EmailBean
+     * 
+     * @param newFolderName - the name of the folder where the email will be moved to
+     * @param email_id - the id of the email that will be moved to another folder
+     * @return int - the amount of rows that were affected.
+     * @version 1.0.0
+     */
     public int updateEmailFolder(String newFolderName, int email_id) throws SQLException {
         String query = "UPDATE Emails SET folder_id = ? WHERE email_id = ?";
         if (folderDao.getId(newFolderName) == -1) {
@@ -116,11 +137,16 @@ public class EmailDAO {
                 PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, folderDao.getId(newFolderName));
             ps.setInt(2, email_id);
-            
             return ps.executeUpdate();
         }
     }
-    
+     /**
+     * A method that fetches a record from the database and transforms it into an EmailBean
+     * 
+     * @param id - the email_id
+     * @return EmailBean - The EmailBean corresponding to the email_id
+     * @version 1.0.0
+     */
     public EmailBean getEmail(int id) throws SQLException {
         EmailBean bean = new EmailBean();
         String query = "SELECT * FROM Emails e WHERE e.email_id = ?";
@@ -141,16 +167,22 @@ public class EmailDAO {
                 //Attachments
                 bean.setAttach(attachDao.read(id, false));
                 bean.setEmbedAttach(attachDao.read(id, true));
-                
+
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
-                //bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
+                bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
             } else {
                 throw new SQLException("Email with id: " + id + " doesn't exist");
             }
         }
         return bean;
     }
-
+    
+     /**
+     * A method that deletes an email from the database
+     * @param id - the email_id that the user wishes to delete
+     * @return int - the amount of rows that were affected.
+     * @version 1.0.0
+     */
     public int deleteEmail(int id) throws SQLException {
         String query = "DELETE FROM Emails WHERE email_id = ?";
         int result;
@@ -162,8 +194,8 @@ public class EmailDAO {
         if (result == 0) {
             throw new SQLException("Record with id: " + id + "doesn't exist!");
         }
-        System.out.println("Record with id: " + id + " deleted.");
+        LOG.info("Record with id: " + id + " deleted.");
         return result;
     }
-    
+
 }
