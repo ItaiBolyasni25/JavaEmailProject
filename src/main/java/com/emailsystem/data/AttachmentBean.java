@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author 1633867
  */
-public class AttachmentBean {
+public class AttachmentBean implements BeanInterface {
     private byte[] attach = {};
     private String name = "bob.jpg";
     

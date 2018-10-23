@@ -33,15 +33,17 @@ import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  *
  * @author 1633867
  */
+@Ignore
 public class TestDAOModule extends Assert {
 
-    private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false";
+    private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private final String UNAME = "a1633867";
     private final String PASSWORD = "dawson";
 
@@ -100,12 +102,12 @@ public class TestDAOModule extends Assert {
 
     @Test(expected = SQLException.class)
     public void deleteInexistantEmailTest() throws SQLException {
-        db.deleteEmail(100);
+        db.delete(100);
     }
 
     @Test(expected = SQLException.class)
     public void deleteEmailTest() throws SQLException {
-        db.deleteEmail(5);
+        db.delete(5);
         //GetEmail should throw an exception because the entry doesn't exist
         db.getEmail(5);
     }

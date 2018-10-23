@@ -26,6 +26,6 @@
     </dependency>
   </dependencies>
   <properties>
-    <mainClass>com.emailsystem.application.Application</mainClass>
+    <mainClass>com.emailsystem.application.MainApp</mainClass>
   </properties>
 </project>

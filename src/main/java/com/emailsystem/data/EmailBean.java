@@ -15,7 +15,7 @@ import java.util.Objects;
  *
  * @author 1633867
  */
-public class EmailBean {
+public class EmailBean implements BeanInterface {
 
 
     private int id;

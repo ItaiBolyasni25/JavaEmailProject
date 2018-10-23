@@ -21,6 +21,7 @@ import junit.framework.Assert;
 
 import junit.framework.TestCase;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
 
@@ -28,6 +29,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author GamingDanik
  */
+@Ignore
 public class TestMailModule extends Assert {
 
     private MailModule mail;

@@ -13,6 +13,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +36,8 @@ public class FolderDAO {
         this.UNAME = UNAME;
         this.PASSWORD = PASSWORD;
     }
+
+    
      /**
      * A method that returns the id of a given folder
      *

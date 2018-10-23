@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootAnchor" prefHeight="725.0" prefWidth="985.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.rootController.RootLayoutController">
+   <children>
+      <AnchorPane fx:id="splitAnchorPane" layoutX="261.0" layoutY="42.0" maxHeight="839.0" maxWidth="686.0" minWidth="686.0" prefHeight="644.0" prefWidth="686.0" style="-fx-background-color: white;">
+         <children>
+            <SplitPane fx:id="splitPane" dividerPositions="0.5" orientation="VERTICAL" prefHeight="644.0" prefWidth="686.0">
+              <items>
+                  <AnchorPane fx:id="topSplit" prefHeight="249.0" prefWidth="664.0" style="-fx-background-color: red;" />
+                  <AnchorPane fx:id="bottomSplit" prefHeight="249.0" prefWidth="664.0" style="-fx-background-color: white;" />
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="leftPane" layoutX="14.0" layoutY="42.0" prefHeight="644.0" prefWidth="232.0" style="-fx-background-color: white;" />
+      <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="961.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

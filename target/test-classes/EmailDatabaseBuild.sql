@@ -1,4 +1,7 @@
 
+SET @@global.time_zone = "+00:00";
+SELECT @@global.time_zone;
+
 DROP DATABASE IF EXISTS EmailDB;
 CREATE DATABASE EmailDB;
 

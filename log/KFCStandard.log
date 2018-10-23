@@ -1,0 +1,590 @@
+[INFO ] 2018-10-22 13:24:38.231 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:24:49.446 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:00.350 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 13:25:09.585 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 13:25:11.469 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:17.482 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 13:25:20.501 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[ERROR] 2018-10-22 13:25:20.502 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 13:25:22.369 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:27.871 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:35.019 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:37.495 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:38.705 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 13:25:48.192 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 13:25:50.063 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:25:50.764 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 13:26:02.514 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[ERROR] 2018-10-22 13:26:02.514 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 13:26:04.208 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:26:06.333 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 13:26:16.328 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 13:26:17.846 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:26:18.416 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:26:21.535 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:26:33.417 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:26:45.567 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 13:26:55.736 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 13:26:57.397 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 13:32:23.857 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 13:32:23.880 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 13:32:25.723 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 13:32:25.732 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 13:32:27.516 [main] com.emailsystem.persistence.EmailDAO.deleteEmail(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 13:32:28.479 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 13:32:30.397 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 13:32:30.398 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 13:32:30.422 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 13:32:33.755 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 14:20:02.170 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:20:02.199 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 14:20:04.145 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 14:20:04.154 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 14:48:18.423 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:48:18.433 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 14:48:20.384 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 14:48:20.395 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 14:48:22.330 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 14:48:23.283 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:48:25.232 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:48:25.233 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:48:25.255 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 14:48:28.594 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 14:48:32.481 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:48:32.481 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:48:33.354 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:48:34.293 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 14:48:34.333 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:48:34.334 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:48:34.365 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:48:34.366 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 14:48:34.371 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 14:48:35.885 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:48:40.773 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 14:48:51.455 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 14:49:01.713 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 14:49:11.844 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 14:49:13.827 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 14:49:22.890 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[ERROR] 2018-10-22 14:49:22.891 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 14:49:24.691 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 14:49:34.453 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 14:49:38.363 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 14:49:51.151 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-22 14:50:03.968 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-22 14:50:14.439 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-22 14:50:38.106 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:50:38.119 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 14:50:39.991 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 14:50:40.000 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 14:50:41.787 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 14:50:42.671 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:50:44.690 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:50:44.690 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:50:44.714 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 14:50:48.246 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 14:50:51.730 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:50:51.730 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:50:52.721 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:50:53.718 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 14:50:53.747 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:50:53.747 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:50:53.792 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:50:53.792 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 14:50:53.797 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 14:50:55.329 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:52:04.936 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:52:04.948 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 14:52:06.782 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 14:52:06.792 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 14:52:08.738 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 14:52:09.742 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:52:11.737 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:11.737 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:52:11.762 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 14:52:15.719 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 14:52:19.525 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:19.525 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:52:20.455 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:52:21.528 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 14:52:21.581 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:21.582 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:52:21.619 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:21.619 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 14:52:21.624 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 14:52:23.205 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:52:40.789 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:52:40.800 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 14:52:42.723 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 14:52:42.735 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 14:52:44.589 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 14:52:45.573 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:52:47.590 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:47.591 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:52:47.631 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 14:52:51.049 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 14:52:54.826 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:54.826 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:52:55.699 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:52:56.711 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 14:52:56.739 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:56.739 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:52:56.761 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:52:56.761 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 14:52:56.766 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 14:52:58.252 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:54:12.179 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 14:54:12.194 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 14:54:14.168 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 14:54:14.181 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 14:54:15.979 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 14:54:17.058 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:54:18.912 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:54:18.913 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:54:18.935 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 14:54:22.351 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 14:54:26.273 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:54:26.273 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:54:27.235 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 14:54:28.206 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 14:54:28.236 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:54:28.237 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 14:54:28.260 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 14:54:28.260 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 14:54:28.264 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 14:54:29.894 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:03:09.163 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:03:09.174 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 15:03:11.065 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 15:03:11.076 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 15:03:12.895 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 15:03:13.909 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:03:15.639 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:03:15.639 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:03:15.662 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 15:03:19.136 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 15:03:22.866 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:03:22.866 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:03:23.708 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:03:24.638 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 15:03:24.664 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:03:24.665 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:03:24.689 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:03:24.689 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 15:03:24.694 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 15:03:26.158 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:03:30.779 [JavaFX Application Thread] com.emailsystem.application.MainApp.start(MainApp.java:34) - this
+[INFO ] 2018-10-22 15:03:30.782 [JavaFX Application Thread] com.emailsystem.application.MainApp.start(MainApp.java:35) - null
+[INFO ] 2018-10-22 15:10:15.074 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:10:15.085 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 15:10:16.969 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 15:10:16.980 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 15:10:18.902 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 15:10:19.895 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:10:21.923 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:10:21.924 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:10:21.945 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 15:10:25.277 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 15:10:28.959 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:10:28.960 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:10:29.971 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:10:30.926 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 15:10:30.952 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:10:30.952 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:10:30.974 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:10:30.974 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 15:10:30.978 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 15:10:32.469 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:19:57.827 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:19:57.830 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:19:58.937 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:19:59.824 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 15:19:59.850 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:19:59.850 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:19:59.883 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:19:59.883 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 15:19:59.889 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 15:20:22.318 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:20:22.328 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:147) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-22 15:20:24.134 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-22 15:20:24.145 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-22 15:20:25.991 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:197) - Record with id: 5 deleted.
+[INFO ] 2018-10-22 15:20:26.885 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:20:28.858 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:20:28.858 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:20:28.879 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-22 15:20:32.322 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - temp was created with id: 3
+[INFO ] 2018-10-22 15:20:36.025 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:20:36.026 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:20:36.989 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:56) - java.jpg was created
+[INFO ] 2018-10-22 15:20:37.976 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-22 15:20:38.001 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:20:38.001 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 26 was created
+[INFO ] 2018-10-22 15:20:38.023 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-22 15:20:38.023 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:114) - Email with id 27 was created
+[INFO ] 2018-10-22 15:20:38.027 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:123) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-22 15:20:39.395 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:98) - Test Folder was created with id: 3
+[INFO ] 2018-10-22 15:54:30.171 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:29) - Clicked
+[ERROR] 2018-10-22 17:16:22.564 [JavaFX Application Thread] com.emailsystem.application.MainApp.initLayout(MainApp.java:55) - initLayout failed
+[ERROR] 2018-10-22 17:17:21.153 [JavaFX Application Thread] com.emailsystem.application.MainApp.initLayout(MainApp.java:55) - initLayout failed
+[ERROR] 2018-10-22 17:18:40.411 [JavaFX Application Thread] com.emailsystem.application.MainApp.initLayout(MainApp.java:55) - initLayout failed
+[ERROR] 2018-10-22 17:19:25.422 [JavaFX Application Thread] com.emailsystem.application.MainApp.initLayout(MainApp.java:55) - initLayout failed
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/login.fxml
+
+[INFO ] 2018-10-22 17:28:27.430 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:69) - error
+[INFO ] 2018-10-22 17:29:58.307 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:69) - error Error resolving onDragDropped='#dragDropped', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml:80
+
+[INFO ] 2018-10-22 17:30:27.511 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:69) - error Error resolving onDragDropped='#dragDropped', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml:80
+
+[INFO ] 2018-10-22 18:56:08.639 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - THIS
+[INFO ] 2018-10-22 18:56:42.276 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:58) - Not THIS
+[INFO ] 2018-10-22 18:56:42.279 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - THIS
+[INFO ] 2018-10-22 18:58:23.993 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:73) - THIS
+[INFO ] 2018-10-22 19:01:56.861 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[ERROR] 2018-10-22 19:01:56.881 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:87) - initLeftPane failed 
+[INFO ] 2018-10-22 19:01:56.882 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:02:40.195 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[ERROR] 2018-10-22 19:02:40.210 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:87) - initLeftPane failed 
+[INFO ] 2018-10-22 19:02:40.210 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:04:52.075 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[ERROR] 2018-10-22 19:04:52.098 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:87) - initLeftPane failed 
+[INFO ] 2018-10-22 19:04:52.099 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:06:10.785 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[ERROR] 2018-10-22 19:06:10.809 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:87) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/emailTable.fxml
+
+[INFO ] 2018-10-22 19:06:10.809 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:08:26.434 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[ERROR] 2018-10-22 19:08:26.455 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:88) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/emailTable.fxml
+
+[INFO ] 2018-10-22 19:08:26.455 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:09:04.389 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[ERROR] 2018-10-22 19:09:04.414 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:89) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/emailTable.fxml
+
+[INFO ] 2018-10-22 19:09:04.414 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:10:41.368 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:10:42.483 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:15:23.088 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:15:23.932 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - error javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:16:28.434 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:16:29.371 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:19:06.263 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:19:07.043 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:19:42.742 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:19:43.567 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:71) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:23:39.127 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:23:39.934 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 19:24:54.752 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:34:18.037 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:34:18.882 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:55) - Executed
+[INFO ] 2018-10-22 19:35:27.539 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:35:28.338 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:55) - Executed
+[INFO ] 2018-10-22 19:36:52.927 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:36:53.720 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:55) - Executed
+[INFO ] 2018-10-22 19:38:06.553 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:38:07.384 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:55) - Executed
+[INFO ] 2018-10-22 19:41:22.352 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:49) - Not THIS
+[INFO ] 2018-10-22 19:41:23.292 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:55) - Executed
+[INFO ] 2018-10-22 20:20:33.728 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:51) - Not THIS
+[INFO ] 2018-10-22 20:20:34.682 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:57) - Executed
+[INFO ] 2018-10-22 20:21:54.573 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:51) - Not THIS
+[INFO ] 2018-10-22 20:21:55.506 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:57) - Executed
+[INFO ] 2018-10-22 20:33:13.966 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:51) - Not THIS
+[INFO ] 2018-10-22 20:33:14.958 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:57) - Executed
+[INFO ] 2018-10-22 21:03:28.987 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:53) - Not THIS
+[INFO ] 2018-10-22 21:03:29.156 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:03:59.185 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:53) - Not THIS
+[INFO ] 2018-10-22 21:03:59.209 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:05:28.832 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:53) - Not THIS
+[INFO ] 2018-10-22 21:05:29.012 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:06:39.291 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:53) - Not THIS
+[INFO ] 2018-10-22 21:06:39.461 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:07:56.482 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:08:23.720 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:56) - Not THIS
+[INFO ] 2018-10-22 21:08:23.730 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:15:47.302 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:16:58.207 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:17:22.797 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:19:11.523 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:99) - did this!!
+[INFO ] 2018-10-22 21:19:11.533 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:19:34.756 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:104) - did this!!
+[INFO ] 2018-10-22 21:19:34.765 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:19:53.695 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:106) - did this!!
+[INFO ] 2018-10-22 21:19:53.698 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:20:16.363 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:110) - did this!!
+[INFO ] 2018-10-22 21:20:17.215 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:21:06.746 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:108) - before did this!!
+[INFO ] 2018-10-22 21:21:06.749 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:110) - did this!!
+[INFO ] 2018-10-22 21:21:06.749 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:57) - did this2!!
+[INFO ] 2018-10-22 21:21:07.545 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:21:34.610 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:21:34.612 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:21:35.403 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - did this2!!
+[INFO ] 2018-10-22 21:21:35.404 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:21:59.575 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:110) - before did this!!
+[INFO ] 2018-10-22 21:21:59.579 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:112) - did this!!
+[INFO ] 2018-10-22 21:22:00.392 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:23:21.827 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:23:21.830 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:23:22.603 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:23:55.388 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:23:55.391 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:23:56.189 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:24:37.292 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:24:37.295 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:24:38.075 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:25:12.476 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - before did this!!
+[INFO ] 2018-10-22 21:25:12.478 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:113) - did this!!
+[INFO ] 2018-10-22 21:25:13.294 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:25:13.295 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:26:27.128 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - before did this!!
+[INFO ] 2018-10-22 21:26:27.131 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:113) - did this!!
+[INFO ] 2018-10-22 21:26:27.938 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:26:27.938 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:28:03.464 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - before did this!!
+[INFO ] 2018-10-22 21:28:03.467 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:113) - did this!!
+[INFO ] 2018-10-22 21:28:04.244 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:28:04.245 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:33:23.729 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:72) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-22 21:35:58.716 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:50) - did this!!
+[INFO ] 2018-10-22 21:35:58.722 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:74) - did this!!
+[INFO ] 2018-10-22 21:35:58.723 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:35:58.723 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:35:59.519 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:35:59.869 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.869 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.873 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.873 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.874 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.875 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.875 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.877 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:35:59.878 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.010 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.013 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.014 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.016 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.017 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.019 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.021 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.023 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.024 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.026 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.027 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.028 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.030 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.031 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.033 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.034 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.035 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.036 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.037 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.038 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.039 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.040 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.041 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.042 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.043 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.043 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.044 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.046 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.047 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.522 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.523 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.526 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.526 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.527 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.527 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.530 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:36:06.531 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:22.566 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:50) - did this!!
+[INFO ] 2018-10-22 21:40:22.571 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:74) - did this!!
+[INFO ] 2018-10-22 21:40:22.572 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:40:22.573 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:40:23.400 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:40:23.791 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.792 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.795 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.796 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.797 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.798 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.799 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.800 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.801 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.802 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.803 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.804 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.806 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.806 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.808 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.809 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.810 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.811 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.812 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.813 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.814 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.816 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.818 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.818 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.821 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.823 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.824 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.825 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.826 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.827 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.829 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.830 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.831 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:23.832 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:51.502 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:50) - did this!!
+[INFO ] 2018-10-22 21:40:51.508 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:74) - did this!!
+[INFO ] 2018-10-22 21:40:51.509 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:40:51.509 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:40:52.456 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:40:52.898 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.900 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.904 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.905 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.906 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.907 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.908 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.911 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.911 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.913 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.915 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.917 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.918 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.920 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.921 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.922 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.924 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.927 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.928 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.930 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.931 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.932 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.934 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.935 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.937 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.939 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.940 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.943 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.944 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.946 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.970 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.971 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.972 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:40:52.973 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:43.598 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:50) - did this!!
+[INFO ] 2018-10-22 21:57:43.604 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController.initialize(EmailTreeController.java:74) - did this!!
+[INFO ] 2018-10-22 21:57:43.605 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:109) - before did this!!
+[INFO ] 2018-10-22 21:57:43.606 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:111) - did this!!
+[INFO ] 2018-10-22 21:57:44.386 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:60) - Executed
+[INFO ] 2018-10-22 21:57:44.806 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.807 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.811 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.812 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.812 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.813 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.814 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.815 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.815 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.816 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.818 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.819 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.820 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.821 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.823 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.824 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.825 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.826 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.827 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.828 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.829 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.830 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.830 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.831 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.832 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.834 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.834 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.836 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.837 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.838 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.840 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.841 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.842 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!
+[INFO ] 2018-10-22 21:57:44.843 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1.updateItem(EmailTreeController.java:64) - did this!!

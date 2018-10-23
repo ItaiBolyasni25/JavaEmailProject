@@ -3,10 +3,13 @@ package com.emailsystem.persistence;
 import com.emailsystem.business.MailModule;
 import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
+import com.emailsystem.data.FxBeanFactory;
 import java.sql.DriverManager;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,9 +21,9 @@ import org.slf4j.LoggerFactory;
  */
 public class EmailDAO {
 
-    private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
-    private final String UNAME = "a1633867";
-    private final String PASSWORD = "dawson";
+    private String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
+    private String UNAME = "a1633867";
+    private String PASSWORD = "dawson";
     private final static Logger LOG = LoggerFactory.getLogger(EmailDAO.class);
 
     AttachmentDAO attachDao;
@@ -31,6 +34,12 @@ public class EmailDAO {
         attachDao = new AttachmentDAO(URL, UNAME, PASSWORD);
         recDao = new RecipientDAO(URL, UNAME, PASSWORD);
         folderDao = new FolderDAO(URL, UNAME, PASSWORD);
+    }
+    
+    public EmailDAO(String url, String uname, String password) {
+        attachDao = new AttachmentDAO(url, uname, password);
+        recDao = new RecipientDAO(url, uname, password);
+        folderDao = new FolderDAO(url, uname, password);
     }
 
      /**
@@ -68,6 +77,22 @@ public class EmailDAO {
         }
         return allEmails;
     }
+    
+    public ObservableList<FxBeanFactory> findAllFoldersFX() throws SQLException {
+        ObservableList<FxBeanFactory> list = FXCollections.observableArrayList();
+        String query = "SELECT foldername FROM Folders";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query)) {
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                FxBeanFactory fx = new FxBeanFactory();
+                fx.setFolderName(rs.getString(1));
+                list.add(fx);
+            }
+        }
+        return list;
+    }
+    
      /**
      * A method that creates all the entries that are related to a certain EmailBean
      * 
@@ -183,7 +208,7 @@ public class EmailDAO {
      * @return int - the amount of rows that were affected.
      * @version 1.0.0
      */
-    public int deleteEmail(int id) throws SQLException {
+    public int delete(int id) throws SQLException {
         String query = "DELETE FROM Emails WHERE email_id = ?";
         int result;
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
