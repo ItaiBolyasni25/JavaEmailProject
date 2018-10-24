@@ -25,13 +25,35 @@ public class FxBeanFactory {
     private StringProperty subject = new SimpleStringProperty();
     private StringProperty textMsg = new SimpleStringProperty();
     private StringProperty folderName = new SimpleStringProperty();
+    private StringProperty htmlMsg = new SimpleStringProperty();
+    private StringProperty to = new SimpleStringProperty();
+    private StringProperty cc = new SimpleStringProperty();
+    private StringProperty bcc = new SimpleStringProperty();
+    
     
     public FxBeanFactory(EmailBean bean) {
         this.id.set(bean.getId());
         this.from.set(bean.getFrom());
         this.subject.set(bean.getSubject());
-        this.textMsg.set(bean.getHTMLMsg());   
+        this.textMsg.set(bean.getTextMsg().length() > 32 ? bean.getTextMsg().substring(0,32) + "..." : bean.getTextMsg());
+        this.htmlMsg.set(bean.getHTMLMsg());
         this.folderName.set(bean.getFolderName());
+        this.cc.set(buildRecipientString(bean.getCc()));
+        this.bcc.set(buildRecipientString(bean.getBcc()));
+        this.to.set(buildRecipientString(bean.getTo()));
+        
+        
+    }
+    
+    private String buildRecipientString(String[] recipients) {
+        String sb = "";
+        for (int i = 0; i < recipients.length; i++) {
+                sb += recipients[i];
+                if (i != recipients.length - 1) {
+                    sb += "; ";
+                }   
+            }
+         return sb;
     }
     
     public FxBeanFactory() {
@@ -49,7 +71,66 @@ public class FxBeanFactory {
     public String getFolderName() {
         return this.folderName.get();
     }
+    
+    public StringProperty getCcProperty() {
+        return cc;
+    }
 
+    public void setCc(String folderName) {
+        this.cc.set(folderName);
+    }
+    
+    public String getCc() {
+        return this.cc.get();
+    }
+    
+    public StringProperty getBccProperty() {
+        return bcc;
+    }
+
+    public IntegerProperty getIdProperty() {
+        return id;
+    }
+    
+    public int getId() {
+        return this.id.get();
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public void setBcc(String folderName) {
+        this.bcc.set(folderName);
+    }
+    
+    public String getBcc() {
+        return this.bcc.get();
+    }
+    
+    public StringProperty getToProperty() {
+        return to;
+    }
+
+    public void setTo(String folderName) {
+        this.to.set(folderName);
+    }
+    
+    public String getTo() {
+        return this.to.get();
+    }
+    
+    public StringProperty getHtmlMsgProperty() {
+        return this.htmlMsg;
+    }
+
+    public void setHtmlMsg(String folderName) {
+        this.htmlMsg.set(folderName);
+    }
+    
+    public String getHtmlMsg() {
+        return this.htmlMsg.get();
+    }
     
     public static ObservableList<FxBeanFactory> transformBeanListToFxList(List<EmailBean> beans) {
         ObservableList<FxBeanFactory> list = FXCollections.observableArrayList();

@@ -67,12 +67,12 @@ public class LoginController {
             try {
                 scene = new Scene((AnchorPane) loader.load());
                 RootLayoutController root = loader.getController();
+                root.setLoginController(this);
                 main.setScene(scene);
             } catch (IOException ex) {
                LOG.info(ex + "");
             }
         } else {
-            LOG.info("THIS");
             action.setText("Wrong email address or password!");
         }
         
@@ -83,5 +83,9 @@ public class LoginController {
     
     public void setMain(MainApp main) {
         this.main = main;
+    }
+    
+    public MainApp getMain() {
+        return this.main;
     }
 }

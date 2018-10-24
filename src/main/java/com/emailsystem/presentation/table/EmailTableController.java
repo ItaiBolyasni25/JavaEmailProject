@@ -13,6 +13,8 @@ import com.emailsystem.presentation.rootController.RootLayoutController;
 import com.emailsystem.presentation.viewEmail.ViewController;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,9 +67,9 @@ public class EmailTableController {
         
     }
     
-    public void displayTheTable() throws SQLException {
+    public void displayTheTable(String folderName) throws SQLException {
         // Add observable list data to the table
-        emailTableView.setItems(FxBeanFactory.transformBeanListToFxList(dao.findAll()));
+        emailTableView.setItems(FxBeanFactory.transformBeanListToFxList(dao.findEmailsInFolder(folderName)));
     }
 
     private void showEmailDetails(FxBeanFactory newValue) {
@@ -78,6 +80,7 @@ public class EmailTableController {
             
             AnchorPane viewEmail = (AnchorPane)loader.load();
             ViewController view = loader.getController();
+            this.root.setViewController(view);
             view.loadEmail(newValue);
             
             root.changeBottomPane(viewEmail);

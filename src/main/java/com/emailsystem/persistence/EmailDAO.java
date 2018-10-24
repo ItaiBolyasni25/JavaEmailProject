@@ -78,6 +78,38 @@ public class EmailDAO {
         return allEmails;
     }
     
+    public List<EmailBean> findEmailsInFolder(String folderName) throws SQLException {
+        List<EmailBean> list = new ArrayList();
+        String query = "SELECT * FROM Emails WHERE folder_id = ?";
+        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setInt(1, folderDao.getId(folderName));
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) { 
+                EmailBean bean = new EmailBean();
+                bean.setId(rs.getInt("email_id"));
+                bean.setFrom(rs.getString("senderEmail"));
+                bean.setSubject(rs.getString("subject"));
+                bean.setTo(recDao.read(bean.getId(), "TO"));
+                bean.setCc(recDao.read(bean.getId(), "CC"));
+                bean.setBcc(recDao.read(bean.getId(), "BCC"));
+                bean.setTextMsg(rs.getString("textMsg"));
+                bean.setHTMLMsg(rs.getString("htmlMsg"));
+                bean.setFolderName(folderDao.getFolderName(rs.getInt("folder_id")));
+                //Attachments
+                bean.setAttach(attachDao.read(bean.getId(), false));
+                bean.setEmbedAttach(attachDao.read(bean.getId(), true));
+
+                // Timestamp 
+                bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
+                bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
+                list.add(bean);
+            }
+            return list;
+        }
+    }
+    
     public ObservableList<FxBeanFactory> findAllFoldersFX() throws SQLException {
         ObservableList<FxBeanFactory> list = FXCollections.observableArrayList();
         String query = "SELECT foldername FROM Folders";

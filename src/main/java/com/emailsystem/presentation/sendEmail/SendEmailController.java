@@ -28,7 +28,7 @@ public class SendEmailController {
     @FXML
     private TextField subject;
     @FXML
-    private TextField fwd;
+    private TextField cc;
     @FXML
     private HTMLEditor emailEditor;
     
@@ -68,4 +68,13 @@ public class SendEmailController {
 
         event.consume();
     }
+    
+    public void setTo(String email) {
+        this.to.setText(email);
+    }
+    
+    public void setSubject(String fwdSubject) {
+        this.subject.setText(fwdSubject);
+    }
+    
 }

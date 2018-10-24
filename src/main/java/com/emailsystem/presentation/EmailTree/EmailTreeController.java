@@ -11,8 +11,10 @@ import com.emailsystem.persistence.FolderDAO;
 import com.emailsystem.presentation.table.EmailTableController;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -33,7 +35,7 @@ public class EmailTreeController {
     private final static Logger LOG = LoggerFactory.getLogger(EmailTreeController.class);
 
     private EmailDAO dao = new EmailDAO();
-
+    private EmailTableController emailTable;
 
     @FXML
     private TreeView<FxBeanFactory> treeView;
@@ -47,7 +49,6 @@ public class EmailTreeController {
         // We need a root node for the tree and it must be the same type as all
         // nodes
         FxBeanFactory rootFolder = new FxBeanFactory();
-        LOG.info("did this!!");
         // The tree will display common name so we set this for the root
         // Because we are using i18n the root name comes from the resource
         // bundle
@@ -61,7 +62,6 @@ public class EmailTreeController {
             @Override
             protected void updateItem(FxBeanFactory item, boolean empty) {
                 super.updateItem(item, empty);
-                LOG.info("did this!!");
                 if (item != null) {
                     setText(item.getFolderName());
                     setGraphic(getTreeItem().getGraphic());
@@ -71,7 +71,6 @@ public class EmailTreeController {
                 }
             }
         });
-        LOG.info("did this!!");
         // We are going to drag and drop
         treeView.setOnDragDetected((MouseEvent event) -> {
             /* drag was detected, start drag-and-drop gesture */
@@ -108,9 +107,10 @@ public class EmailTreeController {
     }
     
     public void displayTree() throws SQLException {
-        
+        treeView.getRoot().getChildren().clear();
         // Retrieve the list of fish
         ObservableList<FxBeanFactory> folders = dao.findAllFoldersFX();
+        
 
         // Build an item for each fish and add it to the root
         if (folders != null) {
@@ -130,7 +130,27 @@ public class EmailTreeController {
 
         // Listen for selection changes and show the fishData details when
         // changed.
-//        fishFXTreeView.getSelectionModel().selectedItemProperty()
-//                .addListener((observable, oldValue, newValue) -> showFishDetailsTree(newValue));
+        treeView.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> changeEmailSelection(newValue));
+    }
+    
+    public void setEmailTableController(EmailTableController table) {
+        this.emailTable = table;
+    }
+    
+    public void changeEmailSelection(TreeItem<FxBeanFactory> fxBean) {
+        try {
+            this.emailTable.displayTheTable(fxBean.getValue().getFolderName());
+        } catch (SQLException ex) {
+            errorAlert(ex + "");
+        }
+    }
+    
+    private void errorAlert(String msg) {
+        Alert dialog = new Alert(Alert.AlertType.ERROR);
+        dialog.setTitle(resources.getString("sqlError"));
+        dialog.setHeaderText(resources.getString("sqlError"));
+        dialog.setContentText(resources.getString(msg));
+        dialog.show();
     }
 }
