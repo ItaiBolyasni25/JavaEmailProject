@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootAnchor" maxHeight="880.0" maxWidth="1098.0" prefHeight="880.0" prefWidth="1098.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.rootController.RootLayoutController">
+<AnchorPane fx:id="rootAnchor" maxHeight="880.0" maxWidth="1098.0" prefHeight="880.0" prefWidth="1098.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.rootController.RootLayoutController">
    <children>
       <AnchorPane fx:id="splitAnchorPane" layoutX="328.0" layoutY="61.0" maxHeight="839.0" maxWidth="729.0" minWidth="686.0" prefHeight="644.0" prefWidth="729.0" style="-fx-background-color: lightblue; -fx-background-radius: 10;">
          <children>
@@ -52,17 +52,17 @@
             <Image url="@../images/email-icon.png" />
          </image>
       </ImageView>
-      <TextField fx:id="folderName" layoutX="41.0" layoutY="200.0" prefHeight="37.0" prefWidth="232.0" promptText="New folder name">
+      <TextField fx:id="folderName" layoutX="41.0" layoutY="200.0" prefHeight="37.0" prefWidth="232.0" promptText="%newFolder">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button layoutX="41.0" layoutY="246.0" mnemonicParsing="false" onAction="#createFolder" prefHeight="20.0" prefWidth="232.0" style="-fx-background-color: #c0c0c0; -fx-border-color: #999999; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Create">
+      <Button layoutX="41.0" layoutY="246.0" mnemonicParsing="false" onAction="#createFolder" prefHeight="20.0" prefWidth="232.0" style="-fx-background-color: #c0c0c0; -fx-border-color: #999999; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="%buttonCreate">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="compose" layoutX="41.0" layoutY="849.0" mnemonicParsing="false" onAction="#composeEmail" prefHeight="50.0" prefWidth="232.0" style="-fx-background-color: #ff9933; -fx-border-color: #ff9933; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Send Email" textFill="WHITE">
+      <Button fx:id="compose" layoutX="41.0" layoutY="849.0" mnemonicParsing="false" onAction="#composeEmail" prefHeight="50.0" prefWidth="232.0" style="-fx-background-color: #ff9933; -fx-border-color: #ff9933; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="%sendEmail" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

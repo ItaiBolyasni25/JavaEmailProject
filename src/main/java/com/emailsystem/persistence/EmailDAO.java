@@ -3,7 +3,7 @@ package com.emailsystem.persistence;
 import com.emailsystem.business.MailModule;
 import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
-import com.emailsystem.data.FxBeanFactory;
+import com.emailsystem.data.EmailFXBean;
 import java.sql.DriverManager;
 import java.sql.*;
 import java.util.ArrayList;
@@ -22,24 +22,21 @@ import org.slf4j.LoggerFactory;
 public class EmailDAO {
 
     private String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
-    private String UNAME = "a1633867";
-    private String PASSWORD = "dawson";
     private final static Logger LOG = LoggerFactory.getLogger(EmailDAO.class);
-
-    AttachmentDAO attachDao;
-    RecipientDAO recDao;
-    FolderDAO folderDao;
-
-    public EmailDAO() {
-        attachDao = new AttachmentDAO(URL, UNAME, PASSWORD);
+    private final String UNAME;
+    private final String PASSWORD;
+    private final AttachmentDAO attachDao;
+    private final RecipientDAO recDao;
+    private final FolderDAO folderDao;
+    private Connection connection;
+    
+    public EmailDAO(String uname, String password) throws SQLException {
+        this.UNAME = uname;
+        this.PASSWORD = password;
+        attachDao = new AttachmentDAO(UNAME, PASSWORD);
         recDao = new RecipientDAO(URL, UNAME, PASSWORD);
         folderDao = new FolderDAO(URL, UNAME, PASSWORD);
-    }
-    
-    public EmailDAO(String url, String uname, String password) {
-        attachDao = new AttachmentDAO(url, uname, password);
-        recDao = new RecipientDAO(url, uname, password);
-        folderDao = new FolderDAO(url, uname, password);
+        this.connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
     }
 
      /**
@@ -81,8 +78,7 @@ public class EmailDAO {
     public List<EmailBean> findEmailsInFolder(String folderName) throws SQLException {
         List<EmailBean> list = new ArrayList();
         String query = "SELECT * FROM Emails WHERE folder_id = ?";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, folderDao.getId(folderName));
             ResultSet rs = ps.executeQuery();
             
@@ -105,19 +101,19 @@ public class EmailDAO {
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
                 list.add(bean);
+                
             }
             return list;
         }
     }
     
-    public ObservableList<FxBeanFactory> findAllFoldersFX() throws SQLException {
-        ObservableList<FxBeanFactory> list = FXCollections.observableArrayList();
+    public ObservableList<EmailFXBean> findAllFoldersFX() throws SQLException {
+        ObservableList<EmailFXBean> list = FXCollections.observableArrayList();
         String query = "SELECT foldername FROM Folders";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                FxBeanFactory fx = new FxBeanFactory();
+                EmailFXBean fx = new EmailFXBean();
                 fx.setFolderName(rs.getString(1));
                 list.add(fx);
             }
@@ -135,8 +131,7 @@ public class EmailDAO {
     public int createEmail(EmailBean email) throws SQLException {
         int result;
         String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES (?,?,?,?,?,?)";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, email.getFrom());
             ps.setString(2, email.getSubject());
@@ -190,8 +185,7 @@ public class EmailDAO {
         if (folderDao.getId(newFolderName) == -1) {
             throw new SQLException("Folder you are trying to move your email to doesn't exist!");
         }
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, folderDao.getId(newFolderName));
             ps.setInt(2, email_id);
             return ps.executeUpdate();
@@ -207,8 +201,7 @@ public class EmailDAO {
     public EmailBean getEmail(int id) throws SQLException {
         EmailBean bean = new EmailBean();
         String query = "SELECT * FROM Emails e WHERE e.email_id = ?";
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -243,8 +236,7 @@ public class EmailDAO {
     public int delete(int id) throws SQLException {
         String query = "DELETE FROM Emails WHERE email_id = ?";
         int result;
-        try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
-                PreparedStatement ps = connection.prepareStatement(query)) {
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
             result = ps.executeUpdate();
         }

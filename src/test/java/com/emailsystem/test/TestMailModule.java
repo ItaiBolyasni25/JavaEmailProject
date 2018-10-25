@@ -27,9 +27,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  *
- * @author GamingDanik
+ * @author Itai Bolyasni
  */
-@Ignore
 public class TestMailModule extends Assert {
 
     private MailModule mail;

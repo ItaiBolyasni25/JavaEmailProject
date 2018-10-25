@@ -20,14 +20,13 @@ import org.slf4j.LoggerFactory;
  * @version 1.0.0
  */
 public class AttachmentDAO {
-    private final String URL;
+    private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
     private final String UNAME;
     private final String PASSWORD;
     private final static Logger LOG = LoggerFactory.getLogger(AttachmentDAO.class);
 
     
-    public AttachmentDAO(String URL, String UNAME, String PASSWORD) {
-        this.URL = URL;
+    public AttachmentDAO(String UNAME, String PASSWORD) {
         this.UNAME = UNAME;
         this.PASSWORD = PASSWORD;
     }

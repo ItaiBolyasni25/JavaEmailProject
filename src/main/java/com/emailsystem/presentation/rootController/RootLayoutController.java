@@ -6,7 +6,7 @@
 package com.emailsystem.presentation.rootController;
 
 import com.emailsystem.application.MainApp;
-import com.emailsystem.data.FxBeanFactory;
+import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.EmailDAO;
 import com.emailsystem.persistence.FolderDAO;
 import com.emailsystem.presentation.EmailTree.EmailTreeController;
@@ -53,17 +53,11 @@ public class RootLayoutController {
     private String UNAME = "a1633867";
     private String PASSWORD = "dawson";
     private boolean isComposing = true;
-    private final EmailDAO dao;
     private SendEmailController emailController;
     private EmailTableController tableController;
     private ViewController viewController;
     private EmailTreeController treeController;
     private LoginController loginController;
-    
-    
-    public RootLayoutController() {
-        dao = new EmailDAO();
-    }
     
     public void initialize() {
         
@@ -74,9 +68,8 @@ public class RootLayoutController {
         setTableControllerToTree(this.tableController);
         try {
             tableController.displayTheTable("Inbox");
-            LOG.info("Executed");
+
             treeController.displayTree();
-            
         } catch (SQLException ex) {
             LOG.info("Didnt Executed " + ex.getMessage());
         }
@@ -91,17 +84,16 @@ public class RootLayoutController {
         try {
             bottomSplit.getChildren().clear();
             FXMLLoader loader = new FXMLLoader();
-            loader.setResources(resources);
+            //loader.setResources(resources);
             loader.setLocation(MainApp.class.getResource("/fxml/send_email.fxml"));
-            
             AnchorPane sendEmail = (AnchorPane)loader.load();
             emailController = loader.getController();
-            
             bottomSplit.getChildren().add(sendEmail);
         } catch (IOException ex) {
             LOG.error("initLeftPane failed ");
         }
     }
+    
     
     public void setLoginController(LoginController login) {
         this.loginController = login;
@@ -116,6 +108,7 @@ public class RootLayoutController {
             
             AnchorPane table = (AnchorPane)loader.load();
             tableController = loader.getController();
+            //tableController.setEmailDao(dao);
             tableController.setRootController(this);
             topSplit.getChildren().add(table);
         } catch (IOException ex) {
@@ -133,9 +126,8 @@ public class RootLayoutController {
             AnchorPane view = (AnchorPane)loader.load();
             
             treeController = loader.getController();
-            LOG.info("before did this!!");
+            //treeController.setEmailDao(dao);
             leftPane.getChildren().add(view);
-            LOG.info("did this!!");
         } catch (IOException ex) {
             LOG.error("initLeftPane failed ");
         }
@@ -149,7 +141,7 @@ public class RootLayoutController {
         compose.setText("Send Email");
     }
     
-    public void fwdEmail(FxBeanFactory fx) {
+    public void fwdEmail(EmailFXBean fx) {
         initBottomSplit();
         emailController.setTo(fx.getFrom());
         emailController.setSubject("FWD: " + fx.getSubject());

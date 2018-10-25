@@ -40,21 +40,26 @@ import org.junit.Test;
  *
  * @author 1633867
  */
-@Ignore
+
 public class TestDAOModule extends Assert {
 
     private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private final String UNAME = "a1633867";
     private final String PASSWORD = "dawson";
 
-    EmailDAO db = new EmailDAO();
+    EmailDAO db;
     EmailBean bean = new EmailBean();
     FolderDAO folders = new FolderDAO(URL, UNAME, PASSWORD);
-    AttachmentDAO attachments = new AttachmentDAO(URL, UNAME, PASSWORD);
+    AttachmentDAO attachments = new AttachmentDAO(UNAME, PASSWORD);
     RecipientDAO recipients = new RecipientDAO(URL,UNAME,PASSWORD);
 
     @Before
     public void seedDatabase() {
+        try {
+            db = new EmailDAO(UNAME, PASSWORD);
+        } catch (SQLException ex) {
+            
+        }
         final String seedDataScript = loadAsString("EmailTableBuild.sql");
         final String seedEntriesScript = loadAsString("EmailEntriesBuild.sql");
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD)) {

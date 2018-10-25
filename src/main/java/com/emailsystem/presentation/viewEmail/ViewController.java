@@ -6,15 +6,18 @@
 package com.emailsystem.presentation.viewEmail;
 
 import com.emailsystem.application.MainApp;
-import com.emailsystem.data.FxBeanFactory;
+import com.emailsystem.data.AttachmentBean;
+import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.AttachmentDAO;
 import com.emailsystem.presentation.LoginController.LoginController;
 import com.emailsystem.presentation.attachmentView.AttachmentController;
 import com.emailsystem.presentation.rootController.RootLayoutController;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
+import java.util.Properties;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,12 +26,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author GamingDanik
  */
 public class ViewController {
+
     @FXML
     private Text to;
     @FXML
@@ -41,25 +47,31 @@ public class ViewController {
     private Text cc;
     @FXML
     private Text bcc;
-    
+
     private AttachmentController attachController;
     private AttachmentDAO attachDao;
-    private FxBeanFactory fx;
-    private String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
-    private String UNAME = "a1633867";
-    private String PASSWORD = "dawson";
+    private EmailFXBean fx;
     private RootLayoutController root;
-    
+    private int numOfAttach = 0;
+    private final static Logger LOG = LoggerFactory.getLogger(ViewController.class);
+
     @FXML
     private void initialize() {
-        attachDao = new AttachmentDAO(URL,UNAME,PASSWORD);
+        try {
+            Properties prop = new Properties();
+            InputStream is = getClass().getResourceAsStream("Bundle");
+            prop.load(is);
+            attachDao = new AttachmentDAO(prop.getProperty("dbUname"), "dbPassword");
+        } catch (IOException ex) {
+            
+        }
+        
     }
-    
+
 //    public void setMain(MainApp main) {
 //        this.main = main;
 //    }
-    
-    public void loadEmail(FxBeanFactory fx) {
+    public void loadEmail(EmailFXBean fx) {
         this.from.setText(fx.getFrom());
         this.subject.setText(fx.getSubject());
         this.htmlView.getEngine().loadContent(fx.getHtmlMsg());
@@ -68,44 +80,51 @@ public class ViewController {
         this.bcc.setText(fx.getBcc());
         this.fx = fx;
     }
-    
+
     public void openAttach(ActionEvent action) {
         try {
             load();
         } catch (SQLException ex) {
-            Logger.getLogger(ViewController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.warn("Couldnt open attach");
         }
     }
-    
+
     public void setRootController(RootLayoutController root) {
         this.root = root;
     }
-    
+
     private void load() throws SQLException {
         try {
             FXMLLoader loader = new FXMLLoader();
-            
+
             loader.setLocation(MainApp.class.getResource("/fxml/attachView.fxml"));
-            
-            AnchorPane attachView = (AnchorPane)loader.load();
+
+            AnchorPane attachView = (AnchorPane) loader.load();
             attachController = loader.getController();
-            if (attachDao.read(fx.getId(), true).size() > 0)
-                attachController.loadImage(attachDao.read(fx.getId(), true).get(0).getAttach());
+            List<AttachmentBean> list = attachDao.read(fx.getId(), true);
+            if (attachDao.read(fx.getId(), true).size() > 0) {
+                attachController.loadImage(list.get(0).getAttach());
+            }
+            this.numOfAttach = list.size();
             Stage primaryStage = new Stage();
             Scene scene = new Scene(attachView);
             primaryStage.setScene(scene);
             primaryStage.centerOnScreen();
             primaryStage.show();
-            
+
         } catch (IOException ex) {
-            System.out.println(ex + "");
+            LOG.warn(ex.getMessage());
         }
     }
-    
+
+    public int getNumOfAttach() {
+        return this.numOfAttach;
+    }
+
     public void replyEmail(ActionEvent action) {
         root.replyEmail(fx.getFrom());
     }
-    
+
     public void fwdEmail(ActionEvent action) {
         root.fwdEmail(this.fx);
     }

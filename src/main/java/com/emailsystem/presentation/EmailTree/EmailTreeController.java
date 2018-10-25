@@ -5,11 +5,14 @@
  */
 package com.emailsystem.presentation.EmailTree;
 
-import com.emailsystem.data.FxBeanFactory;
+import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.EmailDAO;
 import com.emailsystem.persistence.FolderDAO;
 import com.emailsystem.presentation.table.EmailTableController;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javafx.collections.ObservableList;
@@ -34,21 +37,36 @@ public class EmailTreeController {
 
     private final static Logger LOG = LoggerFactory.getLogger(EmailTreeController.class);
 
-    private EmailDAO dao = new EmailDAO();
+    private EmailDAO dao;
     private EmailTableController emailTable;
 
     @FXML
-    private TreeView<FxBeanFactory> treeView;
+    private TreeView<EmailFXBean> treeView;
 
     // Resource bundle is injected when controller is loaded
     @FXML
     private ResourceBundle resources;
 
+    public EmailTreeController() {
+        Properties prop = new Properties();
+        InputStream in = getClass().getResourceAsStream("/Bundle.properties");
+        try {
+            prop.load(in);
+        } catch (IOException ex) {
+            LOG.warn("Error while loading resource bundle " + ex.getMessage());
+        }
+        try {
+            this.dao = new EmailDAO(prop.getProperty("dbUname"), prop.getProperty("dbPassword"));
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(EmailTableController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @FXML
     private void initialize() {
         // We need a root node for the tree and it must be the same type as all
         // nodes
-        FxBeanFactory rootFolder = new FxBeanFactory();
+        EmailFXBean rootFolder = new EmailFXBean();
         // The tree will display common name so we set this for the root
         // Because we are using i18n the root name comes from the resource
         // bundle
@@ -58,9 +76,9 @@ public class EmailTreeController {
 
         // This cell factory is used to choose which field in the FihDta object
         // is used for the node name
-        treeView.setCellFactory((e) -> new TreeCell<FxBeanFactory>() {
+        treeView.setCellFactory((e) -> new TreeCell<EmailFXBean>() {
             @Override
-            protected void updateItem(FxBeanFactory item, boolean empty) {
+            protected void updateItem(EmailFXBean item, boolean empty) {
                 super.updateItem(item, empty);
                 if (item != null) {
                     setText(item.getFolderName());
@@ -88,7 +106,7 @@ public class EmailTreeController {
             event.consume();
         });
     }
-    
+
     @FXML
     private void dragDetected(MouseEvent event) {
         /* drag was detected, start drag-and-drop gesture */
@@ -105,11 +123,11 @@ public class EmailTreeController {
 
         event.consume();
     }
-    
+
     public void displayTree() throws SQLException {
         treeView.getRoot().getChildren().clear();
         // Retrieve the list of fish
-        ObservableList<FxBeanFactory> folders = dao.findAllFoldersFX();
+        ObservableList<EmailFXBean> folders = dao.findAllFoldersFX();
         
 
         // Build an item for each fish and add it to the root
@@ -124,28 +142,30 @@ public class EmailTreeController {
                 treeView.getRoot().getChildren().add(item);
             });
         }
-
         // Open the tree
         treeView.getRoot().setExpanded(true);
-
         // Listen for selection changes and show the fishData details when
         // changed.
         treeView.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> changeEmailSelection(newValue));
     }
-    
+
     public void setEmailTableController(EmailTableController table) {
         this.emailTable = table;
     }
-    
-    public void changeEmailSelection(TreeItem<FxBeanFactory> fxBean) {
+
+    public void changeEmailSelection(TreeItem<EmailFXBean> fxBean) {
         try {
             this.emailTable.displayTheTable(fxBean.getValue().getFolderName());
         } catch (SQLException ex) {
             errorAlert(ex + "");
         }
     }
-    
+
+    public void setEmailDao(EmailDAO dao) {
+        this.dao = dao;
+    }
+
     private void errorAlert(String msg) {
         Alert dialog = new Alert(Alert.AlertType.ERROR);
         dialog.setTitle(resources.getString("sqlError"));
@@ -153,4 +173,5 @@ public class EmailTreeController {
         dialog.setContentText(resources.getString(msg));
         dialog.show();
     }
+
 }

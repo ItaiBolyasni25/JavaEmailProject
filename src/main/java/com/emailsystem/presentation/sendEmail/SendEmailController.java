@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,8 +53,9 @@ public class SendEmailController {
     private Hyperlink attachLink;
     @FXML
     private AnchorPane emailPane;
+    @FXML
+    private ResourceBundle resources;
     
-    private final EmailDAO dao = new EmailDAO();
     private List<AttachmentBean> attachList = new ArrayList();
     private int counter = 0;
     private AttachmentController attachController;
@@ -104,6 +105,7 @@ public class SendEmailController {
         this.subject.setText(fwdSubject);
     }
     
+    
     public void addAttach(ActionEvent action) {
       
         FileChooser fileChooser = new FileChooser();
@@ -115,7 +117,7 @@ public class SendEmailController {
             attachmentBean.setAttach(Files.readAllBytes(file.toPath()));
             attachList.add(attachmentBean);
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.warn("Didn't choose file");
         }
         Hyperlink link = new Hyperlink();
         link.setText(attachmentBean.getName());
@@ -127,9 +129,7 @@ public class SendEmailController {
         this.counter++;
         link.setOnAction(e -> openAttachView(e));
         emailPane.getChildren().add(link);
-        LOG.info(link.getWidth() + "");
         this.lastLayoutX += link.getLayoutBounds().getWidth() + 100;
-        LOG.info(this.lastLayoutX + "");
     }
     
     public void openAttachView(ActionEvent action) {
@@ -142,7 +142,7 @@ public class SendEmailController {
         try {
             attachView = (AnchorPane)loader.load();
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.warn("Couldn't find resource attachView " + ex.getMessage());
         }
             attachController = loader.getController();
             if (attachList.size() > 0)
