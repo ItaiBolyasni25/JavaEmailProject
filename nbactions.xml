@@ -7,4 +7,11 @@
                 <goal>test</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-skipTest</actionName>
+            <displayName>skipTest</displayName>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
     </actions>

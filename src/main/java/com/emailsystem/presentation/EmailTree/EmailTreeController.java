@@ -49,7 +49,7 @@ public class EmailTreeController {
 
     public EmailTreeController() {
         Properties prop = new Properties();
-        InputStream in = getClass().getResourceAsStream("/Bundle.properties");
+        InputStream in = getClass().getResourceAsStream("/UserInfo.properties");
         try {
             prop.load(in);
         } catch (IOException ex) {

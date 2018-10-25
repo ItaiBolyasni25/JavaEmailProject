@@ -54,17 +54,23 @@ public class ViewController {
     private RootLayoutController root;
     private int numOfAttach = 0;
     private final static Logger LOG = LoggerFactory.getLogger(ViewController.class);
-
-    @FXML
-    private void initialize() {
+    
+    public ViewController() {
+        
         try {
             Properties prop = new Properties();
-            InputStream is = getClass().getResourceAsStream("Bundle");
+            InputStream is = getClass().getResourceAsStream("/UserInfo.properties");
             prop.load(is);
             attachDao = new AttachmentDAO(prop.getProperty("dbUname"), "dbPassword");
+            
         } catch (IOException ex) {
             
         }
+    }
+
+    @FXML
+    private void initialize() {
+        
         
     }
 

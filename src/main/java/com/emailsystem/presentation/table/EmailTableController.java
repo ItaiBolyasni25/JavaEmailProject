@@ -58,7 +58,7 @@ public class EmailTableController {
     
     public EmailTableController() {
         Properties prop = new Properties();
-        InputStream in = getClass().getResourceAsStream("/Bundle.properties");
+        InputStream in = getClass().getResourceAsStream("/UserInfo.properties");
         try {
             prop.load(in);
         } catch (IOException ex) {
@@ -95,9 +95,10 @@ public class EmailTableController {
     private void showEmailDetails(EmailFXBean newValue) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setResources(resources);
-            loader.setLocation(MainApp.class.getResource("/fxml/viewEmail.fxml"));
             
+            //loader.setResources(resources);
+            
+            loader.setLocation(MainApp.class.getResource("/fxml/viewEmail.fxml"));
             AnchorPane viewEmail = (AnchorPane)loader.load();
             ViewController view = loader.getController();
             this.root.setViewController(view);
@@ -107,7 +108,7 @@ public class EmailTableController {
             if (newValue != null)
                 view.loadEmail(newValue);
         } catch (IOException ex) {
-            LOG.error("initLeftPane failed ");
+            LOG.error("initLeftPane failed " + ex);
         }
         
     }

@@ -2440,3 +2440,123 @@
 [INFO ] 2018-10-25 01:46:40.703 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 27 was created
 [INFO ] 2018-10-25 01:46:40.709 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:128) - toBeDeleted with id: 3 was deleted
 [INFO ] 2018-10-25 01:46:42.050 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder was created with id: 3
+[INFO ] 2018-10-25 01:47:19.549 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder was created with id: 3
+[INFO ] 2018-10-25 01:47:19.560 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:152) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-25 01:47:21.499 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-25 01:47:21.509 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:128) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-25 01:47:23.435 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:246) - Record with id: 5 deleted.
+[INFO ] 2018-10-25 01:47:24.240 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-25 01:47:26.189 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-25 01:47:26.190 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 26 was created
+[INFO ] 2018-10-25 01:47:26.212 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-10-25 01:47:29.603 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - temp was created with id: 3
+[INFO ] 2018-10-25 01:47:33.195 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-25 01:47:33.195 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 26 was created
+[INFO ] 2018-10-25 01:47:34.186 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-25 01:47:35.214 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - toBeDeleted was created with id: 3
+[INFO ] 2018-10-25 01:47:35.238 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-25 01:47:35.239 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 26 was created
+[INFO ] 2018-10-25 01:47:35.269 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-25 01:47:35.270 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 27 was created
+[INFO ] 2018-10-25 01:47:35.275 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:128) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-10-25 01:47:36.962 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder was created with id: 3
+[INFO ] 2018-10-25 01:47:41.496 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-25 01:47:53.919 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-25 01:48:03.794 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-25 01:48:12.684 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-25 01:48:14.477 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-25 01:48:23.288 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[ERROR] 2018-10-25 01:48:23.289 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-25 01:48:25.012 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-25 01:48:34.759 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-25 01:48:38.398 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-25 01:48:49.822 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[INFO ] 2018-10-25 01:49:00.788 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-25 01:49:08.821 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:77) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-10-25 01:49:10.457 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:77) - Mail sent
+[ERROR] 2018-10-25 01:49:21.242 [JavaFX Application Thread] com.emailsystem.application.MainApp.initLayout(MainApp.java:75) - initLayout failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/login.fxml
+
+[ERROR] 2018-10-25 02:08:00.628 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:110) - initLeftPane failed 
+[ERROR] 2018-10-25 02:09:42.570 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:110) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:11:57.446 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:11:58.731 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:11:59.217 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:12:43.228 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:13:10.544 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.initialize(ViewController.java:60) - Bug?
+[ERROR] 2018-10-25 02:13:10.550 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:13:42.967 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:14:38.192 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.initialize(ViewController.java:63) - Bug?1
+[INFO ] 2018-10-25 02:14:38.195 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.initialize(ViewController.java:65) - Bug?
+[ERROR] 2018-10-25 02:14:38.196 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:16:32.132 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:18:04.798 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:111) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:19:19.960 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:112) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:20:04.896 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:98) - HERE
+[ERROR] 2018-10-25 02:20:04.921 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:20:38.386 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:100) - HERE
+[ERROR] 2018-10-25 02:20:38.412 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:114) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:21:14.078 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:102) - HERE
+[ERROR] 2018-10-25 02:21:14.104 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:114) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:23:42.897 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:24:32.885 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:25:13.021 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.initialize(ViewController.java:60) - PLASD
+[ERROR] 2018-10-25 02:25:13.024 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-25 02:26:02.426 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-25 02:26:52.018 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:26:52.021 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[ERROR] 2018-10-25 02:27:36.831 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml:11
+
+[ERROR] 2018-10-25 02:27:38.219 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml:11
+
+[ERROR] 2018-10-25 02:27:39.023 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml:11
+
+[ERROR] 2018-10-25 02:28:43.732 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:113) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml:11
+
+[ERROR] 2018-10-25 02:32:05.326 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initTopSplit(RootLayoutController.java:115) - javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/emailTable.fxml:9
+
+[ERROR] 2018-10-25 02:32:05.331 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:132) - initLeftPane failed 
+[WARN ] 2018-10-25 02:34:10.165 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
+
