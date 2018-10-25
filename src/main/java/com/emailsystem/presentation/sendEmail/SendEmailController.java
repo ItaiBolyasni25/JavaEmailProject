@@ -5,13 +5,30 @@
  */
 package com.emailsystem.presentation.sendEmail;
 
+import com.emailsystem.application.MainApp;
+import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.persistence.EmailDAO;
+import com.emailsystem.presentation.attachmentView.AttachmentController;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.HTMLEditor;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,8 +48,12 @@ public class SendEmailController {
     private TextField cc;
     @FXML
     private HTMLEditor emailEditor;
+    @FXML
+    private Hyperlink attachLink;
     
     private final EmailDAO dao = new EmailDAO();
+    private List<AttachmentBean> attachList = new ArrayList();
+    private AttachmentController attachController;
     
     @FXML
     private void initialize() {
@@ -77,4 +98,45 @@ public class SendEmailController {
         this.subject.setText(fwdSubject);
     }
     
+    public void addAttach(ActionEvent action) {
+      
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file = fileChooser.showOpenDialog(to.getScene().getWindow());
+        AttachmentBean attachmentBean = new AttachmentBean();
+        try {
+            
+            attachmentBean.setName(file.getPath());
+            attachmentBean.setAttach(Files.readAllBytes(file.toPath()));
+            attachList.add(attachmentBean);
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.attachLink.setText(attachmentBean.getName());
+    }
+    
+    public void openAttachView(ActionEvent action) {
+        if (this.attachLink.getText().isEmpty()) {
+            return;
+        }
+            FXMLLoader loader = new FXMLLoader();
+            
+            loader.setLocation(MainApp.class.getResource("/fxml/attachView.fxml"));
+            
+            AnchorPane attachView = null;
+        try {
+            attachView = (AnchorPane)loader.load();
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            attachController = loader.getController();
+            if (attachList.size() > 0)
+                attachController.loadImage(attachList.get(0).getAttach());
+            Stage primaryStage = new Stage();
+            Scene scene = new Scene(attachView);
+            primaryStage.setScene(scene);
+            primaryStage.centerOnScreen();
+            primaryStage.show();
+    }
+   
 }

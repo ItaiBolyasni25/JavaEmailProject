@@ -89,6 +89,7 @@ public class RootLayoutController {
     
     private void initBottomSplit() {
         try {
+            bottomSplit.getChildren().clear();
             FXMLLoader loader = new FXMLLoader();
             loader.setResources(resources);
             loader.setLocation(MainApp.class.getResource("/fxml/send_email.fxml"));
@@ -149,7 +150,6 @@ public class RootLayoutController {
     }
     
     public void fwdEmail(FxBeanFactory fx) {
-        bottomSplit.getChildren().clear();
         initBottomSplit();
         emailController.setTo(fx.getFrom());
         emailController.setSubject("FWD: " + fx.getSubject());
@@ -202,7 +202,5 @@ public class RootLayoutController {
     private void sendEmail() {
         LOG.info("Email was sent!");
         initBottomSplit();
-        compose.setText("Compose Email");
-        this.isComposing = false;
     }
 }
