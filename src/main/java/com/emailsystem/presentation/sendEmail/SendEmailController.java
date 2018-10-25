@@ -26,6 +26,7 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -50,10 +51,15 @@ public class SendEmailController {
     private HTMLEditor emailEditor;
     @FXML
     private Hyperlink attachLink;
+    @FXML
+    private AnchorPane emailPane;
     
     private final EmailDAO dao = new EmailDAO();
     private List<AttachmentBean> attachList = new ArrayList();
+    private int counter = 0;
     private AttachmentController attachController;
+    private double lastLayoutX = 103;
+    
     
     @FXML
     private void initialize() {
@@ -105,20 +111,29 @@ public class SendEmailController {
         File file = fileChooser.showOpenDialog(to.getScene().getWindow());
         AttachmentBean attachmentBean = new AttachmentBean();
         try {
-            
-            attachmentBean.setName(file.getPath());
+            attachmentBean.setName(file.getPath().substring(file.getPath().lastIndexOf("\\") + 1));
             attachmentBean.setAttach(Files.readAllBytes(file.toPath()));
             attachList.add(attachmentBean);
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.attachLink.setText(attachmentBean.getName());
+        Hyperlink link = new Hyperlink();
+        link.setText(attachmentBean.getName());
+        link.setLayoutX(lastLayoutX);
+        link.setLayoutY(487);
+        link.setPrefWidth(100);
+        link.setFont(new Font(14));
+        link.setId(counter + "");
+        this.counter++;
+        link.setOnAction(e -> openAttachView(e));
+        emailPane.getChildren().add(link);
+        LOG.info(link.getWidth() + "");
+        this.lastLayoutX += link.getLayoutBounds().getWidth() + 100;
+        LOG.info(this.lastLayoutX + "");
     }
     
     public void openAttachView(ActionEvent action) {
-        if (this.attachLink.getText().isEmpty()) {
-            return;
-        }
+        int clickedIndex = Integer.parseInt(((Hyperlink)action.getSource()).getId());
             FXMLLoader loader = new FXMLLoader();
             
             loader.setLocation(MainApp.class.getResource("/fxml/attachView.fxml"));
@@ -131,7 +146,7 @@ public class SendEmailController {
         }
             attachController = loader.getController();
             if (attachList.size() > 0)
-                attachController.loadImage(attachList.get(0).getAttach());
+                attachController.loadImage(attachList.get(clickedIndex).getAttach());
             Stage primaryStage = new Stage();
             Scene scene = new Scene(attachView);
             primaryStage.setScene(scene);

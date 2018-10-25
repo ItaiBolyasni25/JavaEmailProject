@@ -1998,3 +1998,67 @@
 [INFO ] 2018-10-24 20:16:07.744 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
 [INFO ] 2018-10-24 20:16:07.748 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
 [INFO ] 2018-10-24 20:16:08.530 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:17:07.205 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:17:07.211 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:17:08.032 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:19:26.137 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:203) - Email was sent!
+[INFO ] 2018-10-24 20:20:50.475 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:20:50.481 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:20:51.295 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:21:47.028 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:21:47.032 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:21:47.819 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:22:41.627 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:22:41.630 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:22:42.431 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:33:18.067 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:33:18.070 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:33:18.881 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:34:35.261 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:34:35.264 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:34:36.048 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:39:08.716 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:39:08.720 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:39:09.526 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:43:27.975 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:43:27.979 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:43:28.852 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:46:11.632 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:46:11.636 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:46:12.440 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:47:45.646 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:47:45.650 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:47:46.451 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:47:57.824 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:129) - 0.0
+[INFO ] 2018-10-24 20:47:57.825 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:131) - 153.0
+[INFO ] 2018-10-24 20:48:21.531 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:129) - 0.0
+[INFO ] 2018-10-24 20:48:21.531 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:131) - 203.0
+[INFO ] 2018-10-24 20:49:31.962 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:49:31.966 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:49:32.753 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:49:41.878 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:129) - 0.0
+[INFO ] 2018-10-24 20:49:41.878 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:131) - 153.0
+[INFO ] 2018-10-24 20:51:49.053 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:51:49.056 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:51:49.846 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:51:57.536 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:130) - 0.0
+[INFO ] 2018-10-24 20:51:57.537 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:132) - 153.0
+[INFO ] 2018-10-24 20:52:04.673 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:130) - 0.0
+[INFO ] 2018-10-24 20:52:04.674 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:132) - 203.0
+[INFO ] 2018-10-24 20:53:31.000 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:53:31.006 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:53:31.794 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:53:39.473 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:130) - 0.0
+[INFO ] 2018-10-24 20:53:39.474 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:132) - 153.0
+[INFO ] 2018-10-24 20:54:22.982 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:54:22.986 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:54:23.808 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed
+[INFO ] 2018-10-24 20:54:28.721 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:130) - 0.0
+[INFO ] 2018-10-24 20:54:28.721 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:132) - 203.0
+[INFO ] 2018-10-24 20:54:37.395 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:130) - 0.0
+[INFO ] 2018-10-24 20:54:37.395 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:132) - 303.0
+[INFO ] 2018-10-24 20:54:43.823 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:130) - 0.0
+[INFO ] 2018-10-24 20:54:43.824 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.addAttach(SendEmailController.java:132) - 403.0
+[INFO ] 2018-10-24 20:57:48.550 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:136) - before did this!!
+[INFO ] 2018-10-24 20:57:48.554 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initLeftPane(RootLayoutController.java:138) - did this!!
+[INFO ] 2018-10-24 20:57:49.357 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initialize(RootLayoutController.java:77) - Executed

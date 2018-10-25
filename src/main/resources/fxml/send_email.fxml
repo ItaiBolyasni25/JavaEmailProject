@@ -40,6 +40,5 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Hyperlink fx:id="attachLink" layoutX="103.0" layoutY="487.0" onAction="#openAttachView" />
    </children>
 </AnchorPane>
