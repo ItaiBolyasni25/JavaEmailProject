@@ -2,6 +2,7 @@ package com.emailsystem.business;
 
 import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * @author Itai Bolyasni
  * @version 1.0.0
  */
-public class ImapModule {
+public class ImapModule implements MailInterface {
 
     private final String imapServerName = "imap.gmail.com";
     ImapServer imapServer;
@@ -126,5 +127,10 @@ public class ImapModule {
             stringEmails[i] = emails[i].toString();
         }
         return stringEmails;
+    }
+
+    @Override
+    public void send(EmailBean bean) throws SQLException {
+        throw new UnsupportedOperationException("Not supported."); 
     }
 }

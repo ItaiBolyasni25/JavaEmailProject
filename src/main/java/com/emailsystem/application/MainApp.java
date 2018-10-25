@@ -69,7 +69,7 @@ public class MainApp extends Application {
     }
 
     private void loadRoot() throws IOException {
-        this.currentLocale = new Locale("en", "CA");
+        this.currentLocale = new Locale("fr", "CA");
         FXMLLoader loader = new FXMLLoader();
         loader.setResources(ResourceBundle.getBundle("Bundle", currentLocale));
         loader.setLocation(MainApp.class.getResource("/fxml/root.fxml"));
@@ -81,7 +81,7 @@ public class MainApp extends Application {
 
     private void initLayout() {
 
-        this.currentLocale = new Locale("en", "CA");
+        this.currentLocale = new Locale("fr", "CA");
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setResources(ResourceBundle.getBundle("Bundle", currentLocale));

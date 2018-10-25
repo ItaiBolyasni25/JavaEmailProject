@@ -2560,3 +2560,24 @@
 [WARN ] 2018-10-25 02:34:10.165 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
 /C:/Users/GamingDanik/Desktop/EmailProject/target/classes/fxml/root.fxml
 
+[INFO ] 2018-10-25 02:35:01.673 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:01.677 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:02.686 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:02.686 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:03.084 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:03.084 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:03.431 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:03.432 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:03.870 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:03.870 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:05.000 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:05.000 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:08.269 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:08.269 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:08.421 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:08.422 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:08.574 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:08.575 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[INFO ] 2018-10-25 02:35:08.813 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
+[INFO ] 2018-10-25 02:35:08.813 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
+[ERROR] 2018-10-25 02:37:29.043 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initBottomSplit(RootLayoutController.java:93) - initLeftPane failed 

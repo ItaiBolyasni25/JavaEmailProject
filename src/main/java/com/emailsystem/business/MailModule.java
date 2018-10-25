@@ -14,7 +14,7 @@ import jodd.mail.RFC2822AddressParser;
  * @author Itai Bolyasni
  * @version 1.0.0
  */
-public class MailModule {
+public class MailModule implements MailInterface {
 
     private final String password = "15241524";
     private final static Logger LOG = LoggerFactory.getLogger(MailModule.class);
@@ -27,10 +27,11 @@ public class MailModule {
      * @param EmailBean bean
      * @version 1.0.0
      */
+    @Override
     public void send(EmailBean bean) throws SQLException {
         if (verifyBeanData(bean) && bean != null) {
             SmtpModule smtp = new SmtpModule(bean.getFrom(), password);
-            smtp.sendEmail(bean);
+            smtp.send(bean);
         }
     }
 
@@ -40,6 +41,7 @@ public class MailModule {
      * @return EmailBean[]
      * @version 1.0.0
      */
+    @Override
     public EmailBean[] receive() {
         EmailBean[] emails = null;
         if (checkEmail(receiveEmail)) {

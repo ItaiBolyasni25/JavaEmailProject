@@ -3,6 +3,7 @@ package com.emailsystem.business;
 
 import com.emailsystem.data.AttachmentBean;
 import com.emailsystem.data.EmailBean;
+import java.sql.SQLException;
 import java.time.ZoneId;
 import java.util.Date;
 import jodd.mail.Email;
@@ -20,7 +21,7 @@ import org.slf4j.LoggerFactory;
  * @author Itai Bolyasni
  * @version 1.0.0
  */
-public class SmtpModule {
+public class SmtpModule implements MailInterface {
 
     private SmtpServer smtpServer;
     private final String smtpHost = "smtp.gmail.com";
@@ -41,7 +42,8 @@ public class SmtpModule {
      * @params EmailBean bean - the bean configured by the user
      * @version 1.0.0
      */
-    public void sendEmail(EmailBean bean) {
+    @Override
+    public void send(EmailBean bean) {
         Email email = Email.create()
                 .from(bean.getFrom())
                 .to(bean.getTo())
@@ -77,5 +79,10 @@ public class SmtpModule {
             LOG.info("Mail sent");
             mailSession.close();
         }
+    }
+
+    @Override
+    public EmailBean[] receive() throws SQLException {
+        throw new UnsupportedOperationException("Not supported."); 
     }
 }
