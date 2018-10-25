@@ -35,13 +35,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author 1633867
  */
 
-public class TestDAOModule extends Assert {
+public class TestDAOModule  {
 
     private final String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private final String UNAME = "a1633867";

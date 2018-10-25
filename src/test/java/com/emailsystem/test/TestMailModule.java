@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 
 import junit.framework.TestCase;
 import org.junit.Before;
@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Itai Bolyasni
  */
-public class TestMailModule extends Assert {
+public class TestMailModule {
 
     private MailModule mail;
     private EmailBean bean = new EmailBean();;
