@@ -155,6 +155,7 @@ public class EmailDAO {
                     if (email.getTo().length > 0) {
                         result = recDao.create(email, id, "TO");
                     }
+                    System.out.println(email.getAttach().size());
                     if (email.getAttach().size() > 0) {
                         for (AttachmentBean attach : email.getAttach()) {
                             result = attachDao.create(attach, id, false);

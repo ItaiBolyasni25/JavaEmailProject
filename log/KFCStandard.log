@@ -2581,3 +2581,208 @@
 [INFO ] 2018-10-25 02:35:08.813 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:103) - HERE2
 [INFO ] 2018-10-25 02:35:08.813 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:105) - HERE3
 [ERROR] 2018-10-25 02:37:29.043 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.initBottomSplit(RootLayoutController.java:93) - initLeftPane failed 
+[WARN ] 2018-10-31 14:33:03.849 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.openAttach(ViewController.java:94) - Couldnt open attach
+[WARN ] 2018-10-31 14:33:08.956 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.openAttach(ViewController.java:94) - Couldnt open attach
+[WARN ] 2018-10-31 14:33:12.971 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.openAttach(ViewController.java:94) - Couldnt open attach
+[WARN ] 2018-10-31 14:44:29.538 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 14:48:11.698 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 14:51:29.255 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 14:53:18.591 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 14:58:41.202 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:96) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:06:07.186 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:96) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:09:55.158 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:10:56.718 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:15:38.803 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:17:21.044 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-31 15:23:42.354 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder was created with id: 3
+[INFO ] 2018-10-31 15:23:42.374 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:152) - Test Folder was updated to: Did it work
+[INFO ] 2018-10-31 15:23:44.613 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder 2 was created with id: 3
+[INFO ] 2018-10-31 15:23:44.623 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:128) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-10-31 15:23:46.843 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:246) - Record with id: 5 deleted.
+[INFO ] 2018-10-31 15:23:48.023 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[WARN ] 2018-10-31 15:26:21.934 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:97) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[INFO ] 2018-10-31 15:28:51.974 [JavaFX Application Thread] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) -  was created with id: 1
+[INFO ] 2018-10-31 15:28:52.875 [JavaFX Application Thread] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - dxcv was created with id: 2
+[INFO ] 2018-10-31 15:28:54.035 [JavaFX Application Thread] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - sdf was created with id: 3
+[WARN ] 2018-10-31 15:33:26.424 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:97) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:36:48.239 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:38:13.632 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:40:20.354 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:96) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:47:35.760 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:49:32.366 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 15:51:25.280 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:95) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 16:01:08.470 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:102) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 16:04:29.614 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:102) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 16:06:02.417 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:102) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 16:14:58.074 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - Error loading root.fxml javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/root.fxml
+
+[WARN ] 2018-10-31 16:16:18.198 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - Error loading root.fxml com.emailsystem.persistence.EmailDAO@6826fcbc
+[WARN ] 2018-10-31 16:18:02.202 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:103) - DAO2 com.emailsystem.persistence.EmailDAO@bcaf433
+[WARN ] 2018-10-31 16:18:02.206 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - Error loading root.fxml com.emailsystem.persistence.EmailDAO@bcaf433
+[WARN ] 2018-10-31 16:19:57.818 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:103) - DAO2 com.emailsystem.persistence.EmailDAO@58984592
+[WARN ] 2018-10-31 16:19:57.821 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - Error loading root.fxml com.emailsystem.persistence.EmailDAO@58984592
+[WARN ] 2018-10-31 16:21:01.563 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - DAO2 com.emailsystem.persistence.EmailDAO@39a119f9
+[WARN ] 2018-10-31 16:21:01.566 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:105) - Error loading root.fxml com.emailsystem.persistence.EmailDAO@39a119f9
+[WARN ] 2018-10-31 16:21:51.563 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:88) - PLEASE WORK DAO AOAODAODOAOKD com.emailsystem.persistence.EmailDAO@9275b3a
+[WARN ] 2018-10-31 16:21:51.743 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - DAO2 com.emailsystem.persistence.EmailDAO@9275b3a
+[WARN ] 2018-10-31 16:21:51.744 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:105) - Error loading root.fxml com.emailsystem.persistence.EmailDAO@9275b3a
+[WARN ] 2018-10-31 16:34:51.413 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:88) - PLEASE WORK DAO AOAODAODOAOKD com.emailsystem.persistence.EmailDAO@1eccbe8e
+[WARN ] 2018-10-31 16:34:51.421 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:104) - DAO2 com.emailsystem.persistence.EmailDAO@1eccbe8e
+[WARN ] 2018-10-31 16:34:51.421 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:105) - Error loading root.fxml com.emailsystem.persistence.EmailDAO@1eccbe8e
+[WARN ] 2018-10-31 16:40:31.174 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 16:41:22.402 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 16:44:35.620 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 16:46:45.947 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 16:50:25.757 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 16:55:53.924 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 17:06:55.598 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 17:08:27.736 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[WARN ] 2018-10-31 17:10:09.717 [JavaFX Application Thread] com.emailsystem.presentation.LoginController.LoginController.onSubmit(LoginController.java:94) - Error loading root.fxml {dbUname=a1633867, passwordValue=, dbPassword=dawson, emailValue=}
+[ERROR] 2018-10-31 17:37:08.755 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:101) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[ERROR] 2018-10-31 17:38:16.602 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.showEmailDetails(EmailTableController.java:101) - initLeftPane failed javafx.fxml.LoadException: 
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/viewEmail.fxml
+
+[INFO ] 2018-10-31 17:56:15.530 [com.emailsystem.application.MainApp.main()] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-31 18:37:38.112 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:37:38.140 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:79) - Email: is invalid!
+[INFO ] 2018-10-31 18:38:32.244 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:38:32.251 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:79) - Email: is invalid!
+[INFO ] 2018-10-31 18:40:59.619 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:40:59.648 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:79) - Email: is invalid!
+[INFO ] 2018-10-31 18:42:53.773 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:42:53.802 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:79) - Email: is invalid!
+[INFO ] 2018-10-31 18:45:09.965 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:45:09.995 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:48:11.135 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:48:11.163 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:49:09.207 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:49:09.236 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:50:18.456 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:50:18.484 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:51:10.600 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:51:10.628 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:51:36.260 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:51:36.269 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:52:52.744 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:52:52.773 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:55:36.866 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:55:36.895 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 18:57:23.526 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 18:57:23.534 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:00:02.363 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 19:00:02.396 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:02:28.700 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:235) - Email was sent!
+[ERROR] 2018-10-31 19:02:28.729 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:10:40.637 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:236) - Email was sent!
+[ERROR] 2018-10-31 19:10:40.665 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:18:34.375 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:18:34.405 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:23:00.095 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:23:00.126 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:25:51.266 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:25:51.276 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:25:58.554 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:25:58.564 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[ERROR] 2018-10-31 19:27:19.601 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:27:19.608 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:27:49.675 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:27:49.677 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:27:50.643 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:27:50.644 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:27:50.956 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:27:50.957 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[ERROR] 2018-10-31 19:29:17.883 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:82) - Email: is invalid!
+[INFO ] 2018-10-31 19:29:17.890 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 19:33:15.404 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:81) - Mail sent
+[INFO ] 2018-10-31 19:33:15.434 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 19:38:12.888 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:81) - Mail sent
+[INFO ] 2018-10-31 19:38:12.918 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 19:38:57.058 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:81) - Mail sent
+[INFO ] 2018-10-31 19:38:57.082 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 19:43:03.768 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:81) - Mail sent
+[INFO ] 2018-10-31 19:43:03.904 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 19:43:03.904 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 26 was created
+[INFO ] 2018-10-31 19:43:03.905 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:244) - Email was sent!
+[INFO ] 2018-10-31 20:14:13.329 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:80) - Mail sent
+[INFO ] 2018-10-31 20:14:13.494 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:14:13.496 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 1 was created
+[INFO ] 2018-10-31 20:14:13.496 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:244) - Email was sent!
+[INFO ] 2018-10-31 20:15:57.259 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:15:57.264 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 2 was created
+[INFO ] 2018-10-31 20:21:11.315 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:80) - Mail sent
+[INFO ] 2018-10-31 20:21:11.491 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:21:11.492 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 3 was created
+[INFO ] 2018-10-31 20:21:11.493 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 20:30:47.407 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:30:47.413 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 4 was created
+[INFO ] 2018-10-31 20:36:48.881 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:80) - Mail sent
+[INFO ] 2018-10-31 20:36:49.032 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:36:49.037 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-31 20:36:49.044 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 5 was created
+[INFO ] 2018-10-31 20:36:49.044 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 20:37:00.987 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:37:00.994 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-31 20:37:01.002 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 6 was created
+[INFO ] 2018-10-31 20:46:21.481 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:46:21.488 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 7 was created
+[INFO ] 2018-10-31 20:47:16.677 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:80) - Mail sent
+[INFO ] 2018-10-31 20:47:16.824 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:47:16.852 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-31 20:47:16.891 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 8 was created
+[INFO ] 2018-10-31 20:47:16.891 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:243) - Email was sent!
+[INFO ] 2018-10-31 20:47:27.567 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:47:27.578 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-10-31 20:47:27.622 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 9 was created
+[INFO ] 2018-10-31 20:50:19.809 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:50:19.811 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 10 was created
+[INFO ] 2018-10-31 20:51:45.969 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:51:45.978 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:166) - Email with id 11 was created
+[INFO ] 2018-10-31 20:56:41.910 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:56:41.915 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:167) - Email with id 12 was created
+[INFO ] 2018-10-31 20:59:11.352 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-10-31 20:59:11.357 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:167) - Email with id 13 was created

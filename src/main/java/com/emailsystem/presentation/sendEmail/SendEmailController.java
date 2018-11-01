@@ -6,16 +6,23 @@
 package com.emailsystem.presentation.sendEmail;
 
 import com.emailsystem.application.MainApp;
+import com.emailsystem.business.MailModule;
 import com.emailsystem.data.AttachmentBean;
+import com.emailsystem.data.EmailBean;
+import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.EmailDAO;
 import com.emailsystem.presentation.attachmentView.AttachmentController;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,7 +67,16 @@ public class SendEmailController {
     private int counter = 0;
     private AttachmentController attachController;
     private double lastLayoutX = 103;
+    private String from;
+    private EmailDAO emailDao;
     
+    public void setEmailDAO(EmailDAO email) {
+        this.emailDao = email;
+    }
+    
+    public AnchorPane getEmailPane() {
+        return this.emailPane;
+    }
     
     @FXML
     private void initialize() {
@@ -105,9 +121,12 @@ public class SendEmailController {
         this.subject.setText(fwdSubject);
     }
     
+    public void setEmaiLEditor(String text) {
+        this.emailEditor.setHtmlText(text);
+    }
     
     public void addAttach(ActionEvent action) {
-      
+        
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(to.getScene().getWindow());
@@ -152,6 +171,41 @@ public class SendEmailController {
             primaryStage.setScene(scene);
             primaryStage.centerOnScreen();
             primaryStage.show();
+    }
+    
+    private String[] trimmedArray(String[] unTrimmed) {
+        String[] trimmed = new String[unTrimmed.length];
+        for (int i = 0; i < unTrimmed.length; i++) {
+            trimmed[i] = unTrimmed[i].trim();
+        }
+        return trimmed;
+    }
+    
+    public void composeEmail(ActionEvent action) {
+        EmailBean bean = new EmailBean();
+        bean.setTo(to.getText().contains(",")? trimmedArray(to.getText().split(",")): new String[] {to.getText()});
+        bean.setSubject(this.subject.getText());
+        if (!cc.getText().isEmpty()) {
+        bean.setCc(cc.getText().contains(",")? trimmedArray(cc.getText().split(",")): new String[] {cc.getText()});
+        }
+        bean.setFolderName("Sent");
+        bean.setHTMLMsg(this.emailEditor.getHtmlText());
+        bean.setTextMsg("Text");
+        bean.setAttach(attachList);
+        bean.setFrom(this.from);
+        bean.setSentTime(LocalDateTime.now());
+        MailModule mail = new MailModule();
+        System.out.println(bean);
+        try {
+            mail.send(bean);
+            emailDao.createEmail(bean);
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
    
 }

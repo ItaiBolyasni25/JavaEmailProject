@@ -24,6 +24,7 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -54,49 +55,48 @@ public class LoginController {
 
     MainApp main;
     private final static Logger LOG = LoggerFactory.getLogger(LoginController.class);
-    private EmailDAO dao;
+    private Properties propIn;
 
     @FXML
     private void initialize() {
 
     }
-
+    public void setProperties(Properties prop) {
+        this.propIn = prop;
+    }
     @FXML
     protected void onSubmit(ActionEvent event) {
-        Properties propIn = new Properties();
-        try(InputStream in = getClass().getResourceAsStream("/UserInfo.properties")) {
+        try (InputStream in = getClass().getResourceAsStream("/UserInfo.properties")) {
             OutputStream os = new FileOutputStream("src/main/resources/UserInfo.properties");
             propIn.load(in);
             if (!propIn.containsKey("emailValue") || !propIn.containsKey("passwordValue")
-                || !propIn.containsKey("dbUname") || !propIn.containsKey("dbPassword")) {
-            propIn.setProperty("emailValue", email.getText());
-            propIn.setProperty("passwordValue", password.getText());
-            propIn.setProperty("dbUname", dbUname.getText());
-            propIn.setProperty("dbPassword", dbPassword.getText());
+                    || !propIn.containsKey("dbUname") || !propIn.containsKey("dbPassword")) {
+                propIn.setProperty("emailValue", email.getText());
+                propIn.setProperty("passwordValue", password.getText());
+                propIn.setProperty("dbUname", dbUname.getText());
+                propIn.setProperty("dbPassword", dbPassword.getText());
             }
             propIn.store(os, null);
-        } catch (IOException ex) {
-            LOG.warn("Error while loading resource bundle " + ex.getMessage());
-        }
-        try {
+            System.out.println("Prop1: " + propIn.getProperty("dbUname"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setResources(ResourceBundle.getBundle("Bundle", locale));
+            loader.setLocation(MainApp.class.getResource("/fxml/root.fxml"));
+            Parent bob = (AnchorPane)loader.load();
+            RootLayoutController root = loader.getController();
+            root.setProperties(propIn);
+            root.setLoginController(this);
+            root.doWork();
 
-            this.dao = new EmailDAO(propIn.getProperty("dbUname"), propIn.getProperty("dbPassword"));
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setResources(ResourceBundle.getBundle("Bundle", locale));
-                loader.setLocation(MainApp.class.getResource("/fxml/root.fxml"));
-                Scene scene;
-                scene = new Scene((AnchorPane) loader.load());
-                RootLayoutController root = loader.getController();
-                root.setLoginController(this);
-                main.setScene(scene);
-                
-            } catch (IOException ex) {
-                LOG.warn("Error loading root.fxml " + ex);
-            }
-        } catch (SQLException ex) {
-            action.setText("Wrong email address or password!");
+            Scene scene;
+            scene = new Scene(bob);
+
+            main.setScene(scene);
+        } catch (IOException ex) {
+            LOG.warn("Error loading root.fxml " + this.propIn);
+            ex.printStackTrace();
         }
+
+
 
     }
 

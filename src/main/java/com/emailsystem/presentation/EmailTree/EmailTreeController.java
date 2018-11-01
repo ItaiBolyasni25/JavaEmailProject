@@ -5,9 +5,12 @@
  */
 package com.emailsystem.presentation.EmailTree;
 
+import com.emailsystem.business.MailModule;
+import com.emailsystem.data.EmailBean;
 import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.EmailDAO;
 import com.emailsystem.persistence.FolderDAO;
+import com.emailsystem.presentation.rootController.RootLayoutController;
 import com.emailsystem.presentation.table.EmailTableController;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,6 +42,7 @@ public class EmailTreeController {
 
     private EmailDAO dao;
     private EmailTableController emailTable;
+    private RootLayoutController root;
 
     @FXML
     private TreeView<EmailFXBean> treeView;
@@ -46,21 +50,6 @@ public class EmailTreeController {
     // Resource bundle is injected when controller is loaded
     @FXML
     private ResourceBundle resources;
-
-    public EmailTreeController() {
-        Properties prop = new Properties();
-        InputStream in = getClass().getResourceAsStream("/UserInfo.properties");
-        try {
-            prop.load(in);
-        } catch (IOException ex) {
-            LOG.warn("Error while loading resource bundle " + ex.getMessage());
-        }
-        try {
-            this.dao = new EmailDAO(prop.getProperty("dbUname"), prop.getProperty("dbPassword"));
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(EmailTableController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
 
     @FXML
     private void initialize() {
@@ -124,11 +113,14 @@ public class EmailTreeController {
         event.consume();
     }
 
+    public void setRoot(RootLayoutController root) {
+        this.root = root;
+    }
+
     public void displayTree() throws SQLException {
         treeView.getRoot().getChildren().clear();
         // Retrieve the list of fish
         ObservableList<EmailFXBean> folders = dao.findAllFoldersFX();
-        
 
         // Build an item for each fish and add it to the root
         if (folders != null) {
@@ -154,9 +146,14 @@ public class EmailTreeController {
         this.emailTable = table;
     }
 
+    public void receiveEmails(TreeItem<EmailFXBean> fxBean) throws SQLException {
+
+        this.emailTable.displayTheTable(fxBean.getValue().getFolderName());
+    }
+
     public void changeEmailSelection(TreeItem<EmailFXBean> fxBean) {
         try {
-            this.emailTable.displayTheTable(fxBean.getValue().getFolderName());
+            receiveEmails(fxBean);
         } catch (SQLException ex) {
             errorAlert(ex + "");
         }

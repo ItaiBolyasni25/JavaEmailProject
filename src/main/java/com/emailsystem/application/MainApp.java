@@ -44,7 +44,10 @@ public class MainApp extends Application {
     private AnchorPane loginPage;
     Locale currentLocale;
 
+    private String UNAME;
+    private String PASSWORD;
     private LoginController loginController;
+    private Properties propIn = new Properties();
 
     @Override
     public void start(Stage primaryStage) {
@@ -54,13 +57,18 @@ public class MainApp extends Application {
 
 
         try(InputStream in = getClass().getResourceAsStream("/UserInfo.properties")) {
-            Properties propIn = new Properties();
-            propIn.load(in);
+            this.propIn.load(in);
             if (propIn.containsKey("emailValue") || propIn.containsKey("passwordValue")
                     || propIn.containsKey("dbUname") || propIn.containsKey("dbPassword")) {
+                this.UNAME = propIn.getProperty("dbUname");
+                this.PASSWORD = propIn.getProperty("dbPassword");
+                
                 loadRoot();
             } else {
+                
                 initLayout();
+                loginController.setProperties(this.propIn);
+                System.out.println("Prop1: " + propIn.getProperty("dbUname"));
             }
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,19 +77,26 @@ public class MainApp extends Application {
     }
 
     private void loadRoot() throws IOException {
-        this.currentLocale = new Locale("fr", "CA");
+        this.currentLocale = new Locale("en", "CA");
         FXMLLoader loader = new FXMLLoader();
         loader.setResources(ResourceBundle.getBundle("Bundle", currentLocale));
         loader.setLocation(MainApp.class.getResource("/fxml/root.fxml"));
         Scene scene;
         scene = new Scene((AnchorPane) loader.load());
         RootLayoutController root = loader.getController();
+        root.setProperties(propIn);
+        root.doWork();
+        try {
+            root.setDao(new EmailDAO(UNAME, PASSWORD));
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
         setScene(scene);
     }
 
     private void initLayout() {
 
-        this.currentLocale = new Locale("fr", "CA");
+        this.currentLocale = new Locale("en", "CA");
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setResources(ResourceBundle.getBundle("Bundle", currentLocale));

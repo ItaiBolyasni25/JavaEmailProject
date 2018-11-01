@@ -7,22 +7,27 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane fx:id="emailPane" maxHeight="517.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="729.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.sendEmail.SendEmailController">
+<AnchorPane fx:id="emailPane" maxHeight="517.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="729.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.sendEmail.SendEmailController">
    <children>
       <HTMLEditor fx:id="emailEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutY="170.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="314.0" prefWidth="699.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
       <AnchorPane layoutX="15.0" prefHeight="200.0" prefWidth="699.0">
          <children>
-            <TextField fx:id="fwd" layoutY="126.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="Subject:">
+            <TextField fx:id="subject" layoutY="130.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="Subject:">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="to" layoutY="26.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="To:">
+            <TextField fx:id="to" layoutY="12.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="To:">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="subject" layoutY="76.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="CC:">
+            <TextField fx:id="bcc" layoutY="91.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="BCC:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="cc" layoutY="53.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="CC:">
                <font>
                   <Font size="14.0" />
                </font>

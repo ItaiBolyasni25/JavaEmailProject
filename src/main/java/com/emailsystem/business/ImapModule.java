@@ -68,6 +68,8 @@ public class ImapModule implements MailInterface {
                     beans[index].setPriority(email.priority());
                     beans[index].setSentTime(LocalDateTime.ofInstant(email.sentDate().toInstant(), ZoneId.systemDefault()));
                     beans[index].setReceivedTime(LocalDateTime.ofInstant(email.receivedDate().toInstant(), ZoneId.systemDefault()));
+                    beans[index].setFolderName("Inbox");
+                    System.out.println("Attach size: " + email.attachments().size());
 
                     // process messages
                     beans[index].setTextMsg(processMessages(email.messages(), false));

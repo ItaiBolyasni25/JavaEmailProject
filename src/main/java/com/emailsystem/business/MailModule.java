@@ -3,6 +3,7 @@ package com.emailsystem.business;
 
 import com.emailsystem.data.EmailBean;
 import java.sql.SQLException;
+import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import jodd.mail.RFC2822AddressParser;
@@ -16,7 +17,7 @@ import jodd.mail.RFC2822AddressParser;
  */
 public class MailModule implements MailInterface {
 
-    private final String password = "15241524";
+    private final String password = "dawsoncollege";
     private final static Logger LOG = LoggerFactory.getLogger(MailModule.class);
     private final String receiveEmail = "receive.1633867@gmail.com";
 
@@ -30,8 +31,10 @@ public class MailModule implements MailInterface {
     @Override
     public void send(EmailBean bean) throws SQLException {
         if (verifyBeanData(bean) && bean != null) {
+            
             SmtpModule smtp = new SmtpModule(bean.getFrom(), password);
             smtp.send(bean);
+            System.out.println("DONE");
         }
     }
 
@@ -45,7 +48,7 @@ public class MailModule implements MailInterface {
     public EmailBean[] receive() {
         EmailBean[] emails = null;
         if (checkEmail(receiveEmail)) {
-            ImapModule imap = new ImapModule(receiveEmail, password);
+            ImapModule imap = new ImapModule("send.1633867@gmail.com", "dawsoncollege");
             emails = imap.receive();
         }
         return emails;
@@ -60,6 +63,7 @@ public class MailModule implements MailInterface {
         if (bean.getFrom() == null || !checkEmail(bean.getFrom())) {
             throw new SQLException("Email: " + bean.getFrom() + " is invalid!");
         } else if (bean.getTo() == null || !checkEmail(bean.getTo())) {
+           System.out.println(Arrays.toString(bean.getTo()));
            throw new SQLException("Receiver email is invalid!");
         } else if (!checkEmail(bean.getCc())) {
             throw new SQLException("Cc email is invalid!");

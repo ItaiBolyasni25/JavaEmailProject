@@ -6,6 +6,7 @@
 package com.emailsystem.presentation.table;
 
 import com.emailsystem.application.MainApp;
+import com.emailsystem.business.MailModule;
 import com.emailsystem.data.EmailBean;
 import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.EmailDAO;
@@ -33,7 +34,7 @@ import org.slf4j.LoggerFactory;
  * @author GamingDanik
  */
 public class EmailTableController {
-    
+
     @FXML
     private ResourceBundle resources;
 
@@ -51,72 +52,68 @@ public class EmailTableController {
 
     @FXML
     private TableColumn<EmailFXBean, String> description;
-    
+
     private EmailDAO dao;
     private RootLayoutController root;
     private final static Logger LOG = LoggerFactory.getLogger(EmailTableController.class);
-    
-    public EmailTableController() {
-        Properties prop = new Properties();
-        InputStream in = getClass().getResourceAsStream("/UserInfo.properties");
-        try {
-            prop.load(in);
-        } catch (IOException ex) {
-            LOG.warn("Error while loading resource bundle " + ex.getMessage());
-        }
-        try {
-            this.dao = new EmailDAO(prop.getProperty("dbUname"), prop.getProperty("dbPassword"));
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(EmailTableController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
+    private Properties prop;
+
     public void initialize() {
-                // Connects the property in the FishData object to the column in the
+        // Connects the property in the FishData object to the column in the
         // table
         emailAddress.setCellValueFactory(cellData -> cellData.getValue().getFromProperty());
         subject.setCellValueFactory(cellData -> cellData.getValue().getSubjectProperty());
         description.setCellValueFactory(cellData -> cellData.getValue().getTextMsgProperty());
-        
-         emailTableView
+
+        emailTableView
                 .getSelectionModel()
                 .selectedItemProperty()
                 .addListener(
                         (observable, oldValue, newValue) -> showEmailDetails(newValue));
-        
+
     }
-    
+
     public void displayTheTable(String folderName) throws SQLException {
         // Add observable list data to the table
+        MailModule mail = new MailModule();
+        for (EmailBean bean : mail.receive()) {
+            System.out.println(bean.getAttach().size() + " another " + bean.getEmbedAttach());
+            dao.createEmail(bean);
+        }
         emailTableView.setItems(EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName)));
-        
+
+    }
+
+    public void setProperties(Properties prop) {
+        this.prop = prop;
     }
 
     private void showEmailDetails(EmailFXBean newValue) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            
+
             //loader.setResources(resources);
-            
             loader.setLocation(MainApp.class.getResource("/fxml/viewEmail.fxml"));
-            AnchorPane viewEmail = (AnchorPane)loader.load();
+            AnchorPane viewEmail = (AnchorPane) loader.load();
             ViewController view = loader.getController();
-            this.root.setViewController(view);
+            root.setViewController(view);
+            view.setProperties(this.prop);
             
-            
-            root.changeBottomPane(viewEmail);
-            if (newValue != null)
+            if (newValue != null) {
                 view.loadEmail(newValue);
+            }
+            root.changeBottomPane(viewEmail);
         } catch (IOException ex) {
             LOG.error("initLeftPane failed " + ex);
+            ex.printStackTrace();
         }
-        
+
     }
-    
+
     public void setEmailDao(EmailDAO dao) {
         this.dao = dao;
     }
-    
+
     public void setRootController(RootLayoutController root) {
         this.root = root;
     }

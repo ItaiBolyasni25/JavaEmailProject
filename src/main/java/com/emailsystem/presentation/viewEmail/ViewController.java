@@ -17,11 +17,13 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Level;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
@@ -47,44 +49,55 @@ public class ViewController {
     private Text cc;
     @FXML
     private Text bcc;
+    @FXML
+    private Button openAttach;
 
+    private List<AttachmentBean> list;
     private AttachmentController attachController;
     private AttachmentDAO attachDao;
     private EmailFXBean fx;
     private RootLayoutController root;
     private int numOfAttach = 0;
     private final static Logger LOG = LoggerFactory.getLogger(ViewController.class);
-    
+    private Properties prop;
+
     public ViewController() {
-        
-        try {
-            Properties prop = new Properties();
-            InputStream is = getClass().getResourceAsStream("/UserInfo.properties");
-            prop.load(is);
-            attachDao = new AttachmentDAO(prop.getProperty("dbUname"), "dbPassword");
-            
-        } catch (IOException ex) {
-            
-        }
+
+    }
+
+    public void setProperties(Properties prop) {
+        this.prop = prop;
     }
 
     @FXML
     private void initialize() {
-        
-        
-    }
 
-//    public void setMain(MainApp main) {
-//        this.main = main;
-//    }
+    }
+    
+    public void start() {
+
+    }
+    
+    public void setAttachDAO(AttachmentDAO attachDao) {
+        this.attachDao = attachDao;
+    }
     public void loadEmail(EmailFXBean fx) {
-        this.from.setText(fx.getFrom());
-        this.subject.setText(fx.getSubject());
-        this.htmlView.getEngine().loadContent(fx.getHtmlMsg());
-        this.to.setText(fx.getTo());
-        this.cc.setText(fx.getCc());
-        this.bcc.setText(fx.getBcc());
-        this.fx = fx;
+        try {
+            this.attachDao = new AttachmentDAO("a1633867", "dawson");
+            System.out.println(fx.getId());
+            System.out.println(this.attachDao);
+            this.list = attachDao.read(fx.getId(), false);
+            this.from.setText(fx.getFrom());
+            this.subject.setText(fx.getSubject());
+            this.htmlView.getEngine().loadContent(fx.getHtmlMsg());
+            this.to.setText(fx.getTo());
+            this.cc.setText(fx.getCc());
+            this.bcc.setText(fx.getBcc());
+            this.fx = fx;
+            this.openAttach.setText(this.openAttach.getText() + "(" + list.size() + ")");
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(ViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void openAttach(ActionEvent action) {
@@ -107,8 +120,7 @@ public class ViewController {
 
             AnchorPane attachView = (AnchorPane) loader.load();
             attachController = loader.getController();
-            List<AttachmentBean> list = attachDao.read(fx.getId(), true);
-            if (attachDao.read(fx.getId(), true).size() > 0) {
+            if (list.size() > 0) {
                 attachController.loadImage(list.get(0).getAttach());
             }
             this.numOfAttach = list.size();
@@ -128,7 +140,7 @@ public class ViewController {
     }
 
     public void replyEmail(ActionEvent action) {
-        root.replyEmail(fx.getFrom());
+        root.replyEmail(this.fx);
     }
 
     public void fwdEmail(ActionEvent action) {

@@ -54,6 +54,7 @@ public class SmtpModule implements MailInterface {
                 .priority(bean.getPriority())
                 .sentDate(Date.from(bean.getSentTime().atZone(ZoneId.systemDefault()).toInstant()));
         String htmlMsgBuilder = "<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg();
+        System.out.println("FAILED 1");
         for (AttachmentBean attach : bean.getAttach()) {
             email.attachment(EmailAttachment.with().name(attach.getName()).content(attach.getAttach()));
         }
