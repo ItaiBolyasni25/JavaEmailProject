@@ -60,7 +60,6 @@ public class EmailDAO {
                 bean.setId(rs.getInt("email_id"));
                 bean.setFrom(rs.getString("senderEmail"));
                 bean.setSubject(rs.getString("subject"));
-                bean.setName(rs.getString("name"));
                 bean.setTo(recDao.read(bean.getId(), "TO"));
                 bean.setCc(recDao.read(bean.getId(), "CC"));
                 bean.setBcc(recDao.read(bean.getId(), "BCC"));
@@ -87,7 +86,6 @@ public class EmailDAO {
     public List<EmailBean> findEmailsInFolder(String folderName, String senderEmail) throws SQLException {
         List<EmailBean> list = new ArrayList();
         String query = "SELECT * FROM Emails WHERE folder_id = ? AND senderEmail = ? ORDER BY receivedDate DESC";
-        System.out.println(senderEmail);
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, folderDao.getId(folderName));
             ps.setString(2, senderEmail);
@@ -145,9 +143,8 @@ public class EmailDAO {
         int result;
         String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES (?,?,?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
-            if (email.getFrom().contains(">") || email.getFrom().contains("<")) {
+            if (email.getFrom().contains(">") && email.getFrom().contains("<")) {
                 ps.setString(1, email.getFrom().substring(email.getFrom().indexOf("<"), email.getFrom().indexOf(">")));
-                System.out.println("HERE");
             } else {
                 ps.setString(1, email.getFrom());
             }
@@ -172,7 +169,6 @@ public class EmailDAO {
                     if (email.getTo().length > 0) {
                         result = recDao.create(email, id, "TO");
                     }
-                    System.out.println(email.getAttach().size());
                     if (email.getAttach().size() > 0) {
                         for (AttachmentBean attach : email.getAttach()) {
                             result = attachDao.create(attach, id, false);

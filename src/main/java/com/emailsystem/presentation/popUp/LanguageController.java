@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author GamingDanik
+ * @author 1633867
  */
 public class LanguageController {
 
@@ -50,6 +50,12 @@ public class LanguageController {
 
     }
 
+     /**
+     * EventHandler for the French button, changes the locale and langauge of the application to french
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void setEnResources(ActionEvent event) {
         try {
@@ -61,7 +67,7 @@ public class LanguageController {
             RootLayoutController root = loader.getController();
             root.setProperties(prop);
             root.setMain(main);
-            root.doWork();
+            root.start();
 
             main.setScene(scene);
             stage.close();
@@ -71,6 +77,12 @@ public class LanguageController {
 
     }
 
+     /**
+     * EventHandler for the English button, changes the locale and langauge of the application to English
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void setFrResources(ActionEvent event) {
         try {
@@ -82,7 +94,7 @@ public class LanguageController {
             RootLayoutController root = loader.getController();
             root.setProperties(prop);
             root.setMain(main);
-            root.doWork();
+            root.start();
 
             main.setScene(scene);
             stage.close();

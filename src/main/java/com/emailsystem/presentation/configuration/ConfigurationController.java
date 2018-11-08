@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author GamingDanik
+ * @author 1633867
  */
 public class ConfigurationController {
 
@@ -57,6 +57,11 @@ public class ConfigurationController {
 
     }
 
+     /**
+     * Method to populate the form will all information from properties file
+     *
+     * @version 1.0.0
+     */
     public void populateForm() {
         this.email.setText(prop.getProperty("emailValue"));
         this.password.setText(prop.getProperty("passwordValue"));
@@ -69,7 +74,14 @@ public class ConfigurationController {
         this.smtpPort.setText(prop.getProperty("smtpPort"));
         this.name.setText(prop.getProperty("name"));
     }
-
+    
+     /**
+     * EventHandler for the save button
+     * Saves to properties file.
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void onSubmit(ActionEvent event) {
         try (OutputStream os = new FileOutputStream("src/main/resources/UserInfo.properties")) {
@@ -88,7 +100,7 @@ public class ConfigurationController {
             Logger.getLogger(ConfigurationController.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.stage.close();
-        root.doWork();
+        root.start();
     }
     
     public void setRootLayout(RootLayoutController root) {

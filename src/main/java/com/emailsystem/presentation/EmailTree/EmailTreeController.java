@@ -23,16 +23,19 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
@@ -51,23 +54,22 @@ public class EmailTreeController {
 
     private EmailDAO dao;
     private EmailTableController emailTable;
-    private RootLayoutController root;
 
     @FXML
     private TreeView<EmailFXBean> treeView;
-
-    // Resource bundle is injected when controller is loaded
     @FXML
     private ResourceBundle resources;
 
+     /**
+     * Method that initializes the TreeView
+     *
+     * @param folderName - the name of the folder to be created
+     * @return int - the amount of rows affected
+     * @version 1.0.0
+     */
     @FXML
     private void initialize() {
-        // We need a root node for the tree and it must be the same type as all
-        // nodes
         EmailFXBean rootFolder = new EmailFXBean();
-        // The tree will display common name so we set this for the root
-        // Because we are using i18n the root name comes from the resource
-        // bundle
         rootFolder.setFolderName(resources.getString("folders"));
 
         treeView.setRoot(new TreeItem<>(rootFolder));
@@ -78,6 +80,7 @@ public class EmailTreeController {
             @Override
             protected void updateItem(EmailFXBean item, boolean empty) {
                 super.updateItem(item, empty);
+                
                 if (item != null) {
                     setText(item.getFolderName());
                     setGraphic(getTreeItem().getGraphic());
@@ -85,43 +88,40 @@ public class EmailTreeController {
                     setText("");
                     setGraphic(null);
                 }
+                
+                //Prevent dragging emails to the sent folder
+                setOnDragOver(new EventHandler<DragEvent>() {
+                    @Override
+                    public void handle(DragEvent event) {
+                        if (event.getDragboard().hasString() && !item.getFolderName().equalsIgnoreCase("Sent")) {
+                            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                            LOG.info(item.getId() + "");
+                        }
+                    }
+                });
+                //set drop event
+                setOnDragDropped(new EventHandler<DragEvent>() {
+                    @Override
+                    public void handle(DragEvent event) {
+                        try {
+                            dao.updateEmailFolder(item.getFolderName(), Integer.parseInt(event.getDragboard().getString()));
+                            emailTable.displayTheTable("Inbox");
+                        } catch (SQLException ex) {
+                            java.util.logging.Logger.getLogger(EmailTreeController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                });
             }
         });
-        // We are going to drag and drop
-        treeView.setOnDragDetected((MouseEvent event) -> {
-            /* drag was detected, start drag-and-drop gesture */
-            LOG.debug("onDragDetected");
 
-            /* allow any transfer mode */
-            Dragboard db = treeView.startDragAndDrop(TransferMode.ANY);
-
-            /* put a string on dragboard */
-            ClipboardContent content = new ClipboardContent();
-            content.putString(treeView.getSelectionModel().getSelectedItem().getValue().toString());
-
-            db.setContent(content);
-
-            event.consume();
-        });
     }
 
-    @FXML
-    private void dragDetected(MouseEvent event) {
-        /* drag was detected, start drag-and-drop gesture */
-        LOG.debug("onDragDetected");
-
-        /* allow any transfer mode */
-        Dragboard db = treeView.startDragAndDrop(TransferMode.ANY);
-
-        /* put a string on dragboard */
-        ClipboardContent content = new ClipboardContent();
-        content.putString(treeView.getSelectionModel().getSelectedItem().getValue().toString());
-
-        db.setContent(content);
-
-        event.consume();
-    }
-
+     /**
+     * EventHandler for the Delete ContextMenu item
+     *
+     * @param event the ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void onDelete(ActionEvent event) {
         try {
@@ -145,7 +145,12 @@ public class EmailTreeController {
             java.util.logging.Logger.getLogger(EmailTreeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+     /**
+     * EventHandler for the Rename ContextMenu item
+     *
+     * @param ActionEvent event
+     * @version 1.0.0
+     */
     @FXML
     public void onRename(ActionEvent event) {
         try {
@@ -169,11 +174,11 @@ public class EmailTreeController {
             java.util.logging.Logger.getLogger(EmailTreeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public void setRoot(RootLayoutController root) {
-        this.root = root;
-    }
-
+     /**
+     * Method that queries the database and sets up all the items on the TreeView
+     * @throws SQLException
+     * @version 1.0.0
+     */
     public void displayTree() throws SQLException {
         treeView.getRoot().getChildren().clear();
         // Retrieve the list of fish
@@ -182,7 +187,7 @@ public class EmailTreeController {
         // Build an item for each fish and add it to the root
         if (folders != null) {
             folders.stream().map((fd) -> new TreeItem<>(fd)).map((item) -> {
-                ImageView folderImage = new ImageView(getClass().getResource("/images/thumbsup.jpg").toExternalForm());
+                ImageView folderImage = new ImageView(getClass().getResource("/images/folder.png").toExternalForm());
                 folderImage.setFitHeight(20);
                 folderImage.setFitWidth(20);
                 item.setGraphic(folderImage);
@@ -208,24 +213,23 @@ public class EmailTreeController {
         this.emailTable.displayTheTable(fxBean.getValue().getFolderName());
     }
 
+     /*
+     * Method that changes the view of the table based on the selected folder
+     *
+     * @param fxBean - a tree item to know which folder was chosen
+     * @return int - the amount of rows affected
+     * @version 1.0.0
+     */
     public void changeEmailSelection(TreeItem<EmailFXBean> fxBean) {
         try {
             receiveEmails(fxBean);
         } catch (SQLException ex) {
-            errorAlert(ex + "");
+            LOG.error("Unexpected Error " + ex.getMessage());
         }
     }
 
     public void setEmailDao(EmailDAO dao) {
         this.dao = dao;
-    }
-
-    private void errorAlert(String msg) {
-        Alert dialog = new Alert(Alert.AlertType.ERROR);
-        dialog.setTitle(resources.getString("sqlError"));
-        dialog.setHeaderText(resources.getString("sqlError"));
-        dialog.setContentText(resources.getString(msg));
-        dialog.show();
     }
 
 }

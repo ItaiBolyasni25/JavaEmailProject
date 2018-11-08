@@ -18,11 +18,20 @@ import jodd.mail.RFC2822AddressParser;
  */
 public class MailModule implements MailInterface {
 
-    private final String password = "dawsoncollege";
+    private String password = "";
     private final static Logger LOG = LoggerFactory.getLogger(MailModule.class);
-    private final String receiveEmail = "receive.1633867@gmail.com";
+    private String email = "";
     private Properties prop;
-
+    
+    public MailModule(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+    
+    public MailModule() {
+        
+    }
+    
     /**
      * Send method, takes an email bean as param and sends it to a specified
      * receiver.
@@ -36,7 +45,6 @@ public class MailModule implements MailInterface {
             
             SmtpModule smtp = new SmtpModule(prop.getProperty("emailValue"), prop.getProperty("passwordValue"));
             smtp.send(bean);
-            System.out.println("DONE");
         }
     }
 
@@ -49,7 +57,7 @@ public class MailModule implements MailInterface {
     @Override
     public EmailBean[] receive() {
         EmailBean[] emails = null;
-        if (checkEmail(receiveEmail)) {
+        if (checkEmail(prop.getProperty("emailValue"))) {
             ImapModule imap = new ImapModule(prop.getProperty("emailValue"), prop.getProperty("passwordValue"));
             emails = imap.receive();
         }
@@ -57,7 +65,7 @@ public class MailModule implements MailInterface {
     }
 
     public void setProperties(Properties prop) {
-        this.prop = prop;
+       this.prop = prop;
     }
     /** 
         Private method that verifies all the bean's information
@@ -68,7 +76,6 @@ public class MailModule implements MailInterface {
         if (bean.getFrom() == null || !checkEmail(bean.getFrom())) {
             throw new SQLException("Email: " + bean.getFrom() + " is invalid!");
         } else if (bean.getTo() == null || !checkEmail(bean.getTo())) {
-           System.out.println(Arrays.toString(bean.getTo()));
            throw new SQLException("Receiver email is invalid!");
         } else if (!checkEmail(bean.getCc())) {
             throw new SQLException("Cc email is invalid!");

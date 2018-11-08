@@ -128,6 +128,13 @@ public class SendEmailController {
         this.emailEditor.setHtmlText(text);
     }
     
+     /*
+     * adds an attachment to the bean
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
+    
     public void addAttach(ActionEvent action) {
         
         FileChooser fileChooser = new FileChooser();
@@ -154,6 +161,12 @@ public class SendEmailController {
         this.lastLayoutX += link.getLayoutBounds().getWidth() + 100;
     }
     
+     /**
+     * open the attachment
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void openAttachView(ActionEvent action) {
         int clickedIndex = Integer.parseInt(((Hyperlink)action.getSource()).getId());
             FXMLLoader loader = new FXMLLoader();
@@ -184,6 +197,12 @@ public class SendEmailController {
         return trimmed;
     }
     
+     /**
+     * sends an email
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void composeEmail(ActionEvent action) {
         EmailBean bean = new EmailBean();
         bean.setTo(to.getText().contains(",")? trimmedArray(to.getText().split(",")): new String[] {to.getText()});
@@ -199,12 +218,11 @@ public class SendEmailController {
         bean.setSentTime(LocalDateTime.now());
         MailModule mail = new MailModule();
         mail.setProperties(prop);
-        System.out.println(bean);
         try {
             mail.send(bean);
             emailDao.createEmail(bean);
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(ex.getMessage());
         }
     }
     public void setProperties(Properties prop) {

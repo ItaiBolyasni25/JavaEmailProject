@@ -75,7 +75,12 @@ public class RootLayoutController {
 
     }
 
-    public void doWork() {
+     /**
+     * Method that initializes all the components of the root layout
+     *
+     * @version 1.0.0
+     */
+    public void start() {
         this.URL = prop.getProperty("dbUrl");
         this.UNAME = prop.getProperty("dbUname");
         this.PASSWORD = prop.getProperty("dbPassword");
@@ -83,7 +88,7 @@ public class RootLayoutController {
             this.dao = new EmailDAO(this.UNAME, this.PASSWORD, this.URL);
             this.attachDao = new AttachmentDAO(prop.getProperty("dbUname"), prop.getProperty("dbPassword"));
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(RootLayoutController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(ex.getMessage());
         }
         initTopSplit();
         initLeftPane();
@@ -115,6 +120,13 @@ public class RootLayoutController {
         this.prop = prop;
     }
 
+     /**
+     * EventHandler for the configuration contextmenu item
+     * opens the configuration fxml
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void configureProperties(ActionEvent event) {
         try {
@@ -135,10 +147,17 @@ public class RootLayoutController {
             secondaryStage.show();
 
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(RootLayoutController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(ex.getMessage());
         }
     }
 
+     /**
+     * EventHandler for the change language context menu item
+     * opens the language dialog box
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void changeLanguage(ActionEvent event) {
         try {
@@ -157,7 +176,7 @@ public class RootLayoutController {
             
             stage.show();
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(RootLayoutController.class.getName()).log(Level.SEVERE, null, ex);
+           LOG.error(ex.getMessage());
         }
     }
 
@@ -165,6 +184,12 @@ public class RootLayoutController {
         this.main = main;
     }
 
+     /**
+     * EventHandler for the English button, changes the locale and langauge of the application to English
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     private void initBottomSplit() {
         try {
             bottomSplit.getChildren().clear();
@@ -181,13 +206,24 @@ public class RootLayoutController {
         }
     }
 
+     /**
+     * Switches the bottom split
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     private void switchBottomSplit() {
         bottomSplit.getChildren().clear();
         AnchorPane email = this.emailController.getEmailPane();
         bottomSplit.getChildren().add(email);
     }
 
-
+     /**
+     * method to initialize the top right anchor pane
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     private void initTopSplit() {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -205,7 +241,12 @@ public class RootLayoutController {
             LOG.error(ex + "");
         }
     }
-
+     /**
+     * method to initialize the top left anchor pane
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     private void initLeftPane() {
 
         try {
@@ -223,6 +264,12 @@ public class RootLayoutController {
         }
     }
 
+     /**
+     * method that sets up the reply form
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void replyEmail(EmailFXBean fx) {
         switchBottomSplit();
         emailController.setTo(fx.getFrom());
@@ -232,6 +279,12 @@ public class RootLayoutController {
         compose.setText(resources.getString("sendEmail"));
     }
 
+     /**
+     * method that sets up the forward form
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void fwdEmail(EmailFXBean fx) {
         switchBottomSplit();
         emailController.setTo(fx.getFrom());
@@ -241,6 +294,12 @@ public class RootLayoutController {
         compose.setText(resources.getString("sendEmail"));
     }
 
+     /**
+     * method that changes the bottom pane with another view
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void changeBottomPane(AnchorPane view) {
         bottomSplit.getChildren().remove(0);
         bottomSplit.getChildren().add(view);
@@ -250,6 +309,12 @@ public class RootLayoutController {
         compose.setText(resources.getString("compose"));
     }
 
+     /**
+     * Event handler to create a folder
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void createFolder(ActionEvent action) {
         FolderDAO folderDao = new FolderDAO(URL, UNAME, PASSWORD);
         try {
@@ -257,7 +322,7 @@ public class RootLayoutController {
             this.treeController.displayTree();
             folderName.clear();
         } catch (SQLException ex) {
-            errorAlert(ex + "");
+            LOG.error(ex.getMessage());
         }
     }
 
@@ -265,6 +330,12 @@ public class RootLayoutController {
         this.viewController = view;
     }
 
+     /**
+     * Event handler for composing and sending emails
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void composeEmail(ActionEvent action) {
         if (this.isComposing) {
             emailController.composeEmail(action);
@@ -278,13 +349,6 @@ public class RootLayoutController {
         }
     }
 
-    private void errorAlert(String msg) {
-        Alert dialog = new Alert(Alert.AlertType.ERROR);
-        dialog.setTitle(resources.getString("sqlError"));
-        dialog.setHeaderText(resources.getString("sqlError"));
-        dialog.setContentText(resources.getString(msg));
-        dialog.show();
-    }
 
     private void sendEmail() {
         LOG.info("Email was sent!");

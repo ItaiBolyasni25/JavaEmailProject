@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author GamingDanik
+ * @author 1633867
  */
 public class AttachListController {
 
@@ -43,7 +43,12 @@ public class AttachListController {
     public void initialize() {
 
     }
-
+    /**
+     * Method that displays a list of attachments that were sent
+     *
+     * @param items - a list of attachmentbeans 
+     * @version 1.0.0
+     */
     public void displayList(List<AttachmentBean> items) {
         List<Hyperlink> nameList = new ArrayList();
         for (int i = 0; i < items.size(); i++) {
@@ -57,7 +62,12 @@ public class AttachListController {
         listView.setItems(this.items);
         attachList = items;
     }
-
+     /**
+     * Method to load individual attachments from the list
+     *
+     * @param EmailBean bean
+     * @version 1.0.0
+     */
     private void loadAttach(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader();

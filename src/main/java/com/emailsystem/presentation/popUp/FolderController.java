@@ -41,7 +41,13 @@ public class FolderController {
     public void initialize() {
 
     }
-
+    
+     /**
+     * EventHandler for the Delete ContextMenu item
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void onDelete(ActionEvent event) {
         try {
@@ -53,6 +59,12 @@ public class FolderController {
         }
     }
 
+     /**
+     * EventHandler for the Rename ContextMenu item
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     @FXML
     public void onRename(ActionEvent event) {
         try {

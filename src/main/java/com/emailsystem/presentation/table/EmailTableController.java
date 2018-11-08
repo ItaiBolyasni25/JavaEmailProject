@@ -21,10 +21,17 @@ import java.util.List;
 import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,20 +66,25 @@ public class EmailTableController {
     private Properties prop;
 
     public void initialize() {
-        // Connects the property in the FishData object to the column in the
-        // table
+
         emailAddress.setCellValueFactory(cellData -> cellData.getValue().getFromProperty());
         subject.setCellValueFactory(cellData -> cellData.getValue().getSubjectProperty());
         description.setCellValueFactory(cellData -> cellData.getValue().getTextMsgProperty());
-
+        
         emailTableView
                 .getSelectionModel()
                 .selectedItemProperty()
                 .addListener(
                         (observable, oldValue, newValue) -> showEmailDetails(newValue));
-
+        drag();
     }
-
+     /**
+     * Displays the table
+     *
+     * @param folderName - the folder from which to display the items
+     * @throws SQLException
+     * @version 1.0.0
+     */
     public void displayTheTable(String folderName) throws SQLException {
         // Add observable list data to the table
         MailModule mail = new MailModule();
@@ -80,15 +92,66 @@ public class EmailTableController {
         for (EmailBean bean : mail.receive()) {
             dao.createEmail(bean);
         }
-        System.out.println("PROP + " + prop.getProperty("emailValue"));
         emailTableView.setItems(EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName, prop.getProperty("emailValue"))));
 
+    }
+
+     /**
+     * method to set up all the drag events
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
+    private void drag() {
+        this.emailTableView.setRowFactory(tv -> {
+            TableRow<EmailFXBean> row = new TableRow<>();
+            
+            row.setOnMouseClicked(e -> {
+                if (!row.isEmpty() || row != null) {
+                    if (e.isDragDetect()) {
+                        EmailFXBean fxBean = (EmailFXBean) emailTableView.getSelectionModel().getSelectedItem();
+                        if (fxBean != null && !fxBean.getFolderName().equalsIgnoreCase("Sent")) {
+                            row.setOnDragDetected(new EventHandler<MouseEvent>() {
+                                @Override
+                                public void handle(MouseEvent event) {
+                                    Dragboard db = emailTableView.startDragAndDrop(TransferMode.ANY);
+                                    ClipboardContent content = new ClipboardContent();
+                                    content.putString(fxBean.getId() + "");
+                                    db.setContent(content);
+                                    LOG.info("Starting drag event on email with id => " + content.getString());
+                                    event.consume();
+                                }
+                            });
+                            
+                            row.setOnDragOver(new EventHandler<DragEvent>() {
+                                @Override
+                                public void handle(DragEvent event) {
+                                    LOG.debug("Here");
+                                    Dragboard db = event.getDragboard();
+                                    if (event.getDragboard().hasString()) {
+                                        event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                                    }
+                                    event.consume();
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+            return row;
+        });
     }
 
     public void setProperties(Properties prop) {
         this.prop = prop;
     }
 
+     /**
+     * method to show email details on click
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     private void showEmailDetails(EmailFXBean newValue) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -100,7 +163,7 @@ public class EmailTableController {
             ViewController view = loader.getController();
             root.setViewController(view);
             view.setProperties(this.prop);
-            
+
             if (newValue != null) {
                 view.loadEmail(newValue);
             }
@@ -110,6 +173,10 @@ public class EmailTableController {
             ex.printStackTrace();
         }
 
+    }
+
+    public TableView getTableView() {
+        return this.emailTableView;
     }
 
     public void setEmailDao(EmailDAO dao) {

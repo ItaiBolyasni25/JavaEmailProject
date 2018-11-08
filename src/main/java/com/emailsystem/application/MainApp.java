@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  *
- * @author GamingDanik
+ * @author 1633867
  */
 public class MainApp extends Application {
 
@@ -47,22 +47,28 @@ public class MainApp extends Application {
     private LoginController loginController;
     private Properties propIn = new Properties();
 
+    /**
+     * Main entry point for javaFX
+     *
+     * @param Stage - the root stage
+     * @version 1.0.0
+     */
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
 
         this.primaryStage.setTitle("Email Application");
 
-
-        try(InputStream in = getClass().getResourceAsStream("/UserInfo.properties")) {
+        try (InputStream in = getClass().getResourceAsStream("/UserInfo.properties")) {
             this.propIn.load(in);
-            if (propIn.containsKey("emailValue") || propIn.containsKey("passwordValue")
-                    || propIn.containsKey("dbUname") || propIn.containsKey("dbPassword")) {
-                loadRoot(new Locale("en", "CA"));
-            } else {
-                
+            if (!propIn.containsKey("emailValue") || !propIn.containsKey("passwordValue")
+                    || !propIn.containsKey("dbUname") || !propIn.containsKey("dbPassword")) {
                 initLayout();
                 loginController.setProperties(this.propIn);
+
+            } else {
+                loadRoot(new Locale("en", "CA"));
+
             }
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -70,7 +76,13 @@ public class MainApp extends Application {
 
     }
 
-    public void loadRoot(Locale locale) throws IOException {
+    /**
+     * Helper method to load the root.fxml and initialize its components
+     *
+     * @param Locale - the location of the user
+     * @version 1.0.0
+     */
+    private void loadRoot(Locale locale) throws IOException {
         this.currentLocale = locale;
         FXMLLoader loader = new FXMLLoader();
         loader.setResources(ResourceBundle.getBundle("Bundle", currentLocale));
@@ -80,11 +92,17 @@ public class MainApp extends Application {
         RootLayoutController root = loader.getController();
         root.setProperties(propIn);
         root.setMain(this);
-        root.doWork();
+        root.start();
 
         setScene(scene);
     }
 
+    /**
+     * Private method that initializes the login.fxml if this is the user's
+     * first time.
+     *
+     * @version 1.0.0
+     */
     private void initLayout() {
 
         this.currentLocale = new Locale("en", "CA");
@@ -108,6 +126,12 @@ public class MainApp extends Application {
         System.exit(0);
     }
 
+    /**
+     * Method to dynamically change the scene without reloading the stage
+     *
+     * @param scene - the new scene to be loaded
+     * @version 1.0.0
+     */
     public void setScene(Scene scene) {
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();

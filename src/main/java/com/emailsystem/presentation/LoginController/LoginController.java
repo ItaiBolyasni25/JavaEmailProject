@@ -59,6 +59,11 @@ public class LoginController {
     private final static Logger LOG = LoggerFactory.getLogger(LoginController.class);
     private Properties propIn;
 
+     /**
+     * Method to initialize (does nothing)
+     *
+     * @version 1.0.0
+     */
     @FXML
     private void initialize() {
 
@@ -66,6 +71,14 @@ public class LoginController {
     public void setProperties(Properties prop) {
         this.propIn = prop;
     }
+     /**
+     * EventHandler for the onAction event on the button, it will set up the properties file
+     * and load the root layout
+     *
+     * @param folderName - the name of the folder to be created
+     * @return int - the amount of rows affected
+     * @version 1.0.0
+     */
     @FXML
     protected void onSubmit(ActionEvent event) {
         try (InputStream in = getClass().getResourceAsStream("/UserInfo.properties")) {
@@ -92,7 +105,7 @@ public class LoginController {
             RootLayoutController root = loader.getController();
             root.setProperties(propIn);
             root.setMain(main);
-            root.doWork();
+            root.start();
 
             Scene scene;
             scene = new Scene(bob);

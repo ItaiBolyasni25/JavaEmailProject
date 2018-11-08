@@ -20,6 +20,12 @@ public class AttachmentController {
         
     }
     
+     /**
+     * Method to load an image to the ImageView
+     *
+     * @param byte[] - the image byte stream
+     * @version 1.0.0
+     */
     public void loadImage(byte[] byteStream) {
         InputStream is = new ByteArrayInputStream(byteStream);
         attach.setImage(new Image(is));

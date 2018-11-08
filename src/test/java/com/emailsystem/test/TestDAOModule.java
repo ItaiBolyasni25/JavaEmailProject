@@ -91,7 +91,16 @@ public class TestDAOModule  {
      */
     @AfterClass
     public static void seedAfterTestCompleted() {
-        new TestDAOModule().seedDatabase();
+        final String seedDataScript = new TestDAOModule().loadAsString("EmailTableBuild.sql");
+        String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        try (Connection connection = DriverManager.getConnection(URL, "a1633867", "dawson")) {
+            for (String statement : new TestDAOModule().splitStatements(new StringReader(seedDataScript), ";")) {
+                connection.prepareStatement(statement).execute();
+            }
+        
+    }   catch (SQLException ex) {
+            Logger.getLogger(TestDAOModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
@@ -231,6 +240,7 @@ public class TestDAOModule  {
         // Folder temp doesn't exist
         db.updateEmailFolder("temp", 5);
     }
+    
     
 
     private int getAllEmailsCount() throws SQLException {

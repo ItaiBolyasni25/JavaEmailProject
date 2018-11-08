@@ -78,19 +78,20 @@ public class ViewController {
 
     }
 
-    public void start() {
-
-    }
-
     public void setAttachDAO(AttachmentDAO attachDao) {
         this.attachDao = attachDao;
     }
 
+     /**
+     * method to load the bean to the view
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void loadEmail(EmailFXBean fx) {
         try {
             this.attachDao = new AttachmentDAO(prop.getProperty("dbUname"), prop.getProperty("dbPassword"));
-            System.out.println(fx.getId());
-            System.out.println(this.attachDao);
+
             this.list = attachDao.read(fx.getId(), false);
             this.from.setText(fx.getFrom());
             this.subject.setText(fx.getSubject());
@@ -101,10 +102,16 @@ public class ViewController {
             this.fx = fx;
             this.openAttach.setText(this.openAttach.getText() + " (" + list.size() + ")");
         } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(ViewController.class.getName()).log(Level.SEVERE, null, ex);
+            LOG.error(ex.getMessage());
         }
     }
 
+     /**
+     * method that loads attachments
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     public void openAttach(ActionEvent action) {
         try {
             loadAttach();
@@ -117,6 +124,12 @@ public class ViewController {
         this.root = root;
     }
 
+     /**
+     * Method that opens the attachView pop up from which the user can view their received attachments
+     *
+     * @param event - ActionEvent
+     * @version 1.0.0
+     */
     private void loadAttach() throws SQLException {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -134,7 +147,6 @@ public class ViewController {
                 AttachListController listController = loader.getController();
                 listController.displayList(list);
                 scene = new Scene(popUp);
-                System.out.println("HERE");
             } else {
                 return;
             }
