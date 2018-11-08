@@ -8,38 +8,42 @@ import java.sql.DriverManager;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Main DAO, responsible for managing the other DAO as well as fetching EmailBeans
- * 
+ * Main DAO, responsible for managing the other DAO as well as fetching
+ * EmailBeans
+ *
  * @author Itai Bolyasni
  * @version 1.0.0
  */
 public class EmailDAO {
 
-    private String URL = "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true";
     private final static Logger LOG = LoggerFactory.getLogger(EmailDAO.class);
     private final String UNAME;
     private final String PASSWORD;
+    private final String URL;
     private final AttachmentDAO attachDao;
     private final RecipientDAO recDao;
     private final FolderDAO folderDao;
     private Connection connection;
-    
-    public EmailDAO(String uname, String password) throws SQLException {
+    private Properties prop;
+
+    public EmailDAO(String uname, String password, String URL) throws SQLException {
         this.UNAME = uname;
         this.PASSWORD = password;
+        this.URL = URL;
         attachDao = new AttachmentDAO(UNAME, PASSWORD);
         recDao = new RecipientDAO(URL, UNAME, PASSWORD);
         folderDao = new FolderDAO(URL, UNAME, PASSWORD);
         this.connection = DriverManager.getConnection(URL, UNAME, PASSWORD);
     }
 
-     /**
+    /**
      * A method that returns all of the emails in the database
      *
      * @return List - a list of EmailBeans
@@ -56,6 +60,7 @@ public class EmailDAO {
                 bean.setId(rs.getInt("email_id"));
                 bean.setFrom(rs.getString("senderEmail"));
                 bean.setSubject(rs.getString("subject"));
+                bean.setName(rs.getString("name"));
                 bean.setTo(recDao.read(bean.getId(), "TO"));
                 bean.setCc(recDao.read(bean.getId(), "CC"));
                 bean.setBcc(recDao.read(bean.getId(), "BCC"));
@@ -75,14 +80,21 @@ public class EmailDAO {
         return allEmails;
     }
     
-    public List<EmailBean> findEmailsInFolder(String folderName) throws SQLException {
+    public FolderDAO getFolderDAO() {
+        return this.folderDao;
+    }
+
+    public List<EmailBean> findEmailsInFolder(String folderName, String senderEmail) throws SQLException {
         List<EmailBean> list = new ArrayList();
-        String query = "SELECT * FROM Emails WHERE folder_id = ?";
+        String query = "SELECT * FROM Emails WHERE folder_id = ? AND senderEmail = ? ORDER BY receivedDate DESC";
+        System.out.println(senderEmail);
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, folderDao.getId(folderName));
+            ps.setString(2, senderEmail);
+
             ResultSet rs = ps.executeQuery();
-            
-            while (rs.next()) { 
+
+            while (rs.next()) {
                 EmailBean bean = new EmailBean();
                 bean.setId(rs.getInt("email_id"));
                 bean.setFrom(rs.getString("senderEmail"));
@@ -101,12 +113,12 @@ public class EmailDAO {
                 bean.setSentTime(rs.getTimestamp("sentDate").toLocalDateTime());
                 bean.setReceivedTime(rs.getTimestamp("receivedDate").toLocalDateTime());
                 list.add(bean);
-                
+
             }
             return list;
         }
     }
-    
+
     public ObservableList<EmailFXBean> findAllFoldersFX() throws SQLException {
         ObservableList<EmailFXBean> list = FXCollections.observableArrayList();
         String query = "SELECT foldername FROM Folders";
@@ -120,10 +132,11 @@ public class EmailDAO {
         }
         return list;
     }
-    
-     /**
-     * A method that creates all the entries that are related to a certain EmailBean
-     * 
+
+    /**
+     * A method that creates all the entries that are related to a certain
+     * EmailBean
+     *
      * @param email - the EmailBean that will be saved to the database
      * @return int - the amount of rows that were affected.
      * @version 1.0.0
@@ -132,8 +145,12 @@ public class EmailDAO {
         int result;
         String query = "INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES (?,?,?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
-
-            ps.setString(1, email.getFrom());
+            if (email.getFrom().contains(">") || email.getFrom().contains("<")) {
+                ps.setString(1, email.getFrom().substring(email.getFrom().indexOf("<"), email.getFrom().indexOf(">")));
+                System.out.println("HERE");
+            } else {
+                ps.setString(1, email.getFrom());
+            }
             ps.setString(2, email.getSubject());
             ps.setString(3, email.getTextMsg());
             ps.setString(4, email.getHTMLMsg());
@@ -173,11 +190,14 @@ public class EmailDAO {
         return result;
     }
 
-     /**
-     * A method that creates all the entries that are related to a certain EmailBean
-     * 
-     * @param newFolderName - the name of the folder where the email will be moved to
-     * @param email_id - the id of the email that will be moved to another folder
+    /**
+     * A method that creates all the entries that are related to a certain
+     * EmailBean
+     *
+     * @param newFolderName - the name of the folder where the email will be
+     * moved to
+     * @param email_id - the id of the email that will be moved to another
+     * folder
      * @return int - the amount of rows that were affected.
      * @version 1.0.0
      */
@@ -192,9 +212,11 @@ public class EmailDAO {
             return ps.executeUpdate();
         }
     }
-     /**
-     * A method that fetches a record from the database and transforms it into an EmailBean
-     * 
+
+    /**
+     * A method that fetches a record from the database and transforms it into
+     * an EmailBean
+     *
      * @param id - the email_id
      * @return EmailBean - The EmailBean corresponding to the email_id
      * @version 1.0.0
@@ -227,9 +249,10 @@ public class EmailDAO {
         }
         return bean;
     }
-    
-     /**
+
+    /**
      * A method that deletes an email from the database
+     *
      * @param id - the email_id that the user wishes to delete
      * @return int - the amount of rows that were affected.
      * @version 1.0.0
@@ -248,4 +271,7 @@ public class EmailDAO {
         return result;
     }
 
+    public void setProperties(Properties prop) {
+        this.prop = prop;
+    }
 }

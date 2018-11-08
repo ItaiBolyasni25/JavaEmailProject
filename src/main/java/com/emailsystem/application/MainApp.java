@@ -44,8 +44,6 @@ public class MainApp extends Application {
     private AnchorPane loginPage;
     Locale currentLocale;
 
-    private String UNAME;
-    private String PASSWORD;
     private LoginController loginController;
     private Properties propIn = new Properties();
 
@@ -60,15 +58,11 @@ public class MainApp extends Application {
             this.propIn.load(in);
             if (propIn.containsKey("emailValue") || propIn.containsKey("passwordValue")
                     || propIn.containsKey("dbUname") || propIn.containsKey("dbPassword")) {
-                this.UNAME = propIn.getProperty("dbUname");
-                this.PASSWORD = propIn.getProperty("dbPassword");
-                
-                loadRoot();
+                loadRoot(new Locale("en", "CA"));
             } else {
                 
                 initLayout();
                 loginController.setProperties(this.propIn);
-                System.out.println("Prop1: " + propIn.getProperty("dbUname"));
             }
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
@@ -76,8 +70,8 @@ public class MainApp extends Application {
 
     }
 
-    private void loadRoot() throws IOException {
-        this.currentLocale = new Locale("en", "CA");
+    public void loadRoot(Locale locale) throws IOException {
+        this.currentLocale = locale;
         FXMLLoader loader = new FXMLLoader();
         loader.setResources(ResourceBundle.getBundle("Bundle", currentLocale));
         loader.setLocation(MainApp.class.getResource("/fxml/root.fxml"));
@@ -85,12 +79,9 @@ public class MainApp extends Application {
         scene = new Scene((AnchorPane) loader.load());
         RootLayoutController root = loader.getController();
         root.setProperties(propIn);
+        root.setMain(this);
         root.doWork();
-        try {
-            root.setDao(new EmailDAO(UNAME, PASSWORD));
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
         setScene(scene);
     }
 
@@ -103,7 +94,7 @@ public class MainApp extends Application {
             loader.setLocation(MainApp.class.getResource("/fxml/login.fxml"));
             loginPage = (AnchorPane) loader.load();
             loginController = loader.getController();
-            loginController.setLocale(this.currentLocale);
+            //loginController.setLocale(this.currentLocale);
             loginController.setMain(this);
             setScene(new Scene(loginPage));
         } catch (IOException ex) {

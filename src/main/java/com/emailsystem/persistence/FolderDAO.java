@@ -142,7 +142,7 @@ public class FolderDAO {
         if (this.getId(oldFolderName) == -1) {
             throw new SQLException("Folder name doesn't exist!");
         } else if (oldFolderName.equalsIgnoreCase("Inbox") || oldFolderName.equalsIgnoreCase("Sent")) {
-            throw new SQLException(oldFolderName + " cannot be deleted!");
+            throw new SQLException(oldFolderName + " cannot be renamed!");
         }
         String query = "UPDATE Folders SET folderName = ? WHERE folderName = ?";
         try (Connection connection = DriverManager.getConnection(URL, UNAME, PASSWORD);

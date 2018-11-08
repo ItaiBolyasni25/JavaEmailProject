@@ -57,7 +57,7 @@ public class TestDAOModule  {
     @Before
     public void seedDatabase() {
         try {
-            db = new EmailDAO(UNAME, PASSWORD);
+            db = new EmailDAO(UNAME, PASSWORD, URL);
         } catch (SQLException ex) {
             
         }

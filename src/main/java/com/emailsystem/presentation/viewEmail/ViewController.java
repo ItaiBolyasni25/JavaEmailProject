@@ -11,12 +11,14 @@ import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.AttachmentDAO;
 import com.emailsystem.presentation.LoginController.LoginController;
 import com.emailsystem.presentation.attachmentView.AttachmentController;
+import com.emailsystem.presentation.popUp.AttachListController;
 import com.emailsystem.presentation.rootController.RootLayoutController;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 import javafx.event.ActionEvent;
@@ -51,6 +53,8 @@ public class ViewController {
     private Text bcc;
     @FXML
     private Button openAttach;
+    @FXML
+    private ResourceBundle resources;
 
     private List<AttachmentBean> list;
     private AttachmentController attachController;
@@ -73,17 +77,18 @@ public class ViewController {
     private void initialize() {
 
     }
-    
+
     public void start() {
 
     }
-    
+
     public void setAttachDAO(AttachmentDAO attachDao) {
         this.attachDao = attachDao;
     }
+
     public void loadEmail(EmailFXBean fx) {
         try {
-            this.attachDao = new AttachmentDAO("a1633867", "dawson");
+            this.attachDao = new AttachmentDAO(prop.getProperty("dbUname"), prop.getProperty("dbPassword"));
             System.out.println(fx.getId());
             System.out.println(this.attachDao);
             this.list = attachDao.read(fx.getId(), false);
@@ -94,7 +99,7 @@ public class ViewController {
             this.cc.setText(fx.getCc());
             this.bcc.setText(fx.getBcc());
             this.fx = fx;
-            this.openAttach.setText(this.openAttach.getText() + "(" + list.size() + ")");
+            this.openAttach.setText(this.openAttach.getText() + " (" + list.size() + ")");
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(ViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -102,7 +107,7 @@ public class ViewController {
 
     public void openAttach(ActionEvent action) {
         try {
-            load();
+            loadAttach();
         } catch (SQLException ex) {
             LOG.warn("Couldnt open attach");
         }
@@ -112,24 +117,31 @@ public class ViewController {
         this.root = root;
     }
 
-    private void load() throws SQLException {
+    private void loadAttach() throws SQLException {
         try {
             FXMLLoader loader = new FXMLLoader();
-
-            loader.setLocation(MainApp.class.getResource("/fxml/attachView.fxml"));
-
-            AnchorPane attachView = (AnchorPane) loader.load();
-            attachController = loader.getController();
-            if (list.size() > 0) {
-                attachController.loadImage(list.get(0).getAttach());
-            }
+            Scene scene = null;
             this.numOfAttach = list.size();
+            if (this.numOfAttach == 1) {
+                loader.setLocation(MainApp.class.getResource("/fxml/attachView.fxml"));
+                AnchorPane attachView = (AnchorPane) loader.load();
+                attachController = loader.getController();
+                attachController.loadImage(list.get(0).getAttach());
+                scene = new Scene(attachView);
+            } else if (this.numOfAttach > 1) {
+                loader.setLocation(MainApp.class.getResource("/fxml/attachViewPopUp.fxml"));
+                AnchorPane popUp = (AnchorPane) loader.load();
+                AttachListController listController = loader.getController();
+                listController.displayList(list);
+                scene = new Scene(popUp);
+                System.out.println("HERE");
+            } else {
+                return;
+            }
             Stage primaryStage = new Stage();
-            Scene scene = new Scene(attachView);
             primaryStage.setScene(scene);
             primaryStage.centerOnScreen();
             primaryStage.show();
-
         } catch (IOException ex) {
             LOG.warn(ex.getMessage());
         }

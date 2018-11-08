@@ -4,6 +4,7 @@ package com.emailsystem.business;
 import com.emailsystem.data.EmailBean;
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import jodd.mail.RFC2822AddressParser;
@@ -20,6 +21,7 @@ public class MailModule implements MailInterface {
     private final String password = "dawsoncollege";
     private final static Logger LOG = LoggerFactory.getLogger(MailModule.class);
     private final String receiveEmail = "receive.1633867@gmail.com";
+    private Properties prop;
 
     /**
      * Send method, takes an email bean as param and sends it to a specified
@@ -32,7 +34,7 @@ public class MailModule implements MailInterface {
     public void send(EmailBean bean) throws SQLException {
         if (verifyBeanData(bean) && bean != null) {
             
-            SmtpModule smtp = new SmtpModule(bean.getFrom(), password);
+            SmtpModule smtp = new SmtpModule(prop.getProperty("emailValue"), prop.getProperty("passwordValue"));
             smtp.send(bean);
             System.out.println("DONE");
         }
@@ -48,12 +50,15 @@ public class MailModule implements MailInterface {
     public EmailBean[] receive() {
         EmailBean[] emails = null;
         if (checkEmail(receiveEmail)) {
-            ImapModule imap = new ImapModule("send.1633867@gmail.com", "dawsoncollege");
+            ImapModule imap = new ImapModule(prop.getProperty("emailValue"), prop.getProperty("passwordValue"));
             emails = imap.receive();
         }
         return emails;
     }
 
+    public void setProperties(Properties prop) {
+        this.prop = prop;
+    }
     /** 
         Private method that verifies all the bean's information
         @param EmailBean to be checked

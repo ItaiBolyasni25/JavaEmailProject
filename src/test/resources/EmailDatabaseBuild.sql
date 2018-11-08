@@ -1,4 +1,5 @@
-
+SET GLOBAL time_zone = '+00:00';
+SET time_zone = '+00:00';
 
 DROP DATABASE IF EXISTS EmailDB;
 CREATE DATABASE EmailDB;

@@ -69,7 +69,6 @@ public class ImapModule implements MailInterface {
                     beans[index].setSentTime(LocalDateTime.ofInstant(email.sentDate().toInstant(), ZoneId.systemDefault()));
                     beans[index].setReceivedTime(LocalDateTime.ofInstant(email.receivedDate().toInstant(), ZoneId.systemDefault()));
                     beans[index].setFolderName("Inbox");
-                    System.out.println("Attach size: " + email.attachments().size());
 
                     // process messages
                     beans[index].setTextMsg(processMessages(email.messages(), false));
@@ -108,10 +107,10 @@ public class ImapModule implements MailInterface {
         List<AttachmentBean> beanList = new ArrayList<>();
         for (EmailAttachment attach : attachList) {
             if (attachList != null) {
-                if (embed && attach.isEmbedded()) {
+                if (embed && attach.isInline()) {
                     // get all embed files
                     beanList.add(new AttachmentBean(attach.getName(), attach.toByteArray()));
-                } else if (!embed && !attach.isEmbedded()) {
+                } else if (!embed && !attach.isInline()) {
                     // get all attached filess
                     beanList.add(new AttachmentBean(attach.getName(), attach.toByteArray()));
                 }

@@ -1,5 +1,4 @@
- INSERT INTO Folders(folderName) VALUES ("Inbox");
- INSERT INTO Folders(folderName) VALUES ("Sent");
+
 
 INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES ("send.1633867@gmail.com","Hello","test","test", 1, CURRENT_DATE);
 INSERT INTO Emails(senderEmail, subject, textMsg, htmlMsg, folder_id, sentDate) VALUES ("itai.bolyasni@gmail.com","Hello","test","test", 2, CURRENT_DATE);

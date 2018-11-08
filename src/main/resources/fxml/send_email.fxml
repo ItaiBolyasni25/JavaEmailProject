@@ -12,34 +12,34 @@
       <HTMLEditor fx:id="emailEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutY="170.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="314.0" prefWidth="699.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
       <AnchorPane layoutX="15.0" prefHeight="200.0" prefWidth="699.0">
          <children>
-            <TextField fx:id="subject" layoutY="130.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="Subject:">
+            <TextField fx:id="subject" layoutY="130.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="%subject">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="to" layoutY="12.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="To:">
+            <TextField fx:id="to" layoutY="12.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="%to">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="bcc" layoutY="91.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="BCC:">
+            <TextField fx:id="bcc" layoutY="91.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="BCC">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="cc" layoutY="53.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="CC:">
+            <TextField fx:id="cc" layoutY="53.0" maxHeight="30.0" maxWidth="699.0" prefHeight="30.0" prefWidth="699.0" promptText="CC">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
          </children>
       </AnchorPane>
-      <Button layoutX="616.0" layoutY="210.0" mnemonicParsing="false" onAction="#addAttach" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: green;" text="Add Attachment" textFill="WHITE">
+      <Button layoutX="616.0" layoutY="210.0" mnemonicParsing="false" onAction="#addAttach" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: green;" text="%addAttach" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Text layoutX="19.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attachments: ">
+      <Text layoutX="19.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%attachments">
          <font>
             <Font size="14.0" />
          </font>

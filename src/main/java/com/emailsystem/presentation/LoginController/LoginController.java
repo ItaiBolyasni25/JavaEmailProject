@@ -46,6 +46,8 @@ public class LoginController {
     private TextField dbUname;
     @FXML
     private TextField dbPassword;
+    @FXML
+    private TextField name;
 
     @FXML
     private Text action;
@@ -70,21 +72,26 @@ public class LoginController {
             OutputStream os = new FileOutputStream("src/main/resources/UserInfo.properties");
             propIn.load(in);
             if (!propIn.containsKey("emailValue") || !propIn.containsKey("passwordValue")
-                    || !propIn.containsKey("dbUname") || !propIn.containsKey("dbPassword")) {
+                    || !propIn.containsKey("dbUname") || !propIn.containsKey("dbPassword") || !propIn.containsKey("name")) {
                 propIn.setProperty("emailValue", email.getText());
                 propIn.setProperty("passwordValue", password.getText());
                 propIn.setProperty("dbUname", dbUname.getText());
                 propIn.setProperty("dbPassword", dbPassword.getText());
+                propIn.setProperty("name", name.getText());
+                propIn.setProperty("imapServer", "imap.gmail.com");
+                propIn.setProperty("smtpServer", "smtp.gmail.com");
+                propIn.setProperty("dbUrl", "jdbc:mysql://localhost:3306/EmailDB?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true");
+                propIn.setProperty("imapPort", "0");
+                propIn.setProperty("smtpPort", "0");
             }
             propIn.store(os, null);
-            System.out.println("Prop1: " + propIn.getProperty("dbUname"));
             FXMLLoader loader = new FXMLLoader();
-            loader.setResources(ResourceBundle.getBundle("Bundle", locale));
+            loader.setResources(ResourceBundle.getBundle("Bundle", new Locale("en", "CA")));
             loader.setLocation(MainApp.class.getResource("/fxml/root.fxml"));
             Parent bob = (AnchorPane)loader.load();
             RootLayoutController root = loader.getController();
             root.setProperties(propIn);
-            root.setLoginController(this);
+            root.setMain(main);
             root.doWork();
 
             Scene scene;

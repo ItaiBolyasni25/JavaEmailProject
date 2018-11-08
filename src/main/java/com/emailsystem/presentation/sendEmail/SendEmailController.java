@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javafx.event.ActionEvent;
@@ -69,6 +70,8 @@ public class SendEmailController {
     private double lastLayoutX = 103;
     private String from;
     private EmailDAO emailDao;
+    private Properties prop;
+    
     
     public void setEmailDAO(EmailDAO email) {
         this.emailDao = email;
@@ -192,9 +195,10 @@ public class SendEmailController {
         bean.setHTMLMsg(this.emailEditor.getHtmlText());
         bean.setTextMsg("Text");
         bean.setAttach(attachList);
-        bean.setFrom(this.from);
+        bean.setFrom(prop.getProperty("emailValue"));
         bean.setSentTime(LocalDateTime.now());
         MailModule mail = new MailModule();
+        mail.setProperties(prop);
         System.out.println(bean);
         try {
             mail.send(bean);
@@ -203,9 +207,9 @@ public class SendEmailController {
             java.util.logging.Logger.getLogger(SendEmailController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public void setFrom(String from) {
-        this.from = from;
+    public void setProperties(Properties prop) {
+        this.prop = prop;
     }
+
    
 }

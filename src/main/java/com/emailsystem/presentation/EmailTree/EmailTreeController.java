@@ -5,22 +5,29 @@
  */
 package com.emailsystem.presentation.EmailTree;
 
+import com.emailsystem.application.MainApp;
 import com.emailsystem.business.MailModule;
 import com.emailsystem.data.EmailBean;
 import com.emailsystem.data.EmailFXBean;
 import com.emailsystem.persistence.EmailDAO;
 import com.emailsystem.persistence.FolderDAO;
+import com.emailsystem.presentation.popUp.FolderController;
 import com.emailsystem.presentation.rootController.RootLayoutController;
 import com.emailsystem.presentation.table.EmailTableController;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
@@ -29,6 +36,8 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,7 +68,7 @@ public class EmailTreeController {
         // The tree will display common name so we set this for the root
         // Because we are using i18n the root name comes from the resource
         // bundle
-        rootFolder.setFolderName("Folders");
+        rootFolder.setFolderName(resources.getString("folders"));
 
         treeView.setRoot(new TreeItem<>(rootFolder));
 
@@ -111,6 +120,54 @@ public class EmailTreeController {
         db.setContent(content);
 
         event.consume();
+    }
+
+    @FXML
+    public void onDelete(ActionEvent event) {
+        try {
+            FolderDAO folders = dao.getFolderDAO();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setResources(resources);
+            loader.setLocation(MainApp.class.getResource("/fxml/deletePopUp.fxml"));
+
+            AnchorPane view = (AnchorPane) loader.load();
+            FolderController folderController = loader.getController();
+            folderController.setFolderDAO(folders);
+            folderController.setTree(this);
+            Scene scene = new Scene(view);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            folderController.setStage(stage);
+            stage.show();
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(EmailTreeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    public void onRename(ActionEvent event) {
+        try {
+            FolderDAO folders = dao.getFolderDAO();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setResources(resources);
+            loader.setLocation(MainApp.class.getResource("/fxml/renamePopUp.fxml"));
+
+            AnchorPane view = (AnchorPane) loader.load();
+            FolderController folderController = loader.getController();
+            folderController.setFolderDAO(folders);
+            folderController.setTree(this);
+            Scene scene = new Scene(view);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            folderController.setStage(stage);
+            stage.show();
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(EmailTreeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void setRoot(RootLayoutController root) {

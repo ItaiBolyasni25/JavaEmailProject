@@ -76,11 +76,12 @@ public class EmailTableController {
     public void displayTheTable(String folderName) throws SQLException {
         // Add observable list data to the table
         MailModule mail = new MailModule();
+        mail.setProperties(prop);
         for (EmailBean bean : mail.receive()) {
-            System.out.println(bean.getAttach().size() + " another " + bean.getEmbedAttach());
             dao.createEmail(bean);
         }
-        emailTableView.setItems(EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName)));
+        System.out.println("PROP + " + prop.getProperty("emailValue"));
+        emailTableView.setItems(EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName, prop.getProperty("emailValue"))));
 
     }
 
@@ -92,8 +93,9 @@ public class EmailTableController {
         try {
             FXMLLoader loader = new FXMLLoader();
 
-            //loader.setResources(resources);
+            loader.setResources(resources);
             loader.setLocation(MainApp.class.getResource("/fxml/viewEmail.fxml"));
+            loader.setResources(resources);
             AnchorPane viewEmail = (AnchorPane) loader.load();
             ViewController view = loader.getController();
             root.setViewController(view);

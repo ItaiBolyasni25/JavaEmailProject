@@ -30,6 +30,15 @@ public class EmailBean implements BeanInterface {
     private List<AttachmentBean> embedAttach;
     private int priority;
     private String folderName = "";
+    private String name = "";
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getFolderName() {
         return folderName;

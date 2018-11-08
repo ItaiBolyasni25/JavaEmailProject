@@ -52,3 +52,6 @@ CREATE TABLE Recipient (
     FOREIGN KEY (address_id) REFERENCES RecipientAddress(address_id)
        ON DELETE CASCADE
 );
+
+ INSERT INTO Folders(folderName) VALUES ("Inbox");
+ INSERT INTO Folders(folderName) VALUES ("Sent");
