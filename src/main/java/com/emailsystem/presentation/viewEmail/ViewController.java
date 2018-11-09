@@ -143,6 +143,7 @@ public class ViewController {
                 scene = new Scene(attachView);
             } else if (this.numOfAttach > 1) {
                 loader.setLocation(MainApp.class.getResource("/fxml/attachViewPopUp.fxml"));
+                loader.setResources(resources);
                 AnchorPane popUp = (AnchorPane) loader.load();
                 AttachListController listController = loader.getController();
                 listController.displayList(list);

@@ -4335,3 +4335,85 @@
 [INFO ] 2018-11-08 00:48:28.372 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
 [INFO ] 2018-11-08 00:48:32.399 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
 [INFO ] 2018-11-08 00:48:32.400 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 3 was created
+[INFO ] 2018-11-08 20:10:50.506 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-11-08 20:10:50.678 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-11-08 20:10:50.690 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - WindsorKen180.jpg was created
+[INFO ] 2018-11-08 20:10:50.713 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 1 was created
+[INFO ] 2018-11-08 20:10:50.713 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[INFO ] 2018-11-08 20:11:52.586 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-11-08 20:11:52.705 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-11-08 20:11:52.715 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - WindsorKen180.jpg was created
+[INFO ] 2018-11-08 20:11:52.745 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-11-08 20:11:52.751 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 2 was created
+[INFO ] 2018-11-08 20:11:52.752 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[INFO ] 2018-11-08 20:11:57.147 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-11-08 20:11:57.155 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - WindsorKen180.jpg was created
+[INFO ] 2018-11-08 20:11:57.174 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-11-08 20:11:57.178 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 3 was created
+[WARN ] 2018-11-08 20:12:14.290 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.loadAttach(ViewController.java:158) - No resources specified.
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/attachViewPopUp.fxml:15
+
+[INFO ] 2018-11-08 20:12:47.270 [JavaFX Application Thread] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - sdfsdf was created with id: 3
+[INFO ] 2018-11-08 20:13:06.058 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController$1.handle(EmailTableController.java:121) - Starting drag event on email with id => 3
+[INFO ] 2018-11-08 20:13:06.766 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.774 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.782 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.790 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.798 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.806 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.814 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.822 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.830 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.838 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.846 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.854 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.862 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.870 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.878 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.885 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.893 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.901 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.910 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.918 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.926 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.934 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.942 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.950 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.958 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.974 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.982 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:06.998 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.006 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.014 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.022 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.030 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.038 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.046 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.054 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.062 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.070 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.078 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.086 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.094 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.102 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.110 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.126 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.134 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.150 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.158 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.166 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.225 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.286 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.349 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.410 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.474 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.526 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.542 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.599 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.660 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.702 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.754 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:13:07.818 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[WARN ] 2018-11-08 20:13:34.648 [JavaFX Application Thread] com.emailsystem.presentation.viewEmail.ViewController.loadAttach(ViewController.java:158) - No resources specified.
+/C:/Users/1633867/Desktop/EmailProject/target/classes/fxml/attachViewPopUp.fxml:15
+
