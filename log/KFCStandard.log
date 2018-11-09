@@ -4443,3 +4443,7 @@
 [INFO ] 2018-11-08 20:18:18.398 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
 [INFO ] 2018-11-08 20:18:18.457 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
 [INFO ] 2018-11-08 20:18:18.520 [JavaFX Application Thread] com.emailsystem.presentation.EmailTree.EmailTreeController$1$1.handle(EmailTreeController.java:98) - 0
+[INFO ] 2018-11-08 20:24:14.732 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-11-08 20:24:14.921 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-11-08 20:24:14.922 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 4 was created
+[INFO ] 2018-11-08 20:24:14.923 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
