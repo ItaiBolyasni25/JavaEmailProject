@@ -212,7 +212,7 @@ public class SendEmailController {
         }
         bean.setFolderName("Sent");
         bean.setHTMLMsg(this.emailEditor.getHtmlText());
-        bean.setTextMsg("Text");
+        bean.setTextMsg(this.emailEditor.getHtmlText());
         bean.setAttach(attachList);
         bean.setFrom(prop.getProperty("emailValue"));
         bean.setSentTime(LocalDateTime.now());
