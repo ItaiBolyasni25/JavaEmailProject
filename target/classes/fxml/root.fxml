@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootAnchor" maxHeight="880.0" maxWidth="1098.0" prefHeight="880.0" prefWidth="1098.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.rootController.RootLayoutController">
+<AnchorPane fx:id="rootAnchor" maxHeight="880.0" maxWidth="1098.0" prefHeight="880.0" prefWidth="1098.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emailsystem.presentation.rootController.RootLayoutController">
    <children>
       <AnchorPane fx:id="splitAnchorPane" layoutX="328.0" layoutY="61.0" maxHeight="839.0" maxWidth="729.0" minWidth="686.0" prefHeight="644.0" prefWidth="729.0" style="-fx-background-color: lightblue; -fx-background-radius: 10;">
          <children>
