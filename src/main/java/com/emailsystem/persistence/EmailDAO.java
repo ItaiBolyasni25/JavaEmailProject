@@ -83,15 +83,13 @@ public class EmailDAO {
         return this.folderDao;
     }
 
-    public List<EmailBean> findEmailsInFolder(String folderName, String senderEmail) throws SQLException {
+    public List<EmailBean> findEmailsInFolder(String folderName) throws SQLException {
         List<EmailBean> list = new ArrayList();
-        String query = "SELECT * FROM Emails WHERE folder_id = ? AND senderEmail = ? ORDER BY receivedDate DESC";
+        String query = "SELECT * FROM Emails WHERE folder_id = ? ORDER BY receivedDate DESC";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, folderDao.getId(folderName));
-            ps.setString(2, senderEmail);
 
             ResultSet rs = ps.executeQuery();
-
             while (rs.next()) {
                 EmailBean bean = new EmailBean();
                 bean.setId(rs.getInt("email_id"));

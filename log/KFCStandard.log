@@ -4447,3 +4447,179 @@
 [INFO ] 2018-11-08 20:24:14.921 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
 [INFO ] 2018-11-08 20:24:14.922 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 4 was created
 [INFO ] 2018-11-08 20:24:14.923 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[ERROR] 2018-12-04 20:28:45.499 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:95) - Email: qis invalid!
+[ERROR] 2018-12-04 20:28:45.503 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.composeEmail(SendEmailController.java:225) - Cc email is invalid!
+[INFO ] 2018-12-04 20:28:45.504 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[INFO ] 2018-12-04 20:30:36.478 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:30:36.479 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 1 was created
+[INFO ] 2018-12-04 20:31:46.767 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:31:46.889 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:31:46.889 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 2 was created
+[INFO ] 2018-12-04 20:31:46.890 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[INFO ] 2018-12-04 20:31:56.735 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:31:56.736 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 3 was created
+[INFO ] 2018-12-04 20:32:59.262 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:32:59.263 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 4 was created
+[INFO ] 2018-12-04 20:36:40.694 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder was created with id: 3
+[INFO ] 2018-12-04 20:36:40.728 [main] com.emailsystem.persistence.FolderDAO.update(FolderDAO.java:152) - Test Folder was updated to: Did it work
+[INFO ] 2018-12-04 20:36:42.750 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder 2 was created with id: 3
+[INFO ] 2018-12-04 20:36:42.772 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:128) - Test Folder 2 with id: 3 was deleted
+[INFO ] 2018-12-04 20:36:44.761 [main] com.emailsystem.persistence.EmailDAO.delete(EmailDAO.java:266) - Record with id: 5 deleted.
+[INFO ] 2018-12-04 20:36:45.717 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-12-04 20:36:47.735 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:36:47.736 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 26 was created
+[INFO ] 2018-12-04 20:36:47.758 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:57) - Created recipient/s of type CC
+[INFO ] 2018-12-04 20:36:51.456 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - temp was created with id: 3
+[INFO ] 2018-12-04 20:36:55.424 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:36:55.424 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 26 was created
+[INFO ] 2018-12-04 20:36:56.398 [main] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - java.jpg was created
+[INFO ] 2018-12-04 20:36:57.346 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - toBeDeleted was created with id: 3
+[INFO ] 2018-12-04 20:36:57.392 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:36:57.392 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 26 was created
+[INFO ] 2018-12-04 20:36:57.422 [main] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:36:57.422 [main] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 27 was created
+[INFO ] 2018-12-04 20:36:57.428 [main] com.emailsystem.persistence.FolderDAO.delete(FolderDAO.java:128) - toBeDeleted with id: 3 was deleted
+[INFO ] 2018-12-04 20:36:59.033 [main] com.emailsystem.persistence.FolderDAO.create(FolderDAO.java:103) - Test Folder was created with id: 3
+[INFO ] 2018-12-04 20:37:07.213 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:37:24.827 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:37:40.037 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[ERROR] 2018-12-04 20:37:49.131 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:95) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-12-04 20:37:55.498 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[ERROR] 2018-12-04 20:38:04.017 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:95) - Email: kshflkjshfgj12369is invalid!
+[ERROR] 2018-12-04 20:38:04.018 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:95) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-12-04 20:38:10.175 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:38:25.340 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:38:33.412 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:38:50.125 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:39:04.884 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[ERROR] 2018-12-04 20:39:14.068 [main] com.emailsystem.business.MailModule.checkEmail(MailModule.java:95) - Email: kshflkjshfgj12369is invalid!
+[INFO ] 2018-12-04 20:39:20.192 [main] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:40:22.263 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:40:22.270 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - icon.png was created
+[INFO ] 2018-12-04 20:40:22.281 [JavaFX Application Thread] com.emailsystem.persistence.AttachmentDAO.create(AttachmentDAO.java:55) - no-name.DELIVERY-STATUS was created
+[INFO ] 2018-12-04 20:40:22.286 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 1 was created
+[INFO ] 2018-12-04 20:44:02.678 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 20:44:02.822 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:44:02.823 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 2 was created
+[INFO ] 2018-12-04 20:44:02.823 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[INFO ] 2018-12-04 20:44:45.781 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:44:45.781 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 3 was created
+[ERROR] 2018-12-04 20:49:20.351 [JavaFX Application Thread] com.emailsystem.business.MailModule.checkEmail(MailModule.java:95) - Email: is invalid!
+[ERROR] 2018-12-04 20:49:20.354 [JavaFX Application Thread] com.emailsystem.presentation.sendEmail.SendEmailController.composeEmail(SendEmailController.java:225) - Receiver email is invalid!
+[INFO ] 2018-12-04 20:49:20.355 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!
+[INFO ] 2018-12-04 20:50:17.491 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:92) - got here
+[INFO ] 2018-12-04 20:52:03.237 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:94) - EmailBean{id=0from=Itai Bolyasni <itai.bolyasni25@gmail.com>, to=[send.1633867@gmail.com], cc=[], bcc=[Ljava.lang.String;@749cfacd, subject=PLS, textMsg=asdasd
+, HTMLMsg=<div dir="ltr">asdasd</div>
+, attach=[], embedAttach=[], priority=-1, folderName=Inbox, sentTime=2018-12-04T20:51:48, receivedTime=2018-12-04T20:52:02}
+[INFO ] 2018-12-04 20:52:03.346 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:52:03.347 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 4 was created
+[INFO ] 2018-12-04 20:54:32.932 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:54:32.964 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 20:54:48.047 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:54:48.052 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 20:55:09.796 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:94) - EmailBean{id=0from=Itai Bolyasni <itai.bolyasni25@gmail.com>, to=[send.1633867@gmail.com], cc=[], bcc=[Ljava.lang.String;@62b71eac, subject=Re: test, textMsg=dfggdfgdf
+
+On Tue, 4 Dec 2018 at 20:44, Itai Bolyasni <itai.bolyasni25@gmail.com>
+wrote:
+
+> dsfsdf
+>
+> On Tue, 4 Dec 2018 at 20:32, Itai Bolyasni <itai.bolyasni25@gmail.com>
+> wrote:
+>
+>> dfsdfs
+>>
+>> On Tue, 4 Dec 2018 at 20:30, Itai Bolyasni <itai.bolyasni25@gmail.com>
+>> wrote:
+>>
+>>> ttt
+>>>
+>>
+, HTMLMsg=<div dir="ltr">dfggdfgdf</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:44, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">dsfsdf</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:32, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com" target="_blank">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">dfsdfs</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:30, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com" target="_blank">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">ttt</div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+, attach=[], embedAttach=[], priority=-1, folderName=Inbox, sentTime=2018-12-04T20:54:53, receivedTime=2018-12-04T20:55:07}
+[INFO ] 2018-12-04 20:55:09.860 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 20:55:09.860 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:180) - Email with id 5 was created
+[INFO ] 2018-12-04 20:55:09.860 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 20:55:09.907 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf [com.emailsystem.data.EmailFXBean@22e0f99a]
+[INFO ] 2018-12-04 20:56:10.590 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:56:10.595 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 20:58:11.258 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:58:11.295 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here
+[INFO ] 2018-12-04 20:58:11.296 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 20:58:11.300 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here
+[INFO ] 2018-12-04 20:59:14.334 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:59:14.370 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:59:14.371 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 20:59:14.376 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 20:59:51.334 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 20:59:51.341 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 20:59:51.342 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:96) - as well
+[INFO ] 2018-12-04 20:59:51.394 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf [com.emailsystem.data.EmailFXBean@4668d60]
+[INFO ] 2018-12-04 20:59:51.399 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 20:59:51.399 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:96) - as well
+[INFO ] 2018-12-04 21:00:12.803 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:00:12.808 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:00:12.808 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:00:12.812 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - got here Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:10:05.121 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:10:05.158 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.start(RootLayoutController.java:102) - Didnt Executed Parameter index out of range (2 > number of parameters, which is 1).
+[INFO ] 2018-12-04 21:11:00.123 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:11:00.162 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.start(RootLayoutController.java:102) - Didnt Executed Parameter index out of range (2 > number of parameters, which is 1).
+[INFO ] 2018-12-04 21:12:12.958 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:12.998 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:17.773 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:17.779 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:21.512 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:21.518 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:24.358 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:24.364 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:35.267 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:35.273 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:37.892 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:37.898 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:41.095 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Sent send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:41.100 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf []
+[INFO ] 2018-12-04 21:12:48.937 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:94) - EmailBean{id=0from=Itai Bolyasni <itai.bolyasni25@gmail.com>, to=[send.1633867@gmail.com], cc=[], bcc=[Ljava.lang.String;@a86ed04, subject=Re: test, textMsg=dghfdghdfh
+
+On Tue, 4 Dec 2018 at 20:54, Itai Bolyasni <itai.bolyasni25@gmail.com>
+wrote:
+
+> dfggdfgdf
+>
+> On Tue, 4 Dec 2018 at 20:44, Itai Bolyasni <itai.bolyasni25@gmail.com>
+> wrote:
+>
+>> dsfsdf
+>>
+>> On Tue, 4 Dec 2018 at 20:32, Itai Bolyasni <itai.bolyasni25@gmail.com>
+>> wrote:
+>>
+>>> dfsdfs
+>>>
+>>> On Tue, 4 Dec 2018 at 20:30, Itai Bolyasni <itai.bolyasni25@gmail.com>
+>>> wrote:
+>>>
+>>>> ttt
+>>>>
+>>>
+, HTMLMsg=<div dir="ltr">dghfdghdfh</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:54, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">dfggdfgdf</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:44, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com" target="_blank">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">dsfsdf</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:32, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com" target="_blank">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">dfsdfs</div><br><div class="gmail_quote"><div dir="ltr">On Tue, 4 Dec 2018 at 20:30, Itai Bolyasni &lt;<a href="mailto:itai.bolyasni25@gmail.com" target="_blank">itai.bolyasni25@gmail.com</a>&gt; wrote:<br></div><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr">ttt</div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+, attach=[], embedAttach=[], priority=-1, folderName=Inbox, sentTime=2018-12-04T21:12:30, receivedTime=2018-12-04T21:12:44}
+[INFO ] 2018-12-04 21:12:49.049 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 21:12:49.050 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:179) - Email with id 1 was created
+[INFO ] 2018-12-04 21:12:49.050 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:12:49.056 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - as well
+[INFO ] 2018-12-04 21:12:49.094 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf [com.emailsystem.data.EmailFXBean@508cc90f]
+[INFO ] 2018-12-04 21:12:49.098 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.findEmailsInFolder(EmailDAO.java:94) - as well
+[INFO ] 2018-12-04 21:18:04.499 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:97) - Inbox send.1633867@gmail.com
+[INFO ] 2018-12-04 21:18:04.586 [JavaFX Application Thread] com.emailsystem.presentation.table.EmailTableController.displayTheTable(EmailTableController.java:98) - dsf [com.emailsystem.data.EmailFXBean@60f1fe7c]
+[INFO ] 2018-12-04 21:18:31.505 [JavaFX Application Thread] com.emailsystem.business.SmtpModule.createSession(SmtpModule.java:79) - Mail sent
+[INFO ] 2018-12-04 21:18:31.599 [JavaFX Application Thread] com.emailsystem.persistence.RecipientDAO.create(RecipientDAO.java:53) - Created recipient/s of type TO
+[INFO ] 2018-12-04 21:18:31.600 [JavaFX Application Thread] com.emailsystem.persistence.EmailDAO.createEmail(EmailDAO.java:178) - Email with id 2 was created
+[INFO ] 2018-12-04 21:18:31.600 [JavaFX Application Thread] com.emailsystem.presentation.rootController.RootLayoutController.sendEmail(RootLayoutController.java:354) - Email was sent!

@@ -48,7 +48,7 @@ public class TestMailModule {
         bean.setTo(new String[]{"receive.1633867@gmail.com"});
         bean.setSubject("Sending emails with java test new program");
         bean.setTextMsg("Test");
-        bean.setCc(new String[]{"send.1633867@gmail.com", "cc2@gmail.com"});
+        bean.setCc(new String[]{"send.1633867@gmail.com", "cvgb@walla.com"});
         bean.setHTMLMsg("<!DOCTYPE HTML><html><head></head><body>" + bean.getTextMsg() + "</body></html>");
         bean.setFolderName("Inbox");
         mail = new MailModule("send.1633867@gmail.com", "dawsoncollege");

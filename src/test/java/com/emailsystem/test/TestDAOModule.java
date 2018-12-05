@@ -205,7 +205,7 @@ public class TestDAOModule  {
         // new email will have no recipients that were CC
         db.createEmail(bean);
         // Add cc recipient to newly created email
-        bean.setCc(new String[]{"cc2@gmail.com"});
+        bean.setCc(new String[]{"cvgb@walla.com"});
         recipients.create(bean, 26, "CC");
         assertArrayEquals(db.getEmail(26).getCc(), recipients.read(26, "CC"));
     }

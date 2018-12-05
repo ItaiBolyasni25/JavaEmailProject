@@ -89,10 +89,14 @@ public class EmailTableController {
         // Add observable list data to the table
         MailModule mail = new MailModule();
         mail.setProperties(prop);
+        
         for (EmailBean bean : mail.receive()) {
+            LOG.info(bean + "");
             dao.createEmail(bean);
         }
-        emailTableView.setItems(EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName, prop.getProperty("emailValue"))));
+        LOG.info(folderName + " " + prop.getProperty("emailValue"));
+        LOG.info("dsf " + EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName)));
+        emailTableView.setItems(EmailFXBean.transformBeanListToFxList(dao.findEmailsInFolder(folderName)));
 
     }
 
